@@ -17,6 +17,7 @@ export default {
 
 <style scoped lang="scss">
   .button-category{
+    margin-top: 110px;
     margin-right: 10px;
     width: 216px;
     height: 64px;
