@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# client
-=======
 # product-detail
->>>>>>> c993a51fbbd02745d38c34079288a54d37d68755
 
 ## Project setup
 ```
@@ -15,11 +11,7 @@ npm run serve
 ```
 
 ### Compiles and minifies for production
-<<<<<<< HEAD
-```gi
-=======
 ```
->>>>>>> c993a51fbbd02745d38c34079288a54d37d68755
 npm run build
 ```
 
