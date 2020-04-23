@@ -9,8 +9,13 @@
             <p>Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</p>
         </div>
       </div>
-      <button class="btn-chg"> <i class="fas fa-key"></i> <p>Ubah Kata Sandi</p></button>
-      <button class="btn-chg"> <i class="fas fa-lock"></i> <p> Tokopedia</p></button>
+      <button class="btn-chg" data-toggle="modal" data-target="#editPwd">
+        <i class="fas fa-key"></i>
+        <p>Ubah Kata Sandi</p></button>
+        <editPwd/>
+      <button class="btn-chg">
+        <i class="fas fa-lock"></i>
+        <p> Pin Tokopedia</p></button>
     </div>
     <div class="form-profile">
       <section class="span1"><h3><b>Ubah biodata diri</b></h3></section>
@@ -50,6 +55,7 @@
 import editName from '../base/editName.vue';
 import editDateBirth from '../base/editDateBirth.vue';
 import editEmail from '../base/editEmail.vue';
+import editPwd from '../base/editPwd.vue';
 
 export default {
   name: 'settingPage',
@@ -57,6 +63,7 @@ export default {
     editName,
     editDateBirth,
     editEmail,
+    editPwd,
   },
 };
 </script>

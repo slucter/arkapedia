@@ -1,4 +1,7 @@
 <template>
+<div>
+  <Navbar_ />
+  <Submenu_ />
   <div class="dashboard">
     <div class="special-categories">
       <SpecialCategory />
@@ -7,6 +10,7 @@
     <CardCategories />
     <CardProductRow />
   </div>
+</div>
 </template>
 
 <script>
@@ -14,6 +18,8 @@ import ButtonCategories from '@/components/templates/ButtonCategories.vue';
 import CardProductRow from '@/components/templates/CardProductRow.vue';
 import CardCategories from '@/components/templates/CardCategories.vue';
 import SpecialCategory from '@/components/SpecialCategory.vue';
+import Navbar_ from '../components/Navbar/Navbar.vue';
+import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
 
 export default {
   name: 'Home',
@@ -22,6 +28,8 @@ export default {
     CardProductRow,
     CardCategories,
     SpecialCategory,
+    Navbar_,
+    Submenu_,
   },
 };
 </script>
