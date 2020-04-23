@@ -5,6 +5,7 @@ import Profile from '../views/profile.vue';
 import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
 import checkout from '../views/checkout.vue';
+import Login from '../views/login.vue';
 
 Vue.use(VueRouter);
 
@@ -33,6 +34,11 @@ const routes = [
     path: '/checkout',
     name: 'checkout',
     component: checkout,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
   },
 ];
 
