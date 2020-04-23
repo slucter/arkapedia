@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # client
+=======
+# tokped-profile
+>>>>>>> 730bd95bbb59407b37b5ffe7eb10e23760bd9f69
 
 ## Project setup
 ```
@@ -11,7 +15,11 @@ npm run serve
 ```
 
 ### Compiles and minifies for production
+<<<<<<< HEAD
 ```gi
+=======
+```
+>>>>>>> 730bd95bbb59407b37b5ffe7eb10e23760bd9f69
 npm run build
 ```
 
