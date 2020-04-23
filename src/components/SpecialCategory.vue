@@ -26,13 +26,34 @@
             <li class="nav-item">
               <div class="nav-link">Flight</div>
             </li>
+            <li class="nav-item">
+              <div class="nav-link"><i class="fas fa-ellipsis-v"></i></div>
+            </li>
           </ul>
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-5">
+                <label for="inputEmail4">Nomor Telepon</label>
+                <input type="email" class="form-control" id="inputEmail4"
+                placeholder="0812xxxxxxxx">
+              </div>
+              <div class="form-group col-md-5">
+                <label for="inputPassword4">Nominal</label>
+                <select class="form-control form-control-sm">
+                  <option>Pilih</option>
+                </select>
+              </div>
+              <div class="form-group col-md-2">
+                <button class="btn btn-sm btn-primary" disabled>Beli</button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
     <div class="button-category">
       <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Semua Promo</button>
       <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
       <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
       <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
@@ -89,6 +110,7 @@ export default {
     height: 120px;
     background: fuchsia;
     margin: 2px 8px;
+    border-radius: 6px;
   }
   .button-category{
     margin-top: 24px;
@@ -115,6 +137,9 @@ export default {
   .nav-tabs{
     border: none;
     border-bottom: 1px solid #eaeaea;
+    display: flex;
+    flex-wrap: nowrap;
+    // justify-content: ;
   }
   .nav-item{
     height: 40px;
@@ -123,8 +148,31 @@ export default {
   .nav-link{
     display: flex;
     align-items: center;
-    padding: 0 16px;
+    padding: 0;
     height: 100%;
     font-size: 12px;
+  }
+  .col-md-5, .col-md-2{
+    margin: 0;
+  }
+  .col-md-2{
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  form{
+    padding: 6px;
+  }
+  .form-group{
+    padding: 6px;
+  }
+  .form-group label{
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .form-group input, .form-group button, .form-control option{
+    font-size: 12px;
+  }
+  .form-group button{
+    height: 32px;
   }
 </style>
