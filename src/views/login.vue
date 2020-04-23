@@ -14,24 +14,32 @@
                 <div class="form-email">
                   <label for="email">Email</label>
                   <div class="form-input">
-                    <input type="email" id="email">
+                    <input
+                    v-model.trim="$v.email.$model"
+                    type="email"
+                    id="email">
                     <div class="error-msg">
-                      <p>HAHAA</p>
+                      <p class="default-msg" v-if="!$v.email.required || $v.email.email">
+                      Contoh: email@tokopedia.com</p>
+                      <p class="error-email" v-if="!$v.email.email">Format Email Salah!</p>
                     </div>
                   </div>
                 </div>
                 <div class="form-email">
                   <label for="password">Kata Sandi</label>
                   <div class="form-input">
-                    <div class="show-hide">
-                    </div>
-                    <input :type="type" id="password">
+                    <input
+                    v-model.trim="$v.password.$model"
+                    :type="type"
+                    id="password">
                     <i class="material-icons" id="on" @click="show"
                     v-if="btnShow === 1">visibility</i>
                     <i class="material-icons" id="off" @click="hide"
                     v-if="btnShow !== 1" >visibility_off</i>
                     <div class="error-msg">
-                      <p>HAHA</p>
+                      <p
+                      v-if="!$v.password.minLength"
+                      class="error-password-msg">Password Minimum 6 Karakter</p>
                     </div>
                   </div>
                 </div>
@@ -43,25 +51,44 @@
                   <label for="checkbox">Ingat Saya</label>
                 </div>
                 <div class="button">
-                  <button>Masuk</button>
+                  <button
+                  @click="login"
+                  v-if="$v.password.minLength && $v.email.email && $v.email.required
+                  && $v.password.required"
+                  class="green-button">Masuk</button>
+                  <button
+                  v-if="!$v.email.email || !$v.email.required
+                  || !$v.password.required || !$v.password.minLength"
+                  class="default-button">Masuk</button>
                 </div>
               </div>
             </section>
             <div>
               <div class="separator">
-                <span></span>
-                <span>atau masuk dengan</span>
-                <span></span>
+                <span class="hline"></span>
+                <span class="text-separator">atau masuk dengan</span>
+                <span class="hline"></span>
               </div>
+              <div class="button-link">
+                <button class="google-link">Google</button>
+                <button class="facebook-link">Facebook</button>
+              </div>
+            </div>
+            <div class="form-footer">
+              <p>Belum Punya Akun Tokopedia? <router-link to="/register">Daftar</router-link></p>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="footer">
+      <p>2009-2020 © PT Tokopedia <router-link to="/help"> | Bantuan </router-link></p>
+    </div>
   </div>
 </template>
 
 <script>
+import { required, email, minLength } from 'vuelidate/lib/validators';
 import NavbarLogin from '../components/module/NavbarLogin.vue';
 
 export default {
@@ -69,6 +96,8 @@ export default {
     return {
       type: 'password',
       btnShow: 1,
+      email: '',
+      password: '',
     };
   },
   components: {
@@ -87,6 +116,19 @@ export default {
     hide() {
       this.type = 'password';
       this.btnShow = 1;
+    },
+    login(event) {
+      event.preventDefault();
+    },
+  },
+  validations: {
+    email: {
+      required,
+      email,
+    },
+    password: {
+      required,
+      minLength: minLength(6),
     },
   },
 };
@@ -146,6 +188,7 @@ export default {
 .form-input input{
   box-sizing: border-box;
   width: 100%;
+  height: 40px;
   border-radius: 3px;
   border: 1px solid #e0e0e0;
   color: rgba(0,0,0,.7);
@@ -156,8 +199,20 @@ export default {
 }
 .error-msg{
   position: relative;
-  height: 22px;
+  height: 14px;
   margin-bottom: 5px;
+}
+.error-password-msg{
+  color: #d50000;
+  font-size: 13px;
+}
+.error-email{
+  font-size: 13px;
+  color: #d50000!important;
+}
+.default-msg{
+  font-size: 13px;
+  color: #9E9E9E;
 }
 .form-input i{
   display: inline-block;
@@ -165,7 +220,7 @@ export default {
   /* top: -20px; */
   cursor: pointer;
   right: 10px;
-  top: 12px;
+  top: 9px;
   right: 10px;
   position: absolute;
   color: #e0e0e0;
@@ -195,7 +250,7 @@ export default {
   color: #42b549;
   font-size: 13px;
 }
-.button button{
+.green-button{
   box-sizing: border-box;
   width: 100%;
   background: #03ac0e;
@@ -208,5 +263,77 @@ export default {
   text-align: center;
   border: none;
   font-size: 13px;
+  outline: none;
+}
+.default-button{
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  background: #e0e0e0;
+  color: rgba(0,0,0,.26);
+  height: 40px;
+  border-radius: 8px;
+  font-weight: 600;
+  position: relative;
+  padding: 8px 16px;
+  text-align: center;
+  border: none;
+  font-size: 13px;
+  pointer-events: none;
+}
+.separator{
+  margin: 24px 0;
+  display: flex;
+  align-items: center;
+}
+.text-separator{
+  font-size: 12px;
+  text-align: center;
+  padding: 0 18px;
+  color: rgba(0,0,0,.38);
+}
+.hline{
+  display: inline-block;
+  border: .5px solid rgba(0,0,0,.12);
+  width: 25%;
+}
+.button-link{
+  display: block;
+  margin: 0 0 16px;
+}
+.button-link button{
+  margin-bottom: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  /* cursor: pointer; */
+  color: rgba(0,0,0,.54);
+  outline: none;
+  width: 100%;
+  height: 40px;
+}
+.form-footer{
+  margin: 16px 0 12px;
+  text-align: center;
+}
+.form-footer p{
+  color: rgba(0,0,0,.54);
+  font-size: 13px;
+}
+.form-footer a{
+  text-decoration: none;
+  color: #42b549;
+}
+.footer{
+  position: relative;
+  color: rgba(0,0,0,.54);
+  text-align: center;
+  margin: 64px 0 10px 0;
+  font-size: 15px;
+}
+.footer a{
+  text-decoration: none;
+  color: #42b549;
 }
 </style>
