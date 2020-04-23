@@ -54,15 +54,12 @@
     <div class="button-category">
       <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
       <button><div class="icon"><i class="fas fa-star"></i></div>Semua Promo</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Redam COVID-19</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Kesehatan</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Dapur</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Emas</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Pulsa</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Handphone & Tablet</button>
     </div>
   </div>
 </template>
@@ -115,17 +112,18 @@ export default {
   .button-category{
     margin-top: 24px;
     overflow: hidden;
-    display: flex;
-    flex-direction: row;
+    height: 40px;
+    display: inline-block;
   }
   .button-category button{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     padding: 6px 12px;
     margin-right: 8px;
     background: transparent;
     border-radius: 16px;
     border: 1px solid #eaeaea;
+    height: 38px;
   }
   .icon{
     margin-right: 8px;

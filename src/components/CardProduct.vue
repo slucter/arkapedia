@@ -25,6 +25,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  p{
+    margin: 0 !important;
+  }
   .card{
     width: 222.5px;
     height: 356.5px;
