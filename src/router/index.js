@@ -4,6 +4,10 @@ import Dashboard from '../views/Dashboard.vue';
 import Profile from '../views/profile.vue';
 import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
+<<<<<<< HEAD
+=======
+import Detail from '../view/detail.vue';
+>>>>>>> c993a51fbbd02745d38c34079288a54d37d68755
 
 Vue.use(VueRouter);
 
@@ -28,6 +32,14 @@ const routes = [
     name: 'addProduct',
     component: addProduct,
   },
+<<<<<<< HEAD
+=======
+  {
+    path: '/detail',
+    name: 'Detail',
+    component: Detail,
+  },
+>>>>>>> c993a51fbbd02745d38c34079288a54d37d68755
 ];
 
 const router = new VueRouter({
