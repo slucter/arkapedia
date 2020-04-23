@@ -4,6 +4,7 @@ import Dashboard from '../views/Dashboard.vue';
 import Profile from '../views/profile.vue';
 import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
+import Login from '../views/login.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,10 @@ const routes = [
     path: '/add',
     name: 'addProduct',
     component: addProduct,
+  },
+  {
+    path: '/login',
+    component: Login,
   },
 ];
 
