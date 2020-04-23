@@ -4,6 +4,7 @@ import Dashboard from '../views/Dashboard.vue';
 import Profile from '../views/profile.vue';
 import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
+import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
 import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
@@ -30,6 +31,11 @@ const routes = [
     path: '/add',
     name: 'addProduct',
     component: addProduct,
+  },
+  {
+    path: '/profileStore',
+    name: 'profileStore',
+    component: profileStore,
   },
   {
     path: '/detail',
