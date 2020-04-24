@@ -7,15 +7,15 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://www.xmple.com/wallpaper/violet-triangle-1920x1080-c2-410493-1a0635-l2-223-223-a-210-f-10.svg"
+        <img src="https://ecs7.tokopedia.net/img/banner/2020/4/24/98903353/98903353_d1389f69-5b3c-4a4e-af90-b4d3045a17e0.jpg"
         alt="case1">
       </div>
       <div class="carousel-item">
-        <img src="https://www.xmple.com/wallpaper/triangle-magenta-1920x1080-c2-d934c4-86307b-l2-223-223-a-15-f-10.svg"
+        <img src="https://ecs7.tokopedia.net/img/banner/2020/4/24/85531617/85531617_74b6c066-3b86-40a4-b55a-6d45a0028260.jpg"
         alt="case2">
       </div>
       <div class="carousel-item">
-        <img src="https://www.xmple.com/wallpaper/triangle-blue-1920x1080-c2-87ceeb-b0c4de-l2-223-223-a-105-f-10.svg"
+        <img src="https://ecs7.tokopedia.net/img/banner/2020/4/24/85531617/85531617_f2244d1a-b4e1-4d5a-a140-025865b3a442.jpg"
         alt="case3">
       </div>
     </div>
@@ -40,9 +40,13 @@ export default {
 
 <style lang="scss" scoped>
   .carousel{
-    margin: 220px 0 50px;
-    max-height: 223px;
+    margin: 120px 0 50px;
+    max-height: 250px;
     overflow: hidden;
+    border-radius: 20px;
     // background-color: fuchsia;
+  }
+  .carousel-item{
+    text-align: center;
   }
 </style>

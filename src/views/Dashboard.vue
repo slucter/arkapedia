@@ -1,25 +1,26 @@
 <template>
-<div>
-  <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
-  <Submenu_ />
-  <CartSubmenu_ />
-  <div class="dashboard">
-    <div class="container">
-    <Navbar_ />
-      <div class="carousel">
-        <Carousel />
+  <div>
+    <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
+    <Submenu_ />
+    <CartSubmenu_ />
+    <div class="dashboard">
+      <div class="container">
+        <Navbar_ />
+        <div class="carousel">
+          <Carousel />
+        </div>
+        <div class="special-categories">
+          <SpecialCategory />
+        </div>
+        <CardDiscountRow />
+        <ButtonCategories />
+        <div class="card-categories">
+          <h2>Paling Banyak Dicari</h2>
+          <CardCategories />
+        </div>
+        <PromoRow />
+        <CardProductRow />
       </div>
-      <div class="special-categories">
-        <SpecialCategory />
-      </div>
-      <CardDiscountRow />
-      <ButtonCategories />
-      <div class="card-categories">
-        <h2>Paling Banyak Dicari</h2>
-        <CardCategories />
-      </div>
-      <PromoRow />
-      <CardProductRow />
     </div>
     <Footer />
   </div>
@@ -60,6 +61,7 @@ export default {
     },
 
     ClickCart() {
+      console.log('hello');
       const subCartLayer = document.querySelector('.submenu-icon-group');
       subCartLayer.classList.toggle('submenuCartShow');
       const cartIcon = document.querySelector('.submenu-cart-icon');
