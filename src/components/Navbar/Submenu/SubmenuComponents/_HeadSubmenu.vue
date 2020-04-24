@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: '_Head',
+  name: 'Head_',
 };
 </script>
 
