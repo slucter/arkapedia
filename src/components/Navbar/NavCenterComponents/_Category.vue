@@ -1,6 +1,6 @@
 <template>
     <div class="nav-cat">
-        <a href="#">Kategori</a>
+        <a @click="$emit('Catclick')">Kategori</a>
     </div>
 </template>
 
@@ -24,5 +24,6 @@ export default {
     text-decoration: none;
     font-weight: 500;
     color: #5a5a5a;
+    cursor: pointer;
 }
 </style>
