@@ -1,7 +1,7 @@
 <template>
     <div class="nav-menu-icon">
         <div class="icon-group">
-            <a href="#">
+            <a @click="$emit('CartClick')">
             <i class="fas fa-shopping-cart"></i>
             </a>
             <a href="#">
@@ -41,5 +41,6 @@ export default {
     font-size: 19px;
     color: #5a5a5a;
     margin: 15px;
+    cursor: pointer;
 }
 </style>
