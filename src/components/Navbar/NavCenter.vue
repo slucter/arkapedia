@@ -1,9 +1,9 @@
 <template>
     <div class="navbar-w">
         <Logo_ />
-        <Category_ />
+        <Category_ @Catclick="$emit('Catclick2')" />
         <Search_ />
-        <IconGroup_ />
+        <IconGroup_ @CartClick="$emit('CartClick2')" />
         <UserSection_ />
     </div>
 </template>

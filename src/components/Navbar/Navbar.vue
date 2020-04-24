@@ -1,7 +1,7 @@
 <template>
     <nav>
         <NavTop />
-        <NavCenter />
+        <NavCenter @Catclick2="$emit('Catclick3')" @CartClick2="$emit('CartClick3')" />
     </nav>
 </template>
 

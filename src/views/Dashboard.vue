@@ -1,7 +1,8 @@
 <template>
 <div>
-  <Navbar_ />
+  <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
   <Submenu_ />
+  <CartSubmenu_ />
   <div class="dashboard">
     <div class="special-categories">
       <SpecialCategory />
@@ -20,6 +21,7 @@ import CardCategories from '@/components/templates/CardCategories.vue';
 import SpecialCategory from '@/components/SpecialCategory.vue';
 import Navbar_ from '../components/Navbar/Navbar.vue';
 import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
+import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
 
 export default {
   name: 'Home',
@@ -30,6 +32,20 @@ export default {
     SpecialCategory,
     Navbar_,
     Submenu_,
+    CartSubmenu_,
+  },
+  methods: {
+    ClickCategory() {
+      const submenu = document.querySelector('.submenu-category');
+      submenu.classList.toggle('subcat-show');
+    },
+
+    ClickCart() {
+      const subCartLayer = document.querySelector('.submenu-icon-group');
+      subCartLayer.classList.toggle('submenuCartShow');
+      const cartIcon = document.querySelector('.submenu-cart-icon');
+      cartIcon.classList.toggle('SubCartTop');
+    },
   },
 };
 </script>
