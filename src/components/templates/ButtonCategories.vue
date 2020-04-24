@@ -21,8 +21,6 @@ export default {
 
 <style lang="scss" scoped>
   .button-categories{
-    overflow: hidden;
-    position: fixed;
     margin: 20px auto;
     top: 0;
     overflow: hidden;

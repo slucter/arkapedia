@@ -8,6 +8,7 @@ import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
 import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
+import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
 
 Vue.use(VueRouter);
@@ -39,7 +40,7 @@ const routes = [
     component: profileStore,
   },
   {
-    path: '/detail',
+    path: '/detail/:id',
     name: 'Detail',
     component: Detail,
   },
@@ -52,6 +53,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
+  },
+  {
+    path: '/shop/:id',
+    name: 'Shop',
+    component: Shop,
   },
   {
     path: '/register',

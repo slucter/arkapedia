@@ -68,6 +68,7 @@
               </div>
             </div>
         </div>
+        <input type="range" min="0" max="1" v-model="coba" @change="slider">
     </div>
 </template>
 
@@ -78,6 +79,16 @@ export default {
   name: 'profileStore',
   components: {
     Navbar,
+  },
+  data() {
+    return {
+      coba: 0,
+    };
+  },
+  methods: {
+    slider() {
+      console.log(this.coba);
+    },
   },
 };
 </script>

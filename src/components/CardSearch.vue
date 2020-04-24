@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-    <img src="" class="card-img-top" alt="">
+    <img :src="image" class="card-img-top" :alt="image">
     <div class="card-body">
-      <p class="card-title">Pompa Air</p>
-      <p class="card-subtitle">230rb produk</p>
+      <p class="card-title">{{ name }}</p>
+      <p class="card-subtitle">{{ qty }} produk</p>
     </div>
   </div>
 </template>
@@ -11,6 +11,11 @@
 <script>
 export default {
   name: 'HelloWorld',
+  props: [
+    'image',
+    'name',
+    'qty',
+  ],
 };
 </script>
 
