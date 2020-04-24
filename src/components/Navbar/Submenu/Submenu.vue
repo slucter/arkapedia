@@ -21,7 +21,7 @@ export default {
 <style scoped>
 .subcat-show{
    visibility: visible!important;
-   top: 110px!important;
+   top: 90px!important;
    transition: .3s;
 }
 .submenu-category{
