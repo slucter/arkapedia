@@ -51,7 +51,7 @@
       <div class="ratingValue">
         <h1>4.9<span> /5</span></h1>
       </div>
-      <div class="starRating" >
+      <div class="starRating">
         <div class="ratingStar" v-for="star in 5" :key="star">
           <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/4ed9ea8f.svg" alt="">
         </div>
@@ -118,16 +118,41 @@
   <div>
     <reviewProduct/>
   </div>
+  <div>
+    <discussionProduct/>
+  </div>
+  <div>
+    <anotherProduct/>
+  </div>
+  <div>
+    <likeProduct/>
+  </div>
+  <div>
+    <buyProduct/>
+  </div>
+  <div>
+    <findProduct/>
+  </div>
 </div>
 </template>
 
 <script>
+import likeProduct from './likeProduct.vue';
+import buyProduct from './buyProduct.vue';
+import findProduct from './findProduct.vue';
+import discussionProduct from './discussionProduct.vue';
+import anotherProduct from './anotherProduct.vue';
 import reviewProduct from './reviewProduct.vue';
 
 export default {
   name: 'contentProduct',
   components: {
     reviewProduct,
+    discussionProduct,
+    anotherProduct,
+    likeProduct,
+    buyProduct,
+    findProduct,
   },
 };
 </script>
@@ -339,7 +364,6 @@ export default {
 
 .headerCardBuyer {
   width: 100%;
-  height: 500px;
   padding: 24px 24px;
 }
 
