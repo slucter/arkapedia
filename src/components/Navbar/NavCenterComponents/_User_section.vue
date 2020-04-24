@@ -5,15 +5,15 @@
                 <i class="fas fa-store"></i>
             </div>
             <div class="toko-menu-link">
-                <a href="#">Toko</a>
+                <router-link to="/profileStore">Toko</router-link>
             </div>
         </div>
         <div class="nav-user-profile">
-            <div class="icon-toko">
+            <router-link to="/profileStore" class="icon-toko">
                 <span>img</span>
-            </div>
+            </router-link>
             <div class="toko-menu-link">
-                <a href="#">Irhash</a>
+                <router-link to="/profile">Irhash</router-link>
             </div>
         </div>
     </div>
