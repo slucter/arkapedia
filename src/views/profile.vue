@@ -1,6 +1,6 @@
 <template>
     <div class="container-profile">
-        <navbar/>
+        <Navbar/>
         <div class="content">
             <div class="side-left">
                 <cardProfile/>
@@ -10,12 +10,11 @@
             </div>
         </div>
         <div class="footer-profile"></div>
-
     </div>
 </template>
 
 <script>
-import navbar from '../components/module/navbar.vue';
+import Navbar from '../components/Navbar/Navbar.vue';
 import cardProfile from '../components/base/cardProfile.vue';
 import shareProduct from '../components/base/shareProduct.vue';
 
@@ -24,7 +23,7 @@ export default {
   components: {
     cardProfile,
     shareProduct,
-    navbar,
+    Navbar,
   },
 };
 </script>
@@ -40,7 +39,7 @@ export default {
       display: flex;
       height: 546.06px;
       margin: 48px auto 80px;
-      margin-top: 110px;
+      margin-top: 150px;
   }
   .footer-profile{
       height: 678px;

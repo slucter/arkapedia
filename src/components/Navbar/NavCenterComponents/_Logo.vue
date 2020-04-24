@@ -20,7 +20,7 @@ export default {
     justify-content: center;
 }
 .nav-logow img{
-    width: 65%;
+    width: 100%;
     height: 55%;
 }
 </style>
