@@ -26,7 +26,7 @@ export default {
 }
 
 .SubCartTop{
-    top: -25px!important;
+    top: -20px!important;
     transition: .3s;
 }
 .submenu-icon-group{
@@ -35,7 +35,7 @@ export default {
     visibility: hidden;
     bottom:0;
     width: 100vw;
-    height: 89vh;
+    height: 90.4vh;
     background-color: rgba(0, 0, 0, 0.2);
     z-index: 100;
 }
