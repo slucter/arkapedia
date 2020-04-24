@@ -72,7 +72,6 @@ export default {
 
 <style scoped lang="scss">
   .card{
-    margin-top: 200px;
     width: 100%;
     padding: 16px 24px;
     border-radius: 8px;

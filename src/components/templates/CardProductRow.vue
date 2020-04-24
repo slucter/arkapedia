@@ -1,25 +1,28 @@
 <template>
   <div class="card-product-row">
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
-    <CardProduct />
+    <CardProduct v-for="data in products" :key="data.id"
+    :name="data.name" :price="data.price" :image="data.image.image1"
+    :location="data.shop.location" :id="`detail/${data.id}`" />
   </div>
 </template>
 
 <script>
 import CardProduct from '@/components/CardProduct.vue';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'CardProductRow',
   components: {
     CardProduct,
+  },
+  methods: {
+    ...mapActions('product', ['getAllProducts']),
+  },
+  mounted() {
+    this.getAllProducts();
+  },
+  computed: {
+    ...mapState('product', ['products']),
   },
 };
 </script>

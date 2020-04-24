@@ -1,7 +1,9 @@
 <template>
+  <router-link to="/">
     <div class="nav-logow">
-        <img src="../../../assets/img/logo-tokped.svg" alt="logow">
+      <img src="../../../assets/img/logo-tokped.svg" alt="logow">
     </div>
+  </router-link>
 </template>
 
 <script>
