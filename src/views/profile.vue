@@ -12,7 +12,6 @@
             </div>
         </div>
         <div class="footer-profile"></div>
-
     </div>
 </template>
 
