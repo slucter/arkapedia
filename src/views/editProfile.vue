@@ -1,6 +1,6 @@
 <template>
   <div class="container-edit-profile">
-    <navbar/>
+    <Navbar/>
     <div class="container-content">
       <div class="content">
         <editSideBar/>
@@ -11,14 +11,14 @@
 </template>
 
 <script>
-import navbar from '../components/module/navbar.vue';
+import Navbar from '../components/Navbar/Navbar.vue';
 import editSideBar from '../components/base/editSideBar.vue';
 import mainEditProfile from '../components/base/mainEditProfile.vue';
 
 export default {
   name: 'editProfile',
   components: {
-    navbar,
+    Navbar,
     editSideBar,
     mainEditProfile,
   },
