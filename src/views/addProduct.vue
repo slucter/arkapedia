@@ -15,8 +15,8 @@
           <p>Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px (Untuk gambar optimal
             gunakan ukuran minimum 700 x 700 px)</p>
         </div>
-        <div class="squarepants" v-for="uplo in 5" :key="uplo">
-          <div class="uplo"></div>
+        <div class="squarepants"  >
+          <div class="uplo" v-for="uplo in 5" :key="uplo"></div>
         </div>
         <div class="footer-upload">
           <input type="file" class="pick-files">
@@ -63,9 +63,7 @@
     <div class="hero-btn">
       <button class="btn-cncl">Batal</button>
       <button class="btn-sv">Simpan</button>
-    <!-- <div class="col-md-6 mb-5">
-      <div class="btn btn-success btn-block">Submit</div>
-    </div> -->
+  </div>
   </div>
 </template>
 
@@ -114,6 +112,8 @@ export default {
     padding: 0 200px;
   }
   .upload-product{
+    display: flex;
+    flex-direction: column;
     width: 1000px;
     height: 407px;
     background: #ffffff;
@@ -191,11 +191,14 @@ export default {
   }
   .squarepants{
     display: flex;
-    width: 880px;
-    height: 225px;
+    /* flex-direction: row; */
+    align-items: center;
+    width: 940px;
+    height: 200px;
     margin: 0 10px;
   }
   .uplo{
+    display: flex;
     width: 170px;
     height: 160px;
     outline: rgba(0, 0, 0, 0.54) dashed 1px;
@@ -296,7 +299,7 @@ export default {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.54);
   }
-  .category-product input{
+  .category-product select{
     width: 690px;
     height: 40px;
     padding: 10px 16px;
