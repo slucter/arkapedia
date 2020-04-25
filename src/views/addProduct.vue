@@ -31,13 +31,15 @@
             <p>Nama produk min. 5 kata dan terdiri dari jenis produk, merek, dan
                keterangan seperti warna, bahan, atau tipe.</p>
           </div>
-          <input type="text">
+          <input type="text" v-model="this.product.name">
         </div>
         <div class="category-product">
           <div class="dtl-txt">
             <h3>Kategori</h3>
           </div>
-          <input type="text">
+          <select name="etalase" class="select-etalase" v-model="this.product.categoryId">
+            <option value="1">Buku</option>
+          </select>
         </div>
         <div class="etalase">
           <div class="dtl-txt"><h3>Etalase</h3></div>
@@ -45,7 +47,7 @@
         </div>
       </div>
       <div class="desc-product">
-        <descriptionProduct/>
+        <descriptionProduct :inputs="this.product.description"/>
       </div>
       <div class="varian-product"></div>
       <div class="price-product">
@@ -61,7 +63,9 @@
     <div class="hero-btn">
       <button class="btn-cncl">Batal</button>
       <button class="btn-sv">Simpan</button>
-    </div>
+    <!-- <div class="col-md-6 mb-5">
+      <div class="btn btn-success btn-block">Submit</div>
+    </div> -->
   </div>
 </template>
 
@@ -78,6 +82,24 @@ export default {
     priceProduct,
     managementProduct,
     weightProduct,
+  },
+  data() {
+    return {
+      product: {
+        name: null,
+        description: null,
+        price: null,
+        discount: null,
+        quantity: null,
+        weight: null,
+        rating: null,
+        condition: null,
+        imageId: null,
+        categoryId: null,
+        shopId: null,
+        tagId: null,
+      },
+    };
   },
 };
 </script>
