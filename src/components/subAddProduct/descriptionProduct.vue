@@ -3,8 +3,14 @@
       <h1 class="ttl-div">Deskripsi Produk</h1>
         <div class="category-product">
           <div class="kondisi"><h3>Kondisi</h3>
-          <input type="radio"> baru
-          <input type="radio"> bekas
+          <label class="radio">Baru
+            <input type="radio" checked="checked" name="radio">
+               <span class="checkmark"></span>
+            </label>
+            <label class="radio">Bekas
+              <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
           </div>
         </div>
         <div class="product-name">
@@ -106,4 +112,56 @@ export default {
          border-radius: 5px;
          border: 1px solid rgba(0, 0, 0, 0.12);
      }
+     .radio input{
+         position: absolute;
+         opacity: 0;
+         cursor: pointer;
+     }
+     .checkmark {
+         position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.12);
+          border-radius: 50%;
+      }
+      .radio input:checked ~ .checkmark {
+          background-color: #ffffff;
+          border: 3px solid #42b549;
+          border-radius: 50%
+      }
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    .radio input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+    .radio .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #42b549;
+      }
+      .radio {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        margin-left: 50px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.54);
+}
 </style>

@@ -5,8 +5,8 @@
             <div class="ctrl-grp">
                 <h3>Status Produk</h3>
                 <p>Jika status aktif, produkmu dapat dicari oleh calon pembeli.</p>
-                <div class="toggle"></div>
             </div>
+            <slider/>
         </div>
         <div class="stok"><h3>Stok Produk</h3>
         <input type="text">
@@ -22,8 +22,13 @@
 </template>
 
 <script>
+import slider from '../templates/slider.vue';
+
 export default {
   name: 'managementProduct',
+  components: {
+    slider,
+  },
 };
 </script>
 
@@ -80,6 +85,7 @@ export default {
          padding: 10px 16px;
          border: 1px solid rgba(0, 0, 0, 0.12);
          border-radius: 5px;
+         margin-left: 10px;
      }
      .sku input{
          width: 400px;
