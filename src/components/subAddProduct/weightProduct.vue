@@ -10,7 +10,7 @@
                 <option value="1">Gram (g)</option>
                 <option value="2">Kilo Gram (kg)</option>
             </select>
-            <input type="text">
+            <input type="text" @input="$emit('weight', $event.target.value)">
         </div>
         <div class="assurance">
             <div class="ctrl-grp">

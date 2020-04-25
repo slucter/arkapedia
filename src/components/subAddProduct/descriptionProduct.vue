@@ -14,8 +14,7 @@
               ukuran, masa berlaku,dan lainnya. Panjang deskripsi antara 450-2000 karakter.</p>
           </div>
           <textarea name="prodak" class="textarea"
-            v-bind:value="searchText"
-            v-on:input="searchText = $event.target.value">
+          @input="$emit('description', $event.target.value)">
           </textarea>
         </div>
         <div class="product-nam">
@@ -31,6 +30,9 @@
 <script>
 export default {
   name: 'descriptionProduct',
+  props: [
+    'input',
+  ],
 };
 </script>
 

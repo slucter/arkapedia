@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="stok"><h3>Stok Produk</h3>
-        <input type="text">
+        <input type="text" @input="$emit('stock', $event.target.value)">
         </div>
         <div class="sku">
             <div class="ctrl-grp">

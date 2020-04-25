@@ -59,6 +59,8 @@ export default {
     font-weight: bold;
     margin: 0;
     text-transform: uppercase;
+    max-height: 45px;
+    overflow: hidden;
   }
   .card-price{
     font-size: 14px;

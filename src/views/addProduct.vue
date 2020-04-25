@@ -35,13 +35,13 @@
             <p>Nama produk min. 5 kata dan terdiri dari jenis produk, merek, dan
                keterangan seperti warna, bahan, atau tipe.</p>
           </div>
-          <input type="text" v-model="this.product.name">
+          <input type="text" v-model="product.name">
         </div>
         <div class="category-product">
           <div class="dtl-txt">
             <h3>Kategori</h3>
           </div>
-          <select name="etalase" class="select-etalase" v-model="this.product.categoryId">
+          <select name="etalase" class="select-etalase" v-model="product.categoryId">
             <option value="1">Buku</option>
           </select>
         </div>
@@ -51,17 +51,17 @@
         </div>
       </div>
       <div class="desc-product">
-        <descriptionProduct :inputs="this.product.description"/>
+        <descriptionProduct @description="inputDescription"/>
       </div>
-      <div class="varian-product"></div>
+      <!-- <div class="varian-product"></div> -->
       <div class="price-product">
-        <priceProduct/>
+        <priceProduct @price="inputPrice" />
       </div>
       <div class="management-product">
-        <managementProduct/>
+        <managementProduct @stock="inputStock" />
       </div>
       <div class="weight-product">
-        <weightProduct/>
+        <weightProduct @weight="inputWeight" />
       </div>
     </div>
     <div class="col-md-6 mb-5">
@@ -101,6 +101,21 @@ export default {
         tagId: null,
       },
     };
+  },
+  methods: {
+    inputWeight(e) {
+      this.product.weight = e;
+    },
+    inputPrice(e) {
+      this.product.price = e;
+    },
+    inputDescription(e) {
+      this.product.description = e;
+      // console.log(this.product.description);
+    },
+    inputStock(e) {
+      this.product.quantity = e;
+    },
   },
 };
 </script>

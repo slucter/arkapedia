@@ -9,7 +9,7 @@
             <input type="text">
         </div>
         <div class="one-price"><h3>Harga Satuan</h3>
-        <p>Rp</p> <input type="text">
+        <p>Rp</p> <input type="text" @input="$emit('price', $event.target.value)">
         </div>
         <div class="grocir-price">
             <div class="ctrl-grp">

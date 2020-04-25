@@ -45,6 +45,11 @@ const routes = [
     component: Detail,
   },
   {
+    path: '/shop/detail/:id',
+    name: 'Detail',
+    component: Detail,
+  },
+  {
     path: '/checkout',
     name: 'checkout',
     component: checkout,
