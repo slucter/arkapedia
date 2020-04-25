@@ -14,8 +14,8 @@
             <p>kamu hanya dapat mengubah Tanggal Lahir 1 kali. Pastikan
               tanggal lahir sudah benar</p>
             <div class="select-group">
-              <select name="tanggal" class="edit-date">
-                <option value="1">1</option>
+              <select name="tanggal" class="edit-date" >
+                <option value="1" v-for="(date, i) in 30" :key="date">{{i+1}}</option>
               </select>
               <select name="bulan" class="edit-month">
                 <option value="">January</option>

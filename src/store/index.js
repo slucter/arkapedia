@@ -8,6 +8,9 @@ import shop from './modules/shop';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  state: {
+    nama: 'shilfiya',
+  },
   modules: {
     user,
     product,

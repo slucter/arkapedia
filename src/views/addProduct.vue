@@ -1,5 +1,6 @@
 <template>
   <div class="container-add-product">
+    <navbar_/>
     <div class="warn-add">
       <h1 class="ttl-div">Tambah Produk</h1>
       <div class="warn-txt">
@@ -15,12 +16,8 @@
           <p>Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px (Untuk gambar optimal
             gunakan ukuran minimum 700 x 700 px)</p>
         </div>
-        <div class="squarepants">
-          <div class="uplo"></div>
-          <div class="uplo"></div>
-          <div class="uplo"></div>
-          <div class="uplo"></div>
-          <div class="uplo"></div>
+        <div class="squarepants"  >
+          <div class="uplo" v-for="uplo in 5" :key="uplo"></div>
         </div>
         <div class="footer-upload">
           <input type="file" class="pick-files">
@@ -45,15 +42,10 @@
             <option value="1">Buku</option>
           </select>
         </div>
-        <div class="etalase">
-          <div class="dtl-txt"><h3>Etalase</h3></div>
-          <select name="etalase" class="select-etalase"></select>
-        </div>
       </div>
       <div class="desc-product">
         <descriptionProduct @description="inputDescription"/>
       </div>
-      <!-- <div class="varian-product"></div> -->
       <div class="price-product">
         <priceProduct @price="inputPrice" />
       </div>
@@ -64,13 +56,15 @@
         <weightProduct @weight="inputWeight" />
       </div>
     </div>
-    <div class="col-md-6 mb-5">
-      <div class="btn btn-success btn-block">Submit</div>
-    </div>
+    <div class="hero-btn">
+      <button class="btn-cncl">Batal</button>
+      <button class="btn-sv">Simpan</button>
+  </div>
   </div>
 </template>
 
 <script>
+import navbar_ from '../components/Navbar/Navbar.vue';
 import descriptionProduct from '../components/subAddProduct/descriptionProduct.vue';
 import priceProduct from '../components/subAddProduct/priceProduct.vue';
 import managementProduct from '../components/subAddProduct/managementProduct.vue';
@@ -79,6 +73,7 @@ import weightProduct from '../components/subAddProduct/weightProduct.vue';
 export default {
   name: 'addProduct',
   components: {
+    navbar_,
     descriptionProduct,
     priceProduct,
     managementProduct,
@@ -130,6 +125,8 @@ export default {
     padding: 0 200px;
   }
   .upload-product{
+    display: flex;
+    flex-direction: column;
     width: 1000px;
     height: 407px;
     background: #ffffff;
@@ -140,7 +137,7 @@ export default {
   }
   .info-procut{
     width: 1000px;
-    height: 372px;
+    /* height: 372px; */
     background: #ffffff;
     margin: 20px 0;
     padding: 30px;
@@ -148,15 +145,7 @@ export default {
   }
   .desc-product{
     width: 1000px;
-    height: 657px;
-    background: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
-    margin: 20px 0;
-    padding: 30px;
-  }
-  .varian-product{
-    width: 1000px;
-    height: 135px;
+    /* height: 657px; */
     background: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
     margin: 20px 0;
@@ -164,7 +153,7 @@ export default {
   }
   .price-product{
     width: 1000px;
-    height: 379px;
+    /* height: 379px; */
     background: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
     margin: 20px 0;
@@ -207,14 +196,17 @@ export default {
   }
   .squarepants{
     display: flex;
-    width: 880px;
-    height: 225px;
+    /* flex-direction: row; */
+    align-items: center;
+    width: 940px;
+    height: 200px;
     margin: 0 10px;
   }
   .uplo{
+    display: flex;
     width: 170px;
     height: 160px;
-    outline: rgb(255, 0, 0) dashed 1px;
+    outline: rgba(0, 0, 0, 0.54) dashed 1px;
     padding: 10px 5pc 10px 5px;
     margin: 10px 10px 0;
   }
@@ -312,7 +304,7 @@ export default {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.54);
   }
-  .category-product input{
+  .category-product select{
     width: 690px;
     height: 40px;
     padding: 10px 16px;
@@ -329,5 +321,33 @@ export default {
     height: 40px;
     border-radius: 5px;
     border: solid 1px rgba(0,0,0,0.12);
+  }
+  .hero-btn{
+    display: flex;
+    justify-content: flex-end;
+    width: 1000px;
+    height: 40px;
+    margin: 15px 0;
+  }
+  .btn-cncl{
+    width: 136px;
+    height: 38px;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 13px;
+    padding: 0 16px;
+    margin-right: 20px;
+  }
+  .btn-sv{
+    width: 136px;
+    height: 38px;
+    background: #42b549;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #ffffff;
+    font-size: 13px;
+    padding: 0 16px;
   }
 </style>
