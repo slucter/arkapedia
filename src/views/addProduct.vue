@@ -15,11 +15,7 @@
           <p>Format gambar .jpg .jpeg .png dan ukuran minimum 300 x 300px (Untuk gambar optimal
             gunakan ukuran minimum 700 x 700 px)</p>
         </div>
-        <div class="squarepants">
-          <div class="uplo"></div>
-          <div class="uplo"></div>
-          <div class="uplo"></div>
-          <div class="uplo"></div>
+        <div class="squarepants" v-for="uplo in 5" :key="uplo">
           <div class="uplo"></div>
         </div>
         <div class="footer-upload">
@@ -61,6 +57,10 @@
       <div class="weight-product">
         <weightProduct/>
       </div>
+    </div>
+    <div class="hero-btn">
+      <button class="btn-cncl">Batal</button>
+      <button class="btn-sv">Simpan</button>
     </div>
   </div>
 </template>
@@ -176,7 +176,7 @@ export default {
   .uplo{
     width: 170px;
     height: 160px;
-    outline: rgb(255, 0, 0) dashed 1px;
+    outline: rgba(0, 0, 0, 0.54) dashed 1px;
     padding: 10px 5pc 10px 5px;
     margin: 10px 10px 0;
   }
@@ -291,5 +291,33 @@ export default {
     height: 40px;
     border-radius: 5px;
     border: solid 1px rgba(0,0,0,0.12);
+  }
+  .hero-btn{
+    display: flex;
+    justify-content: flex-end;
+    width: 1000px;
+    height: 40px;
+    margin: 15px 0;
+  }
+  .btn-cncl{
+    width: 136px;
+    height: 38px;
+    background: #ffffff;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 13px;
+    padding: 0 16px;
+    margin-right: 20px;
+  }
+  .btn-sv{
+    width: 136px;
+    height: 38px;
+    background: #42b549;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #ffffff;
+    font-size: 13px;
+    padding: 0 16px;
   }
 </style>
