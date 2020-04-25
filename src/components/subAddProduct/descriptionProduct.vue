@@ -24,13 +24,6 @@
             v-on:input="searchText = $event.target.value">
           </textarea>
         </div>
-        <div class="product-nam">
-          <div class="ctrl-grp">
-            <h3>Video Produk</h3>
-            <p>URL video yang didukung saat ini adalah URL video dari Youtube. Info Lengkap</p>
-          </div>
-          <button class="btn-vid"> + Tambah Video</button>
-        </div>
  </div>
 </template>
 

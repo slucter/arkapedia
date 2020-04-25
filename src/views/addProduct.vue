@@ -1,5 +1,6 @@
 <template>
   <div class="container-add-product">
+    <navbar_/>
     <div class="warn-add">
       <h1 class="ttl-div">Tambah Produk</h1>
       <div class="warn-txt">
@@ -41,15 +42,10 @@
             <option value="1">Buku</option>
           </select>
         </div>
-        <div class="etalase">
-          <div class="dtl-txt"><h3>Etalase</h3></div>
-          <select name="etalase" class="select-etalase"></select>
-        </div>
       </div>
       <div class="desc-product">
         <descriptionProduct :inputs="this.product.description"/>
       </div>
-      <div class="varian-product"></div>
       <div class="price-product">
         <priceProduct/>
       </div>
@@ -68,6 +64,7 @@
 </template>
 
 <script>
+import navbar_ from '../components/Navbar/Navbar.vue';
 import descriptionProduct from '../components/subAddProduct/descriptionProduct.vue';
 import priceProduct from '../components/subAddProduct/priceProduct.vue';
 import managementProduct from '../components/subAddProduct/managementProduct.vue';
@@ -76,6 +73,7 @@ import weightProduct from '../components/subAddProduct/weightProduct.vue';
 export default {
   name: 'addProduct',
   components: {
+    navbar_,
     descriptionProduct,
     priceProduct,
     managementProduct,
@@ -124,7 +122,7 @@ export default {
   }
   .info-procut{
     width: 1000px;
-    height: 372px;
+    /* height: 372px; */
     background: #ffffff;
     margin: 20px 0;
     padding: 30px;
@@ -132,15 +130,7 @@ export default {
   }
   .desc-product{
     width: 1000px;
-    height: 657px;
-    background: #ffffff;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
-    margin: 20px 0;
-    padding: 30px;
-  }
-  .varian-product{
-    width: 1000px;
-    height: 135px;
+    /* height: 657px; */
     background: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
     margin: 20px 0;
@@ -148,7 +138,7 @@ export default {
   }
   .price-product{
     width: 1000px;
-    height: 379px;
+    /* height: 379px; */
     background: #ffffff;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 10px 0px;
     margin: 20px 0;
