@@ -22,29 +22,30 @@
       <section class="span1"><h3><b>Ubah biodata diri</b></h3></section>
       <section class="span2">
         <div  class="span3">Nama</div>
-        <div class="span4">{{nama}}</div>
+        <div class="span4">{{dataUser.name}}</div>
         <div class="span5" data-toggle="modal" data-target="#editName">Ubah</div>
         <editName/>
       </section>
       <section class="span2">
         <div class="span3">Tanggal Lahir</div>
+        <div class="span4">{{dataUser.birthdate}}</div>
         <div class="span5" data-toggle="modal" data-target="#editDateBirth">
-          Tambah Tanggal Lahir</div>
+          Ubah Tanggal Lahir</div>
         <editDateBirth/>
       </section>
       <section class="span2">
         <div class="span3">jenis Kelamin</div>
-        <div class="span4">wanita</div>
+        <div class="span4">{{dataUser.sex}}</div>
       </section>
       <section class="span1"><h3><b>Ubah kontak</b></h3></section>
       <section class="span2">
         <div class="span3">Email</div>
-        <div class="span5" data-toggle="modal" data-target="#editEmail">Tambahkan Email</div>
+        <div class="span5" data-toggle="modal" data-target="#editEmail">Ubah Email</div>
         <editEmail/>
       </section>
       <section class="span2">
         <div class="span3">Nomor Hp</div>
-        <div class="span4">083812909066</div>
+        <div class="span4">{{dataUser.phone}}</div>
         <div class="verified">Terverikasi <i class="fas fa-check"></i></div>
         <div class="span5" data-toggle="modal" data-target="#editNumb">Ubah</div>
         <editNumb/>
@@ -54,14 +55,12 @@
 </template>
 
 <script>
+import axios from 'axios';
 import editName from '../base/editName.vue';
 import editDateBirth from '../base/editDateBirth.vue';
 import editEmail from '../base/editEmail.vue';
 import editPwd from '../base/editPwd.vue';
-<<<<<<< HEAD
-=======
 import editNumb from '../base/editNumb.vue';
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 
 export default {
   name: 'settingPage',
@@ -70,16 +69,34 @@ export default {
     editDateBirth,
     editEmail,
     editPwd,
-<<<<<<< HEAD
-=======
     editNumb,
   },
-  computed: {
-    nama() {
-      return this.$store.state.nama;
-      // eslint-disable-next-line no-unreachable
+  data() {
+    return {
+      dataUser: [],
+      local: null,
+    };
+  },
+  created() {
+    this.local = localStorage.getItem('id');
+  },
+  methods: {
+    getUserById() {
+      axios.get(`http://192.168.1.97:5000/api/arkapedia/user/${this.local}`)
+        // eslint-disable-next-line no-unused-vars
+        .then((res) => {
+          // eslint-disable-next-line no-unused-expressions
+          // resolve.res.data;
+          this.dataUser = res.data.user;
+          console.log(res.data.user);
+        })
+        // eslint-disable-next-line no-unused-vars
+        .catch((err) => {
+        });
     },
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
+  },
+  mounted() {
+    this.getUserById();
   },
 };
 </script>

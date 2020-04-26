@@ -1,8 +1,6 @@
 <template>
     <div class="container-profile">
-        <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart" />
-        <Submenu_ />
-        <CartSubmenu_ />
+        <Navbar_/>
         <div class="content">
             <div class="side-left">
                 <cardProfile/>
@@ -16,33 +14,29 @@
 </template>
 
 <script>
+// import axios from 'axios';
 import Navbar_ from '../components/Navbar/Navbar.vue';
 import cardProfile from '../components/base/cardProfile.vue';
 import shareProduct from '../components/base/shareProduct.vue';
-import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
-import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
+// import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
+// import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
 
 export default {
   name: 'profile',
+  data() {
+    return {
+      url: process.env.VUE_APP_BASE_URL,
+      user: {},
+    };
+  },
   components: {
     cardProfile,
     shareProduct,
     Navbar_,
-    Submenu_,
-    CartSubmenu_,
+    // Submenu_,
+    // CartSubmenu_,
   },
-  methods: {
-    ClickCategory() {
-      const submenu = document.querySelector('.submenu-category');
-      submenu.classList.toggle('subcat-show');
-    },
-
-    ClickCart() {
-      const subCartLayer = document.querySelector('.submenu-icon-group');
-      subCartLayer.classList.toggle('submenuCartShow');
-      const cartIcon = document.querySelector('.submenu-cart-icon');
-      cartIcon.classList.toggle('SubCartTop');
-    },
+  created() {
   },
 };
 </script>

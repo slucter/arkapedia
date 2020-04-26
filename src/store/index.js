@@ -14,4 +14,7 @@ export default new Vuex.Store({
     user,
     product,
   },
+  actions: {
+
+  },
 });

@@ -11,6 +11,7 @@ import Login from '../views/login.vue';
 import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
 import history from '../views/history.vue';
+import editProduct from '../views/EditProduct.vue';
 
 Vue.use(VueRouter);
 
@@ -26,7 +27,7 @@ const routes = [
     component: Profile,
   },
   {
-    path: '/edit',
+    path: '/editprofile/:id',
     name: 'editProfile',
     component: editProfile,
   },
@@ -69,6 +70,11 @@ const routes = [
     path: '/history',
     name: 'history',
     component: history,
+  },
+  {
+    path: '/editproduct/:id',
+    name: 'editProduct',
+    component: editProduct,
   },
 ];
 

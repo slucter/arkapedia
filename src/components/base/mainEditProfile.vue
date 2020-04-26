@@ -2,7 +2,7 @@
   <div class="main-edit-profil">
     <div class="name-admin">
       <i class="far fa-user"></i>
-      <h3>Shilfiya Amani</h3>
+      <h3>{{dataUser.name}}</h3>
     </div>
     <div class="profile-setting-container">
       <div class="profile-setting-tablist">
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import settingPage from '../module/settingPage.vue';
 import editAdress from '../module/editAdress.vue';
 import editPayment from '../module/editPayment.vue';
@@ -35,6 +36,33 @@ export default {
     editAdress,
     editPayment,
     editBank,
+  },
+  data() {
+    return {
+      dataUser: [],
+      local: null,
+    };
+  },
+  created() {
+    this.local = localStorage.getItem('id');
+  },
+  methods: {
+    getUserById() {
+      axios.get(`http://192.168.1.97:5000/api/arkapedia/user/${this.local}`)
+        // eslint-disable-next-line no-unused-vars
+        .then((res) => {
+          // eslint-disable-next-line no-unused-expressions
+          // resolve.res.data;
+          this.dataUser = res.data.user;
+          console.log(res.data.user);
+        })
+        // eslint-disable-next-line no-unused-vars
+        .catch((err) => {
+        });
+    },
+  },
+  mounted() {
+    this.getUserById();
   },
 };
 </script>
