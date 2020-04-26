@@ -6,15 +6,8 @@ import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
 import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
-import Cart from '../views/Cart.vue';
+import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
-import Shop from '../views/Shop.vue';
-import Register from '../views/register.vue';
-<<<<<<< HEAD
-import Shipment from '../views/ShipAndPay.vue';
-=======
-import history from '../views/history.vue';
->>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
 
 Vue.use(VueRouter);
 
@@ -35,50 +28,29 @@ const routes = [
     component: editProfile,
   },
   {
-    path: '/profileStore/:id/addProduct',
+    path: '/add',
     name: 'addProduct',
     component: addProduct,
   },
   {
-    path: '/profileStore/:id',
+    path: '/profileStore',
     name: 'profileStore',
     component: profileStore,
   },
   {
-    path: '/detail/:id',
+    path: '/detail',
     name: 'Detail',
     component: Detail,
   },
   {
-    path: '/Cart',
-    name: 'Cart',
-    component: Cart,
+    path: '/checkout',
+    name: 'checkout',
+    component: checkout,
   },
   {
     path: '/login',
     name: 'login',
     component: Login,
-  },
-  {
-    path: '/shop/:id',
-    name: 'Shop',
-    component: Shop,
-  },
-  {
-    path: '/register',
-    name: 'register',
-    component: Register,
-  },
-  {
-<<<<<<< HEAD
-    path: '/shipment',
-    name: 'shipment',
-    component: Shipment,
-=======
-    path: '/history',
-    name: 'history',
-    component: history,
->>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
   },
 ];
 
