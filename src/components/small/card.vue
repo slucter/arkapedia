@@ -2,24 +2,24 @@
     <div class="card">
         <div>
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="heart" class="svg-inline--fa fa-heart fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#e3dada" d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"></path></svg>
-            <img src="../../assets/logo.png" class="card-img-top" alt="...">
+            <img :src="image" class="card-img-top" :alt="image">
         </div>
         <div class="card-body">
             <div class="des-card">
-                <h5 class="card-title">Laptop ASUS E402YA-GA202T AMD E2-70 4GB</h5>
+                <h5 class="card-title">{{ name }}</h5>
             </div>
             <div class="price-card">
-                <p class="card-text">Rp 3.450.000</p>
+                <p class="card-text">Rp {{ price }}</p>
             </div>
             <div class="official">
-                <p class="card-owner"><img class="king-ir" src="https://ecs7.tokopedia.net/img/newtkpd/powermerchant/ic-powermerchant-130px.png"> <span>Surabaya</span></p>
+                <p class="card-owner"><img class="king-ir" src="https://ecs7.tokopedia.net/img/newtkpd/powermerchant/ic-powermerchant-130px.png"> <span>{{ location }}</span></p>
             </div>
             <div class="icon-rating">
             </div>
             <div class="rating">
                    <img class="star-one" src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/4fede911.svg">
             <span class="total-rating">
-                (37)
+                {{rating}}
             </span>
             </div>
         </div>
@@ -32,6 +32,16 @@
 <script>
 export default {
   name: 'Card',
+  props: [
+    'name',
+    'image',
+    'price',
+    'location',
+    'rating',
+    'id',
+  ],
+
+
 };
 </script>
 
@@ -87,7 +97,7 @@ export default {
     }
 
     .rating{
-        margin-top: -20px;
+        margin-top: -30px;
         position: relative;
     }
     .king-ir{

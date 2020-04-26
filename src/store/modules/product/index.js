@@ -23,6 +23,7 @@ export default ({
         .get(context.state.url + 'product') // eslint-disable-line
         .then((res) => {
           context.commit('product', res.data.Products.rows);
+          console.log(res);
         })
         .catch((err) => {
           console.log(err);

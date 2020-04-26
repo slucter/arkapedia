@@ -72,7 +72,7 @@ export default {
     .parent-footer-text-two{
        display: flex;
         flex-direction: column;
-        left: 403px;
+        left: 390px;
         position: absolute;
     }
 
@@ -95,7 +95,7 @@ export default {
     .parent-footer-text-four{
         display: flex;
         flex-direction: column;
-        right: 500px;
+        right: 530px;
         position: absolute;
     }
 

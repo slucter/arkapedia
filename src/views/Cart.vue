@@ -16,9 +16,11 @@
     </div>
     <div>
     <div class="card-list">
-    <div class="row" v-for="row in 20" :key="row.id" >
+    <div class="row">
         <div class="col">
-            <Card/>
+            <Card v-for="data in items" :key="data.id"
+             :name="data.name" :price="data.price" :image="data.image.image1"
+             :location="data.shop.location" :rating="data.id" :id="`detail/${data.id}`"/>
         </div>
     </div>
     </div>
@@ -30,6 +32,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Footer from '../components/small/footer.vue';
 import Purchase from '../components/small/box-purchase.vue';
 import Navbar from '../components/Navbar/Navbar.vue';
@@ -38,12 +41,32 @@ import Card from '../components/small/card.vue';
 
 export default {
   name: 'Cart',
+  data() {
+    return {
+      items: [],
+    };
+  },
   components: {
     Footer,
     Purchase,
     Navbar,
     Minis,
     Card,
+  },
+  methods: {
+    getallproduct() {
+      axios.get('http://192.168.1.97:5000/api/arkapedia/product')
+        .then((res) => {
+          this.items = res.data.Products.rows;
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+  mounted() {
+    this.getallproduct();
   },
 };
 </script>

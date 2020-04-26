@@ -41,8 +41,26 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'purchase',
+
+  methods: {
+    getcart() {
+      axios.get('http://192.168.1.97:5000/api/arkapedia/orderDetail')
+        .then((rest) => {
+          console.log(rest);
+          this.products = rest.data.orderDetails.rows;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
+  mounted() {
+    this.getcart();
+  },
 };
 </script>
 
