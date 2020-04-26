@@ -6,7 +6,7 @@
 
   <!-- Name Product -->
   <div class="productName">
-    <h6>Starter Pack HMNS Perfume isi 3 Varian Parfum (@5ml)</h6>
+    <h6> {{name}} </h6>
   </div>
 
   <!-- Rating Product -->
@@ -28,7 +28,7 @@
       <h3>HARGA</h3>
     </div>
     <div class="valuePrice">
-      <h3>Rp 86.000</h3>
+      <h3>Rp {{price}} </h3>
     </div>
   </div>
 
@@ -116,8 +116,8 @@
       <h3>ONGKOS KIRIM</h3>
     </div>
       <div class="shippingPlace">
-        <!-- <h3>Ke Jakarta Barat, Cengkareng</h3> -->
-        <h3>Ke</h3>
+        <h3>Ke Jakarta Barat, Cengkareng</h3>
+        <!-- <h3>Ke</h3>
         <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" type="button"
           id="dropdownMenuButton"
@@ -128,7 +128,7 @@
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
           </div>
-        </div>
+        </div> -->
     </div>
     <div class="shippingStart">
       <h3>Mulai dari Rp9.000</h3>
@@ -140,6 +140,10 @@
 <script>
 export default {
   name: 'detailProduct',
+  props: [
+    'name',
+    'price',
+  ],
 };
 </script>
 
@@ -315,7 +319,7 @@ export default {
 }
 
 .infoProduct h3 {
-  background: whitesmoke;
+  background: white;
   font-size: 12px;
   width: 50px;
   line-height: 18px;
@@ -372,7 +376,7 @@ export default {
 }
 
 .shippingProduct h3 {
-  background: whitesmoke;
+  background: white;
   font-size: 12px;
   width: 50px;
   line-height: 18px;

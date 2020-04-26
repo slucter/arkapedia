@@ -73,7 +73,7 @@ export default {
 
 <style scoped>
 .headerReview {
-  padding: 0 24px;
+  padding: 24px 24px 0;
 }
 
 .bodyReview {

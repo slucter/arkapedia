@@ -4,9 +4,9 @@
     <div class="titleDiscussion">
       <h3>DISKUSI (170)</h3>
     </div>
-    <div class="productDiscussion">
+    <!-- <div class="productDiscussion">
       <h3>Starter Pack HMNS Perfume isi 3 Varian Parfum (@5ml)</h3>
-    </div>
+    </div> -->
   </div>
 
   <div class="containerAskDiscussion">

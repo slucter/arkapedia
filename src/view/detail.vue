@@ -1,51 +1,54 @@
 <template>
-<div>
+<div class="containerDetailContent">
   <div class="navbar">
-    <h1>Tokopedia</h1>
+    <Navbar/>
+    <!-- <h1>Tokopedia</h1> -->
   </div>
   <div class="navbarAddCart">
-    <navbarAddCart/>
+    <navbarAddCart :name="product.shop.name" :location="product.shop.location"/>
   </div>
   <div class="detailContent">
     <div class="imgContent">
       <div class="imgBody">
         <div class="imgProduct">
-          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2019/7/20/71327545/71327545_e19ad82a-79c0-44f3-8073-38a78ff12a08_700_700.webp" alt="">
+          <img :src="product.image.image1" alt="img-product">
         </div>
       </div>
       <div class="imgCard">
         <div class="imgCardSmall">
-          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2019/7/20/71327545/71327545_e19ad82a-79c0-44f3-8073-38a78ff12a08_700_700.webp" alt="">
+          <img :src="product.image.image1" alt="img-product">
         </div>
         <div class="imgCardSmall">
-          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2019/7/20/71327545/71327545_e19ad82a-79c0-44f3-8073-38a78ff12a08_700_700.webp" alt="">
+          <img :src="product.image.image1" alt="img-product">
         </div>
         <div class="imgCardSmall">
-          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2019/7/20/71327545/71327545_e19ad82a-79c0-44f3-8073-38a78ff12a08_700_700.webp" alt="">
+          <img :src="product.image.image1" alt="img-product">
         </div>
         <div class="imgCardSmall">
-          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2019/7/20/71327545/71327545_e19ad82a-79c0-44f3-8073-38a78ff12a08_700_700.webp" alt="">
+          <img :src="product.image.image1" alt="img-product">
         </div>
         <div class="imgCardSmall">
-          <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2019/7/20/71327545/71327545_e19ad82a-79c0-44f3-8073-38a78ff12a08_700_700.webp" alt="">
+          <img :src="product.image.image1" alt="img-product">
         </div>
       </div>
     </div>
     <div class="productDetail">
-      <detailProduct/>
+      <detailProduct :name="product.name" :price="product.price" />
     </div>
   </div>
   <div>
     <headerContent/>
   </div>
   <div>
-    <contentProduct/>
+    <contentProduct :name="product.name" :description="product.description"
+    :image="product.image.image1"/>
   </div>
 </div>
 </template>
 
 <script>
-// import typeList from '../components/_module/typeList.vue';
+import axios from 'axios';
+import Navbar from '../components/Navbar/Navbar.vue';
 import navbarAddCart from '../components/_module/navbarAddCart.vue';
 import headerContent from '../components/_module/headerContent.vue';
 import contentProduct from '../components/_module/contentProduct.vue';
@@ -58,21 +61,44 @@ export default {
     navbarAddCart,
     headerContent,
     contentProduct,
-    // typeList,
+    Navbar,
   },
-  computed: {
-    getProduct() {
-      return this.$store.state.product;
+  data() {
+    return {
+      product: null,
+    };
+  },
+  methods: {
+    getDetail() {
+      axios.get(`http://192.168.1.97:5000/api/arkapedia/product/${this.$route.params.id}`)
+        .then((res) => {
+          this.product = res.data.product;
+          console.log(res.data.product);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
   },
+  mounted() {
+    this.getDetail();
+  },
+  // computed: {
+  //   getProduct() {
+  //     return this.$store.state.product;
+  //   },
+  // },
 };
 </script>
 
 <style scoped>
-.navbar {
+/* .navbar {
   width: 100%;
   height: 110px;
   background: blue;
+} */
+.containerDetailContent {
+  margin-top: 60px;
 }
 
 .detailContent {

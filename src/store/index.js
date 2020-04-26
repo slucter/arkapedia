@@ -12,14 +12,14 @@ export const store = new Vuex.Store({
     productId: null,
   },
   mutations: {
-    product(state, data) {
-      state.product = data;
+    productId(state, data) {
+      state.productId = data;
     },
   },
   actions: {
-    getProductById(context, data) {
+    getProductById(context) {
       // eslint-disable-next-line prefer-template
-      axios.get('http://192.168.1.97:5000/api/arkapedia/product/:id' + data)
+      axios.get('http://192.168.1.97:5000/api/arkapedia/product/:id')
         .then((res) => {
           context.commit('productId', res.data.result);
         })
