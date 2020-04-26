@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 <div>
   <div class="navbar" v-if="items">
   <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
@@ -7,6 +8,9 @@
   </div>
 <router-view></router-view>
 </div>
+=======
+  <router-view></router-view>
+>>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
 </template>
 
 <script>
@@ -16,6 +20,7 @@ import CartSubmenu_ from './components/Navbar/Submenu/CartSubmenu.vue';
 
 export default {
   name: 'App',
+<<<<<<< HEAD
   data() {
     return {
       items: [],
@@ -44,9 +49,23 @@ export default {
     this.items = localStorage.getItem('items');
   },
 
+=======
+>>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
 };
 </script>
 
-<style>
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: "open sans";
+  }
 
+  h1, h2, h3, h4, h5, h6{
+    margin: 0;
+  }
+  .container{
+    max-width: 1300px !important;
+  }
 </style>

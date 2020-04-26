@@ -10,24 +10,37 @@
                 <option value="1">Gram (g)</option>
                 <option value="2">Kilo Gram (kg)</option>
             </select>
-            <input type="text">
+            <input type="text" @input="$emit('weight', $event.target.value)">
         </div>
         <div class="assurance">
             <div class="ctrl-grp">
                 <h3>Asuransi Pengiriman</h3>
                 <p>Aktifkan jaminan kerugian, kerusakan & kehilangan atas pengiriman produk ini</p>
             </div>
+            <label class="radio">Opsional
+            <input type="radio" checked="checked" name="radio">
+               <span class="checkmark"></span>
+            </label>
+            <label class="radio">Ya
+              <input type="radio" name="radio">
+                <span class="checkmark"></span>
+            </label>
         </div>
         <div class="preorder"><h3>Preorder</h3>
-            <div class="toggle"></div>
+            <slider/>
             <p>Aktifkan Preorder ini jika membutuhkan waktu proses lebih lama. Info Lengkap</p>
         </div>
     </div>
 </template>
 
 <script>
+import slider from '../templates/slider.vue';
+
 export default {
   name: 'weightProduct',
+  components: {
+    slider,
+  },
 };
 </script>
 
@@ -98,4 +111,56 @@ export default {
          height: 25px;
          margin: 40px 0 0;
      }
+.radio input{
+         position: absolute;
+         opacity: 0;
+         cursor: pointer;
+     }
+     .checkmark {
+         position: absolute;
+          top: 0;
+          left: 0;
+          height: 25px;
+          width: 25px;
+          background: #ffffff;
+          border: 1px solid rgba(0, 0, 0, 0.12);
+          border-radius: 50%;
+      }
+      .radio input:checked ~ .checkmark {
+          background-color: #ffffff;
+          border: 3px solid #42b549;
+          border-radius: 50%
+      }
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+    .radio input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+    .radio .checkmark:after {
+        top: 2px;
+        left: 2px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #42b549;
+      }
+      .radio {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        margin-left: 50px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.54);
+}
 </style>

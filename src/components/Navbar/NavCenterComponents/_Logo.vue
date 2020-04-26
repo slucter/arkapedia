@@ -1,8 +1,14 @@
 <template>
+  <router-link to="/">
     <div class="nav-logow">
+<<<<<<< HEAD
         <img src="../../../assets/img/logo-tokped.svg" alt="logow">
         <!-- <a href="#">Arkapedia</a> -->
+=======
+      <img src="../../../assets/img/logo-tokped.svg" alt="logow">
+>>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
     </div>
+  </router-link>
 </template>
 
 <script>
