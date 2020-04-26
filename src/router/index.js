@@ -6,10 +6,11 @@ import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
 import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
-import checkout from '../views/checkout.vue';
+import Cart from '../views/Cart.vue';
 import Login from '../views/login.vue';
 import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
+import history from '../views/history.vue';
 
 Vue.use(VueRouter);
 
@@ -50,9 +51,9 @@ const routes = [
     component: Detail,
   },
   {
-    path: '/checkout',
-    name: 'checkout',
-    component: checkout,
+    path: '/Cart',
+    name: 'Cart',
+    component: Cart,
   },
   {
     path: '/login',
@@ -68,6 +69,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register,
+  },
+  {
+    path: '/history',
+    name: 'history',
+    component: history,
   },
 ];
 

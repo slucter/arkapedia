@@ -49,6 +49,7 @@
             <div class="all-produk">
               <div class="nav-content">
                 <div class="search-adress">
+                  <input type="text" placeholder="Cari alamat" class="input-src">
                   <input type="text" placeholder="Cari Produk" class="input-src">
                   <div class="icon-src"><i class="fas fa-search-location"></i></div>
                 </div>
