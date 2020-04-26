@@ -7,7 +7,8 @@
         <p>0 Follower</p>
       </div>
       <section class="edit-profile">
-        <router-link to="edit" class="btn-edit-profile">Edit Profile</router-link>
+        <router-link to="editprofile/8" class="btn-edit-profile">
+        Edit Profile</router-link>
       </section>
     </div>
   </div>

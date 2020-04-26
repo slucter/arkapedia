@@ -7,8 +7,9 @@ Vue.use(Vuex);
 export default ({
   namespaced: true,
   state: {
-    products: [],
-    // poso: localStorage.getItem('token') || null,
+    id: [],
+    user: [],
+    url: process.env.VUE_APP_BASE_URL,
   },
   // getters: {
   //   getUser(state) {
@@ -16,21 +17,28 @@ export default ({
   //   },
   // },
   mutations: {
-    FOR_USER(state, data) {
-      state.forUser = data;
+    userId(state) {
+      state.id = localStorage.getItem('id');
+    },
+    user(state, data) {
+      state.user = data;
+      console.log(data);
     },
   },
   actions: {
+    getUserId(context) {
+      context.commit('userId');
+    },
     getUserById(context) {
-      axios.get(`${context.state.url} user/${localStorage.id}`)
-      // eslint-disable-next-line no-unused-vars
+      axios
+        .get(context.state.url + 'user/' + context.state.id) // eslint-disable-line
         .then((res) => {
-        // eslint-disable-next-line no-unused-expressions
-          context.commit('FOR_USER', res.data);
-          console.log(res);
+          // console.log(res);
+          context.commit('user', res.data.user);
+        })
+        .catch((err) => {
+          console.log(err);
         });
     },
-  },
-  modules: {
   },
 });

@@ -1,12 +1,18 @@
 <template>
-<div>
+  <div id="app">
     <div class="navbar" v-if="items">
-        <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
-        <Submenu_ />
-        <CartSubmenu_ />
+      <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
+      <Submenu_ />
+      <CartSubmenu_ />
+      <router-view></router-view>
     </div>
-<router-view></router-view>
-</div>
+    <div class="navbar" v-else>
+      <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
+      <Submenu_ />
+      <CartSubmenu_ />
+      <router-view></router-view>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -41,7 +47,7 @@ export default {
   },
 
   created() {
-    this.items = localStorage.getItem('items');
+    this.items = localStorage.getItem('token');
   },
 
 };

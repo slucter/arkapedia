@@ -12,6 +12,7 @@ import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
 import history from '../views/history.vue';
 import editProduct from '../views/EditProduct.vue';
+import Logout from '../views/Logout.vue';
 import MyShop from '../views/OpenShop.vue';
 // import store from '../store/modules/user/index';
 
@@ -61,7 +62,7 @@ const routes = [
     // meta: { requiresVisitor: true },
   },
   {
-    path: '/shop/:id',
+    path: '/detail/shop/:id',
     name: 'Shop',
     component: Shop,
   },
@@ -84,6 +85,11 @@ const routes = [
     path: '/my-shop',
     name: 'my-shop',
     component: MyShop,
+  },
+  {
+    path: '/logout',
+    name: 'Logout',
+    component: Logout,
   },
 ];
 

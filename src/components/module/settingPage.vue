@@ -3,7 +3,7 @@
   <div class="profile-setting-pages">
     <div class="img-profile">
       <div class="well">
-        <img src="../../assets/img/default_toped-26.jpg" alt="">
+        <img :src="dataUser.image" :alt="dataUser.image">
         <input type="file" class="pick-files">
         <div class="warn-filter-image">
             <p>Besar file: maksimum 10.000.000 bytes (10 Megabytes)</p><br>
@@ -40,6 +40,7 @@
       <section class="span1"><h3><b>Ubah kontak</b></h3></section>
       <section class="span2">
         <div class="span3">Email</div>
+        <div class="span4">{{ dataUser.email }}</div>
         <div class="span5" data-toggle="modal" data-target="#editEmail">Ubah Email</div>
         <editEmail/>
       </section>

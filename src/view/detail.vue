@@ -1,11 +1,11 @@
 <template>
 <div class="containerDetailContent">
-  <div class="navbar">
-    <Navbar/>
-    <!-- <h1>Tokopedia</h1> -->
-  </div>
+  <!-- <div class="navbar"> -->
+    <!-- <Navbar/> -->
+  <!-- </div> -->
   <div class="navbarAddCart">
-    <navbarAddCart :name="product.shop.name" :location="product.shop.location"/>
+    <navbarAddCart :name="product.shop.name" :location="product.shop.location"
+    :shop="`shop/${product.shopId}`" />
   </div>
   <div class="detailContent">
     <div class="imgContent">
@@ -43,16 +43,18 @@
     <contentProduct :name="product.name" :description="product.description"
     :image="product.image.image1"/>
   </div>
+  <Footer />
 </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Navbar from '../components/Navbar/Navbar.vue';
+// import Navbar from '../components/Navbar/Navbar.vue';
 import navbarAddCart from '../components/_module/navbarAddCart.vue';
 import headerContent from '../components/_module/headerContent.vue';
 import contentProduct from '../components/_module/contentProduct.vue';
 import detailProduct from '../components/_module/detailProduct.vue';
+import Footer from '../components/footer.vue';
 
 export default {
   name: 'detail',
@@ -61,7 +63,7 @@ export default {
     navbarAddCart,
     headerContent,
     contentProduct,
-    Navbar,
+    Footer,
   },
   data() {
     return {
@@ -78,6 +80,9 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+    },
+    detailShop(id) {
+      this.$router.push(`shop/${id}`);
     },
   },
   mounted() {

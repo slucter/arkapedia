@@ -5,17 +5,19 @@
       <img src="https://ecs7.tokopedia.net/img/cache/215-square/shops-1/2019/8/5/6441653/6441653_e0be89bf-9e96-4045-a6af-b1f0fdfa572c.jpg" alt="">
     </div>
     <div class="storeName">
-      <div class="storeDetail">
-        <div class="storeStatus">
-          <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/8b6c8c02.svg" alt="">
+      <router-link class="link" :to="shop">
+        <div class="storeDetail">
+          <div class="storeStatus">
+            <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/8b6c8c02.svg" alt="">
+          </div>
+          <div class="nameStore">
+            <h5> {{name}} </h5>
+          </div>
+          <div class="storeRank">
+            <img src="https://ecs7.tokopedia.net/img/repsys/gold-3.gif" alt="">
+          </div>
         </div>
-        <div class="nameStore">
-          <h5> {{name}} </h5>
-        </div>
-        <div class="storeRank">
-          <img src="https://ecs7.tokopedia.net/img/repsys/gold-3.gif" alt="">
-        </div>
-      </div>
+      </router-link>
       <div class="storeLocation">
         <div class="locationActive">
           <h5> {{location}} </h5>
@@ -63,24 +65,29 @@ export default {
   props: [
     'name',
     'location',
+    'shop',
   ],
 };
 </script>
 
 <style scoped>
+  .link{
+    color: inherit;
+    text-decoration: none;
+  }
 .navbarCart {
   width: 100%;
   height: 72px;
   background: white;
   z-index: 999;
   position: fixed;
-  margin-top: 519px;
   padding: 8px 0px;
   display: flex;
   flex-direction: row;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
   box-shadow: rgba(49, 53, 59, 0.16) 0px -2px 6px 0px;
+  bottom: 0;
 }
 
 .leftSide {

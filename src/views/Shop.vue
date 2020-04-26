@@ -1,8 +1,8 @@
 <template>
   <div class="shop">
-    <Navbar_ />
     <div class="container">
-      <ShopHero />
+      <ShopHero v-for="shop in seller" :key="shop.id"
+      :name="shop.name" :location="shop.location" />
       <div class="col-md-12 shop-etalase">
         <div class="all-products">
           <CardShop v-for="data in shopProducts" :key="data.id" :name="data.name"
@@ -19,25 +19,28 @@
 import { mapActions, mapState } from 'vuex';
 import CardShop from '@/components/CardShop.vue';
 import ShopHero from '@/components/ShopHero.vue';
-import Navbar_ from '../components/Navbar/Navbar.vue';
+// import Navbar_ from '../components/Navbar/Navbar.vue';
 import Footer from '../components/footer.vue';
 
 export default {
   name: 'Home',
   components: {
-    Navbar_,
+    // Navbar_,
     ShopHero,
     CardShop,
     Footer,
   },
   methods: {
     ...mapActions('shop', ['getAllProductsByShopId']),
+    ...mapActions('shop', ['getSeller']),
   },
   mounted() {
     this.getAllProductsByShopId(this.$route.params.id);
+    this.getSeller(this.$route.params.id);
   },
   computed: {
     ...mapState('shop', ['shopProducts']),
+    ...mapState('shop', ['seller']),
   },
 
 };

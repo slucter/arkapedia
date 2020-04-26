@@ -169,6 +169,11 @@ export default {
       msg: 0,
     };
   },
+  created() {
+    if (localStorage.getItem('id')) {
+      this.$router.push('/');
+    }
+  },
   components: {
     NavbarLogin,
   },

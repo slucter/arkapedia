@@ -3,11 +3,13 @@
     <div class="img-hero"></div>
     <div class="shop-desc">
       <div class="col-md-6 shop-profile">
-        <div class="seller-img"></div>
+        <div class="seller-img">
+          <!-- <img :src="image" :alt="image"> -->
+        </div>
         <div class="seller-profile">
-          <h3>Lock & Lock Official</h3>
+          <h3>{{ name }}</h3>
           <div class="location">
-            <p>Kab. Bekasi</p>
+            <p>{{ location }}</p>
           </div>
           <div class="button-hero">
             <button class="btn btn-sm btn-success">Follow</button>
@@ -48,6 +50,10 @@
 <script>
 export default {
   name: 'ShopHero',
+  props: [
+    'name',
+    'location',
+  ],
 };
 </script>
 
@@ -65,11 +71,12 @@ export default {
   }
   .shop-desc{
     // position: absolute;
-    background-color: #eaeaea;
+    // background-color: #eaeaea;
     width: 100%;
     padding: 10px 0;
     border-radius: 0 0 1em 1em;
     display: flex;
+    box-shadow: 0 2px 10px rgba($color: #696969, $alpha: .5);
   }
   .shop-profile, .shop-detail{
     display: flex;

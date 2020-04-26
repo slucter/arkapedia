@@ -170,6 +170,11 @@ export default {
   components: {
     NavbarLogin,
   },
+  created() {
+    if (localStorage.getItem('id')) {
+      this.$router.push('/');
+    }
+  },
   beforeCreate() {
     Axios.patch(`http://192.168.1.97:5000/api/arkapedia/user/activation?token=${this.$route.query.token}`)
       .then((res) => {
