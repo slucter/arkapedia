@@ -1,7 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+<<<<<<< HEAD
+
+import user from './modules/user/index';
+=======
 import axios from 'axios';
 import user from './modules/user';
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
 import product from './modules/product';
 import shop from './modules/shop';
 

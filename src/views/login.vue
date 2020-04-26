@@ -28,6 +28,17 @@
         </div>
       </div>
     </div>
+    <div class="test" v-if="msg === 3">
+      <div class="modal-msg">
+        <div class="header-modal-msg">
+          <h2>Email Berhasil di Aktivasi</h2>
+        </div>
+        <div class="button-modal-msg">
+          <button @click="closemodal" class="ubah-modal">Ubah</button>
+          <button @click="closemodal" class="masuk-modal">Login</button>
+        </div>
+      </div>
+    </div>
     <NavbarLogin/>
     <div class="background-login">
       <div>
@@ -163,6 +174,7 @@ export default {
     Axios.patch(`http://192.168.1.97:5000/api/arkapedia/user/activation?token=${this.$route.query.token}`)
       .then((res) => {
         console.log(res);
+        this.msg = 3;
       })
       .catch((err) => {
         console.log(err);
