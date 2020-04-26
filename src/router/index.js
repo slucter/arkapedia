@@ -46,11 +46,6 @@ const routes = [
     component: Detail,
   },
   {
-    path: '/shop/detail/:id',
-    name: 'Detail',
-    component: Detail,
-  },
-  {
     path: '/Cart',
     name: 'Cart',
     component: Cart,

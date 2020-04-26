@@ -53,7 +53,6 @@ export default {
     flex-direction: column;
     justify-content: space-around;
     position: relative;
-    top: 150px;
     width: auto;
     }
 
@@ -90,7 +89,6 @@ export default {
     }
 
     .first-square{
-        width: 60%;
         height: 230px;
         position: relative;
         border-top: 4px solid rgba(0, 0, 0, 0.1);

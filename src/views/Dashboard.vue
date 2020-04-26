@@ -40,7 +40,7 @@ import SpecialCategory from '@/components/SpecialCategory.vue';
 import Carousel from '@/components/Carousel.vue';
 import CardDiscountRow from '@/components/templates/CardDiscountRow.vue';
 import PromoRow from '../components/templates/PromoRow.vue';
-import Footer from '../components/footer.vue';
+import Footer from '../components/small/footer.vue';
 import Navbar_ from '../components/Navbar/Navbar.vue';
 import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
 import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
