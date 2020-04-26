@@ -58,7 +58,6 @@ export default {
     font-size: 14px;
     font-weight: bold;
     margin: 0;
-    text-transform: uppercase;
     max-height: 45px;
     overflow: hidden;
   }

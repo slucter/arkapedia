@@ -1,11 +1,7 @@
 <template>
   <div>
-    <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
-    <Submenu_ />
-    <CartSubmenu_ />
     <div class="dashboard">
-      <div class="container row" v-if="id">
-        <Navbar_ />
+      <div class="container is-login" v-if="id">
         <div class="col-md-3">
           <SideInfo :name="user.name" />
         </div>
@@ -26,8 +22,7 @@
           <CardProductRow />
         </div>
       </div>
-      <div class="container row" v-else>
-        <Navbar_ />
+      <div class="container" v-else>
         <div class="col-md-12">
           <div class="carousel">
             <Carousel />
@@ -60,10 +55,7 @@ import SpecialCategory from '@/components/SpecialCategory.vue';
 import Carousel from '@/components/Carousel.vue';
 import CardDiscountRow from '@/components/templates/CardDiscountRow.vue';
 import PromoRow from '../components/templates/PromoRow.vue';
-import Footer from '../components/small/footer.vue';
-import Navbar_ from '../components/Navbar/Navbar.vue';
-import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
-import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
+import Footer from '../components/footer.vue';
 
 export default {
   name: 'Home',
@@ -72,14 +64,11 @@ export default {
     CardProductRow,
     CardCategories,
     SpecialCategory,
-    Navbar_,
     Carousel,
     CardDiscountRow,
     PromoRow,
     Footer,
-    Submenu_,
     SideInfo,
-    CartSubmenu_,
   },
   data() {
     return {
@@ -119,6 +108,10 @@ export default {
   .dashboard{
     margin: 50px auto;
   }
+  .is-login{
+    display: flex;
+    align-items: flex-start;
+  }
   .container{
     padding-top: 100px;
     margin: 0 auto;
@@ -131,5 +124,9 @@ export default {
     padding: 0 5px;
     font-weight: 700;
     font-size: 20px;
+  }
+  .col-md-3{
+    position: relative;
+    top: 50px;
   }
 </style>

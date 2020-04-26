@@ -1,32 +1,23 @@
 <template>
     <div class="container-profile">
-        <Navbar_/>
-        <div class="content">
-            <div class="side-left">
-                <cardProfile/>
-            </div>
-            <div class="side-right">
-                <shareProduct/>
-            </div>
-        </div>
-        <div class="footer-profile"></div>
+      <div class="content">
+          <div class="side-left">
+              <cardProfile/>
+          </div>
+          <div class="side-right">
+              <shareProduct/>
+          </div>
+      </div>
+      <Footer />
     </div>
 </template>
 
 <script>
 // import axios from 'axios';
-import Navbar_ from '../components/Navbar/Navbar.vue';
-<<<<<<< HEAD
+import Footer from '../components/footer.vue';
 import cardProfile from '../components/base/cardProfile.vue';
 import shareProduct from '../components/base/shareProduct.vue';
-// import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
-// import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
-=======
-import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
-import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
-import cardProfile from '../components/base/cardProfile.vue';
-import shareProduct from '../components/base/shareProduct.vue';
->>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
+
 
 export default {
   name: 'profile',
@@ -39,8 +30,7 @@ export default {
   components: {
     cardProfile,
     shareProduct,
-    Navbar_,
-    // Submenu_,
+    Footer,
     // CartSubmenu_,
   },
   created() {

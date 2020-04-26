@@ -10,18 +10,29 @@
         </div>
         <div class="nav-user-profile">
             <router-link to="/profileStore" class="icon-toko">
-                <span>img</span>
+                <img :src="user.image" :alt="user.image">
             </router-link>
             <div class="toko-menu-link">
-                <router-link to="/profile">Irhash</router-link>
+                <router-link to="/profile">{{ user.name }}</router-link>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex';
+
 export default {
   name: 'User_section',
+  mounted() {
+    this.getUserById();
+  },
+  computed: {
+    ...mapState('user', ['user']),
+  },
+  methods: {
+    ...mapActions('user', ['getUserById']),
+  },
 };
 </script>
 
@@ -52,15 +63,24 @@ export default {
     justify-content: center;
     position: relative;
 }
-.icon-toko{
+.icon-toko img{
     width: 35px;
     height: 35px;
-    border-radius: 50px;
+    border-radius: 50%;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+}
+
+.icon-toko{
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
     background-color: rgba(0, 0, 0, 0.1);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
+
 .icon-toko i{
     color: #03ac0e;
 }

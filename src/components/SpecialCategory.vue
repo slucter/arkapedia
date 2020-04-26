@@ -7,7 +7,7 @@
           <div class="category cat1"></div>
           <div class="category cat2"></div>
           <div class="category cat3"></div>
-          <div class="category cat4"></div>
+          <div class="category cat4" v-if="!id"></div>
         </div>
       </div>
       <div class="card-body ml-3">
@@ -39,12 +39,12 @@
               </div>
               <div class="form-group col-md-5">
                 <label for="inputPassword4">Nominal</label>
-                <select class="form-control form-control-sm">
+                <select class="form-control form-control-sm" disabled>
                   <option>Pilih</option>
                 </select>
               </div>
               <div class="form-group col-md-2">
-                <button class="btn btn-sm btn-primary" disabled>Beli</button>
+                <button class="btn btn-sm btn-secondary" disabled>Beli</button>
               </div>
             </div>
           </form>
@@ -66,6 +66,11 @@
 <script>
 export default {
   name: 'HelloWorld',
+  data() {
+    return {
+      id: localStorage.getItem('id'),
+    };
+  },
 };
 </script>
 
@@ -155,12 +160,11 @@ export default {
     border: none;
     border-bottom: 1px solid #eaeaea;
     display: flex;
-    flex-wrap: nowrap;
-    // justify-content: ;
+    padding: 0 16px 0 24px;
+    justify-content: space-between;
   }
   .nav-item{
     height: 40px;
-    padding: 0 24px;
   }
   .nav-link{
     display: flex;
