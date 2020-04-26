@@ -8,6 +8,21 @@ import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
 import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
+<<<<<<< HEAD
+import Shop from '../views/Shop.vue';
+import Register from '../views/register.vue';
+import history from '../views/history.vue';
+import editProduct from '../views/EditProduct.vue';
+=======
+<<<<<<< HEAD
+import Shop from '../views/Shop.vue';
+import Register from '../views/register.vue';
+import history from '../views/history.vue';
+import MyShop from '../views/OpenShop.vue';
+// import store from '../store/modules/user/index';
+=======
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
+>>>>>>> 38dd64817dd8bdbd15a4ea27a677eefab97cab35
 
 Vue.use(VueRouter);
 
@@ -16,6 +31,7 @@ const routes = [
     path: '/',
     name: 'Dashboard',
     component: Dashboard,
+    // meta: { requiresAuth: true },
   },
   {
     path: '/profile',
@@ -23,7 +39,7 @@ const routes = [
     component: Profile,
   },
   {
-    path: '/edit',
+    path: '/editprofile/:id',
     name: 'editProfile',
     component: editProfile,
   },
@@ -51,7 +67,41 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
+    // meta: { requiresVisitor: true },
   },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 38dd64817dd8bdbd15a4ea27a677eefab97cab35
+  {
+    path: '/shop/:id',
+    name: 'Shop',
+    component: Shop,
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+  },
+  {
+    path: '/history',
+    name: 'history',
+    component: history,
+  },
+  {
+<<<<<<< HEAD
+    path: '/editproduct/:id',
+    name: 'editProduct',
+    component: editProduct,
+  },
+=======
+    path: '/my-shop',
+    name: 'my-shop',
+    component: MyShop,
+  },
+=======
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
+>>>>>>> 38dd64817dd8bdbd15a4ea27a677eefab97cab35
 ];
 
 const router = new VueRouter({
@@ -59,5 +109,30 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some((record) => record.meta.requiresAuth)) {
+//     // this route requires auth, check if logged in
+//     // if not, redirect to login page.
+//     if (store.getters.getUser === null) {
+//       next({
+//         path: '/login',
+//       });
+//     } else {
+//       next();
+//     }
+//   } else if (to.matched.some((record) => record.meta.requiresVisitor)) {
+//     // this route requires auth, check if logged in
+//     // if not, redirect to login page.
+//     if (store.getters.getUser) {
+//       next({
+//         path: '/',
+//       });
+//     } else {
+//       next();
+//     }
+//   } else {
+//     next(); // make sure to always call next()!
+//   }
+// });
 
 export default router;

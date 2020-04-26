@@ -3,7 +3,7 @@
     <section class="people-name">
       <img src="../../assets/img/default_toped-26.jpg" alt="">
       <div class="name-status">
-        <h1>Shilfiya Amani</h1>
+        <h1>{{dataUser.name}}</h1>
         <p> <i class="fas fa-egg"></i> 0 points</p>
         <h1>Toko Points</h1>
       </div>
@@ -101,6 +101,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'editSideBar',
   data() {
@@ -109,7 +111,35 @@ export default {
       inbox: true,
       storeHide: true,
       prflHide: true,
+      dataUser: [],
+      local: null,
     };
+  },
+  created() {
+    this.local = localStorage.getItem('id');
+  },
+  computed: {
+    cardUser() {
+      return this.$store.state.forUser;
+    },
+  },
+  methods: {
+    getUserById() {
+      axios.get(`http://192.168.1.97:5000/api/arkapedia/user/${this.local}`)
+        // eslint-disable-next-line no-unused-vars
+        .then((res) => {
+          // eslint-disable-next-line no-unused-expressions
+          // resolve.res.data;
+          this.dataUser = res.data.user;
+          console.log(res.data.user);
+        })
+        // eslint-disable-next-line no-unused-vars
+        .catch((err) => {
+        });
+    },
+  },
+  mounted() {
+    this.getUserById();
   },
 };
 </script>

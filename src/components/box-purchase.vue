@@ -47,6 +47,74 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
+<<<<<<< HEAD
+/* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+=======
+>>>>>>> master
+    .mother-content{
+    display: flex;
+    padding-left: 50px;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    top: 150px;
+    width: auto;
+    }
+
+    .mother-first-chooise{
+    height: 50px;
+    position: relative;
+
+    }
+
+    .first-square{
+    width: 55%;
+    height: 200px;
+    position: relative;
+    border-top: 4px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    }
+
+    .img-box{
+    height: 80px;
+    width: auto;
+    position: relative;
+    top: 20px;
+    border: 3px solid brown;
+    left: 20px;
+    }
+
+    .price{
+    left: 150px;
+    position: relative;
+    top: -50px;
+    }
+
+    .text-name{
+    position: relative;
+    left: 150px;
+    top: -60px;
+    }
+
+    .mini-des{
+    left: 20px;
+    position: relative;
+    margin-top: -30px;
+    }
+
+    .del{
+    position: relative;
+    left: 520px;
+    }
+
+    .text-city{
+        position: relative;
+        top: 20px;
+        left: -57px;
+=======
   .mother-content{
   display: flex;
   /* padding-left: 50px; */
@@ -140,6 +208,8 @@ export default {
         left: 560px;
         font-weight: 700;
         color: rgb(3, 172, 14);
+<<<<<<< HEAD
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
     }
 /* Small devices (landscape phones, 576px and up) */
     @media (max-width: 576px) {
@@ -198,6 +268,8 @@ export default {
     .del{
     position: relative;
     left: 520px;
+=======
+>>>>>>> master
     }
 
     .text-city{
@@ -211,6 +283,11 @@ export default {
         position: relative;
         display: flex;
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
 
     .fa-trash{
         height: 20px;
@@ -267,4 +344,8 @@ export default {
         right: 10px;
         position: absolute;
     }
+<<<<<<< HEAD
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
+=======
+>>>>>>> master
 </style>
