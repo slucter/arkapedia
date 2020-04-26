@@ -26,7 +26,6 @@ export default {
     /* border */
     .second-square{
     height: 250px;
-    width: 100%;
     /* position: relative; */
     padding-top: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -53,12 +52,6 @@ export default {
         display: flex;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         cursor: pointer;
-    }
-
-    .container-side{
-    position: relative;
-    right: 70px;
-    top: -125px;
     }
 
     /* text on border */

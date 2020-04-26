@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="cart">
         <Navbar/>
     <div class="container">
         <div class="col-md-8">
@@ -24,7 +24,8 @@
     </div>
     </div>
     <div>
-        <Footer/></div>
+      </div>
+        <Footer/>
     </div>
 </template>
 
@@ -48,20 +49,19 @@ export default {
 </script>
 
 <style scoped>
-.content-card{
-    margin-top: 30px;
-}
-
-    .text-conten-card{
-        position: relative;
-        padding-left: 80px;
-        color: rgb(82, 86, 94);
-        font-weight: 800;
-        line-height: 1.5;
-        margin-bottom: 0px;
-        left: 50px;
-        width: 500px;
-    }
+  .content-card{
+      margin-top: 30px;
+  }
+  .text-conten-card{
+      position: relative;
+      padding-left: 80px;
+      color: rgb(82, 86, 94);
+      font-weight: 800;
+      line-height: 1.5;
+      margin-bottom: 0px;
+      left: 50px;
+      width: 500px;
+  }
 
     .text-conten-see{
         position: relative;
