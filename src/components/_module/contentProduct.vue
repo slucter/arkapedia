@@ -2,19 +2,15 @@
 <div>
   <div class="headerDescription">
     <div class="titleDescription">
-      <h5>Deskripsi Starter Pack HMNS Perfume isi 3 Varian Parfum (@5ml)</h5>
+      <h5>Deskripsi {{ name }} </h5>
     </div>
     <div class="bodyDescription">
-      <p>***MOHON DIPERHATIKAN SEBELUM MEMESAN***
-        Apabila ready stock pengiriman di proses paling lama 1 - 2 hari kerja setelah pemesanan,
-        hari Sabtu dan Minggu tidak ada pengiriman.
-        Apabila Pre - Order pesanan akan di proses disesuaikan dengan durasi Pre - Order masing2
-        item (bisa lebih cepat).
+      <p> {{ description }}
       </p>
     </div>
   </div>
 
-  <div class="noteStore">
+  <!-- <div class="noteStore">
     <div class="storeNote">
       <h3>CATATAN TOKO</h3>
     </div>
@@ -35,14 +31,14 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="reviewHeader">
     <div class="reviewTotal">
       <h3>ULASAN (1369)</h3>
     </div>
     <div class="reviewContent">
-      <h5>Starter Pack HMNS Perfume isi 3 Varian Parfum (@5ml)</h5>
+      <h5> {{ name }} </h5>
     </div>
   </div>
 
@@ -51,7 +47,7 @@
       <div class="ratingValue">
         <h1>4.9<span> /5</span></h1>
       </div>
-      <div class="starRating" >
+      <div class="starRating">
         <div class="ratingStar" v-for="star in 5" :key="star">
           <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/4ed9ea8f.svg" alt="">
         </div>
@@ -60,9 +56,9 @@
         <h6>(1369) Ulasan</h6>
       </div>
     </div>
-    <div>
+    <!-- <div>
       <h1>rating</h1>
-    </div>
+    </div> -->
   </div>
 
   <div class="allPhotoBuyer">
@@ -76,11 +72,11 @@
 
   <div class="imgBuyerHeader">
     <div class="imgBuyerSmall" v-for="img in 12" :key="img">
-      <img src="https://ecs7.tokopedia.net/img/cache/200-square/attachment/2020/4/15/inv/inv_421b25c6-edb7-49f1-a5a7-90f7e35467b1.jpg" alt="">
+      <img :src="image" alt="img-buyer">
     </div>
   </div>
 
-  <div class="helpBuyer">
+  <!-- <div class="helpBuyer">
     <h1>ULASAN PALING MEMBANTU</h1>
   </div>
 
@@ -114,21 +110,52 @@
         <p>Apakah ulasan ini membantu?</p>
       </div>
     </div>
-  </div>
+  </div> -->
   <div>
     <reviewProduct/>
+  </div>
+  <div>
+    <discussionProduct/>
+  </div>
+  <div>
+    <anotherProduct/>
+  </div>
+  <div>
+    <likeProduct/>
+  </div>
+  <div>
+    <buyProduct/>
+  </div>
+  <div>
+    <findProduct/>
   </div>
 </div>
 </template>
 
 <script>
+import likeProduct from './likeProduct.vue';
+import buyProduct from './buyProduct.vue';
+import findProduct from './findProduct.vue';
+import discussionProduct from './discussionProduct.vue';
+import anotherProduct from './anotherProduct.vue';
 import reviewProduct from './reviewProduct.vue';
 
 export default {
   name: 'contentProduct',
+  props: [
+    'name',
+    'description',
+    'image',
+  ],
   components: {
     reviewProduct,
+    discussionProduct,
+    anotherProduct,
+    likeProduct,
+    buyProduct,
+    findProduct,
   },
+
 };
 </script>
 
@@ -226,7 +253,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 32px 0 24px 24px;
+  padding: 32px 0 12px 24px;
   box-sizing: border-box;
   background: white;
 }
@@ -234,14 +261,17 @@ export default {
 .reviewTotal h3 {
   font-size: 16px;
   font-family: sans-serif;
-  font-weight: 700;
-  color: rgba(49, 53, 59, 0.96);
+  color: rgba(49, 53, 59, 0.68);
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 .reviewContent h5 {
   font-size: 14px;
   color: rgba(49, 53, 59, 0.96);
   font-weight: 400;
+  margin-top: 10px;
+  font-family: sans-serif;
 }
 
 .ratingHeader {
@@ -339,7 +369,6 @@ export default {
 
 .headerCardBuyer {
   width: 100%;
-  height: 500px;
   padding: 24px 24px;
 }
 

@@ -10,7 +10,7 @@
           <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/8b6c8c02.svg" alt="">
         </div>
         <div class="nameStore">
-          <h5>HMNS Perfume</h5>
+          <h5> {{name}} </h5>
         </div>
         <div class="storeRank">
           <img src="https://ecs7.tokopedia.net/img/repsys/gold-3.gif" alt="">
@@ -18,7 +18,7 @@
       </div>
       <div class="storeLocation">
         <div class="locationActive">
-          <h5>Jakarta Pusat</h5>
+          <h5> {{location}} </h5>
         </div>
         <div class="timeActive">
           <h5>Aktif 9 jam yang lalu</h5>
@@ -60,6 +60,10 @@
 <script>
 export default {
   name: 'navbarAddCart',
+  props: [
+    'name',
+    'location',
+  ],
 };
 </script>
 
@@ -70,7 +74,7 @@ export default {
   background: white;
   z-index: 999;
   position: fixed;
-  margin-top: 485px;
+  margin-top: 519px;
   padding: 8px 0px;
   display: flex;
   flex-direction: row;

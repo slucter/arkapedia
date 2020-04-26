@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss" scoped>
   .carousel{
-    margin: 120px 0 50px;
+    margin-bottom: 50px;
     max-height: 250px;
     overflow: hidden;
     border-radius: 20px;

@@ -7,26 +7,22 @@ Vue.use(Vuex);
 export default ({
   namespaced: true,
   state: {
-    productDetail: null,
-    products: [],
+    shopProducts: [],
     url: process.env.VUE_APP_BASE_URL,
   },
   mutations: {
-    product(state, data) {
-      state.products = data;
+    shop(state, data) {
+      state.shopProducts = data;
       console.log(data);
-    },
-    detail(state, data) {
-      state.productDetail = data;
     },
   },
   actions: {
-    getAllProducts(context) {
-      // console.log(context.state.url);
+    getAllProductsByShopId(context, id) {
       axios
-        .get(context.state.url + 'product') // eslint-disable-line
+        .get(context.state.url + 'product/shop/' + id) // eslint-disable-line
         .then((res) => {
-          context.commit('product', res.data.Products.rows);
+          context.commit('shop', res.data.product.rows);
+          // console.log(res.data.product.rows);
         })
         .catch((err) => {
           console.log(err);

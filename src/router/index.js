@@ -8,11 +8,14 @@ import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
 import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
+<<<<<<< HEAD
 import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
 import history from '../views/history.vue';
 import MyShop from '../views/OpenShop.vue';
 // import store from '../store/modules/user/index';
+=======
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
 
 Vue.use(VueRouter);
 
@@ -44,7 +47,7 @@ const routes = [
     component: profileStore,
   },
   {
-    path: '/detail/:id',
+    path: '/detail',
     name: 'Detail',
     component: Detail,
   },
@@ -59,6 +62,7 @@ const routes = [
     component: Login,
     // meta: { requiresVisitor: true },
   },
+<<<<<<< HEAD
   {
     path: '/shop/:id',
     name: 'Shop',
@@ -79,6 +83,8 @@ const routes = [
     name: 'my-shop',
     component: MyShop,
   },
+=======
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
 ];
 
 const router = new VueRouter({

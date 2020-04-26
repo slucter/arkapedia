@@ -21,11 +21,13 @@ export default {
 
 <style lang="scss" scoped>
   .button-categories{
+    overflow: hidden;
+    position: sticky;
     margin: 20px auto;
     top: 0;
     overflow: hidden;
     display: flex;
-    z-index: 2;
+    z-index: 99;
     padding: 0 5px;
   }
 </style>

@@ -42,13 +42,13 @@ export default {
     margin: 0 !important;
   }
   .card{
-    width: 200px;
-    height: 330px;
-    margin: 0 8px 16px;
+    width: 170px;
+    height: 300px;
+    margin: 0 4px 8px;
   }
   .card-img-top{
-    width: 200px;
-    height: 200px;
+    width: 170px;
+    height: 170px;
     background: #eaeaea;
   }
   .card-body{
