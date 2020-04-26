@@ -11,15 +11,6 @@
         <div class="one-price"><h3>Harga Satuan</h3>
         <p>Rp</p> <input type="text">
         </div>
-<<<<<<< HEAD
-        <div class="grocir-price">
-            <div class="ctrl-grp">
-                <h3>Harga Grosir</h3>
-                <p>Tambahkan harga grosir untuk pembelian produk dalam jumlah tertentu.</p>
-            </div>
-        </div>
-=======
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     </div>
 </template>
 

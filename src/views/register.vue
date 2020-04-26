@@ -173,20 +173,14 @@
           <p>© 2009-2020, PT Tokopedia | <router-link to="/help"> Bantuan </router-link></p>
       </div>
     </footer>
-<<<<<<< HEAD
-=======
 
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
   </div>
 </template>
 
 <script>
 import { required, email, minLength } from 'vuelidate/lib/validators';
 import NavbarLogin from '@/components/module/NavbarLogin.vue';
-<<<<<<< HEAD
-=======
 import axios from 'axios';
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 
 export default {
   data() {
@@ -195,23 +189,16 @@ export default {
       btnShow: 1,
       email: '',
       password: '',
-<<<<<<< HEAD
-      fullname: '',
-      code: 1,
-=======
       name: '',
       code: 1,
       alert: 0,
       msg: 0,
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     };
   },
   components: {
     NavbarLogin,
   },
   methods: {
-<<<<<<< HEAD
-=======
     register() {
       axios.post('http://192.168.1.97:5000/api/arkapedia/auth/signup', {
         email: this.email, name: this.name, password: this.password,
@@ -224,7 +211,6 @@ export default {
           console.log(err);
         });
     },
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     show() {
       this.type = 'text';
       this.btnShow = 2;
@@ -233,13 +219,6 @@ export default {
       this.type = 'password';
       this.btnShow = 1;
     },
-<<<<<<< HEAD
-    ubah() {
-      console.log(this.code);
-      // event.preventDefault();
-      if (this.code === 1) {
-        this.code = 0;
-=======
     closemodal() {
       this.msg = 0;
     },
@@ -260,7 +239,6 @@ export default {
           .catch(() => {
             this.msg = 1;
           });
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
       } else {
         this.code = 1;
       }
@@ -272,11 +250,7 @@ export default {
       required,
       email,
     },
-<<<<<<< HEAD
-    fullname: {
-=======
     name: {
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
       required,
       minLength: minLength(3),
     },
@@ -289,8 +263,6 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-=======
 /* Modal */
 .test{
   position: fixed;
@@ -389,7 +361,6 @@ export default {
   text-decoration: none;
   outline: none;
 }
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 /* Content */
 .container-register{
   display: flex;

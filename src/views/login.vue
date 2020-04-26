@@ -1,7 +1,5 @@
 <template>
   <div>
-<<<<<<< HEAD
-=======
     <div class="test" v-if="msg === 1">
       <div class="modal-msg">
         <div class="header-modal-msg">
@@ -30,7 +28,6 @@
         </div>
       </div>
     </div>
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     <NavbarLogin/>
     <div class="background-login">
       <div>
@@ -42,57 +39,6 @@
             </div>
             <section>
               <div>
-<<<<<<< HEAD
-                <div class="form-email">
-                  <label for="email">Email</label>
-                  <div class="form-input">
-                    <input
-                    v-model.trim="$v.email.$model"
-                    type="email"
-                    id="email">
-                    <div class="error-msg">
-                      <p class="default-msg" v-if="!$v.email.required || $v.email.email">
-                      Contoh: email@tokopedia.com</p>
-                      <p class="error-email" v-if="!$v.email.email">Format Email Salah!</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-email">
-                  <label for="password">Kata Sandi</label>
-                  <div class="form-input">
-                    <input
-                    v-model.trim="$v.password.$model"
-                    :type="type"
-                    id="password">
-                    <i class="material-icons" id="on" @click="show"
-                    v-if="btnShow === 1">visibility</i>
-                    <i class="material-icons" id="off" @click="hide"
-                    v-if="btnShow !== 1" >visibility_off</i>
-                    <div class="error-msg">
-                      <p
-                      v-if="!$v.password.minLength"
-                      class="error-password-msg">Password Minimum 6 Karakter</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="user-checkbox">
-                  <div class="forgot">
-                    <router-link to="/forgot">Lupa Kata Sandi?</router-link>
-                  </div>
-                  <input type="checkbox" id="checkbox">
-                  <label for="checkbox">Ingat Saya</label>
-                </div>
-                <div class="button">
-                  <button
-                  @click="login"
-                  v-if="$v.password.minLength && $v.email.email && $v.email.required
-                  && $v.password.required"
-                  class="green-button">Masuk</button>
-                  <button
-                  v-if="!$v.email.email || !$v.email.required
-                  || !$v.password.required || !$v.password.minLength"
-                  class="default-button">Masuk</button>
-=======
                 <div v-if="response === 1">
                   <div class="form-email">
                     <label for="email">Email</label>
@@ -165,7 +111,6 @@
                     || !$v.password.required || !$v.password.minLength"
                     class="default-button">Masuk</button>
                   </div>
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
                 </div>
               </div>
             </section>
@@ -195,45 +140,25 @@
 
 <script>
 import { required, email, minLength } from 'vuelidate/lib/validators';
-<<<<<<< HEAD
-=======
 import Axios from 'axios';
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 import NavbarLogin from '../components/module/NavbarLogin.vue';
 
 export default {
   data() {
     return {
-<<<<<<< HEAD
-=======
       response: 1,
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
       type: 'password',
       btnShow: 1,
       email: '',
       password: '',
-<<<<<<< HEAD
-=======
       error: '',
       checkpass: '',
       msg: 0,
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     };
   },
   components: {
     NavbarLogin,
   },
-<<<<<<< HEAD
-  methods: {
-    show() {
-      if (this.type === 'password') {
-        this.type = 'text';
-        this.btnShow = 2;
-      } else if (this.type === 'text') {
-        this.type = 'password';
-        this.btnShow = 1;
-      }
-=======
   beforeCreate() {
     Axios.patch(`http://192.168.1.97:5000/api/arkapedia/user/activation?token=${this.$route.query.token}`)
       .then((res) => {
@@ -269,16 +194,11 @@ export default {
     show() {
       this.type = 'text';
       this.btnShow = 2;
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     },
     hide() {
       this.type = 'password';
       this.btnShow = 1;
     },
-<<<<<<< HEAD
-    login(event) {
-      event.preventDefault();
-=======
     login() {
       Axios.post('http://192.168.1.97:5000/api/arkapedia/auth/signin', {
         email: this.email, password: this.password,
@@ -300,7 +220,6 @@ export default {
         .catch((err) => {
           console.log(err);
         });
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     },
   },
   validations: {
@@ -317,15 +236,6 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-.background-login{
-  background: url('../assets/img/download.svg') center no-repeat;
-  height: 568px;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  position: relative;
-=======
 /* Modal */
 .test{
   position: fixed;
@@ -408,7 +318,6 @@ export default {
   position: relative;
   margin-top: 16px;
   padding-top: 16px;
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 }
 .form-login{
   border-radius: 9px;
@@ -452,8 +361,6 @@ export default {
 .form-input{
   position: relative;
 }
-<<<<<<< HEAD
-=======
 .email-user {
   margin-bottom: 16px;
   font-size: 14px;
@@ -463,7 +370,6 @@ export default {
   color: #42b549;
   cursor: pointer;
 }
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 .form-input input{
   box-sizing: border-box;
   width: 100%;
@@ -479,11 +385,7 @@ export default {
 .error-msg{
   position: relative;
   height: 14px;
-<<<<<<< HEAD
-  margin-bottom: 5px;
-=======
   margin-bottom: 13px;
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 }
 .error-password-msg{
   color: #d50000;
@@ -614,10 +516,7 @@ export default {
   text-align: center;
   margin: 64px 0 10px 0;
   font-size: 15px;
-<<<<<<< HEAD
-=======
   /* top: 50px; */
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 }
 .footer a{
   text-decoration: none;

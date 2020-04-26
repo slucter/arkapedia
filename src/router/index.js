@@ -10,7 +10,7 @@ import Cart from '../views/Cart.vue';
 import Login from '../views/login.vue';
 import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
-import history from '../views/history.vue'
+import history from '../views/history.vue';
 
 Vue.use(VueRouter);
 
