@@ -10,7 +10,11 @@ import Cart from '../views/Cart.vue';
 import Login from '../views/login.vue';
 import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
+<<<<<<< HEAD
+import Shipment from '../views/ShipAndPay.vue';
+=======
 import history from '../views/history.vue';
+>>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
 
 Vue.use(VueRouter);
 
@@ -66,9 +70,15 @@ const routes = [
     component: Register,
   },
   {
+<<<<<<< HEAD
+    path: '/shipment',
+    name: 'shipment',
+    component: Shipment,
+=======
     path: '/history',
     name: 'history',
     component: history,
+>>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
   },
 ];
 
