@@ -14,7 +14,8 @@
           <p>kamu hanya dapat mengubah nama 1 kali lagi. Pastikan nama sudah benar</p>
           <div class="form-group">
             <label for="name" class="lbl-nm">Nama</label>
-            <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="name"
+            aria-describedby="emailHelp" :value="$store.state.nama">
             <p>Nama dapat dilihat oleh pengguna lainnya</p>
           </div>
         </div>

@@ -7,7 +7,7 @@
         <p>0 Follower</p>
       </div>
       <section class="edit-profile">
-        <button class="btn-edit-profile">Edit Profile</button>
+        <router-link to="edit" class="btn-edit-profile">Edit Profile</router-link>
       </section>
     </div>
   </div>
@@ -70,9 +70,14 @@ export default {
     margin: 12px 0px;
   }
   .btn-edit-profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 40px;
     width: 256px;
     border-radius: 8px;
     border: 1px solid #E5E7E9;
+    text-decoration: none;
+    color: rgba(0,0,0,0.56);
   }
 </style>

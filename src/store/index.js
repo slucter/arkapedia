@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
+import user from './modules/user';
+import product from './modules/product';
 
 Vue.use(Vuex);
 
@@ -25,5 +27,9 @@ export const store = new Vuex.Store({
           console.log(error);
         });
     },
+  },
+  modules: {
+    user,
+    product,
   },
 });

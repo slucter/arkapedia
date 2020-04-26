@@ -4,7 +4,13 @@ import Dashboard from '../views/Dashboard.vue';
 import Profile from '../views/profile.vue';
 import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
+import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
+import checkout from '../views/checkout.vue';
+import Login from '../views/login.vue';
+import Shop from '../views/Shop.vue';
+import Register from '../views/register.vue';
+import history from '../views/history.vue';
 
 Vue.use(VueRouter);
 
@@ -30,9 +36,39 @@ const routes = [
     component: addProduct,
   },
   {
-    path: '/detail',
+    path: '/profileStore',
+    name: 'profileStore',
+    component: profileStore,
+  },
+  {
+    path: '/detail/:id',
     name: 'Detail',
     component: Detail,
+  },
+  {
+    path: '/checkout',
+    name: 'checkout',
+    component: checkout,
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login,
+  },
+  {
+    path: '/shop/:id',
+    name: 'Shop',
+    component: Shop,
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register,
+  },
+  {
+    path: '/history',
+    name: 'history',
+    component: history,
   },
 ];
 

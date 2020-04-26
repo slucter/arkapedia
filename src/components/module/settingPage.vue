@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 <template>
   <div class="profile-setting-pages">
     <div class="img-profile">
@@ -9,14 +10,19 @@
             <p>Ekstensi file yang diperbolehkan: .JPG .JPEG .PNG</p>
         </div>
       </div>
-      <button class="btn-chg"> <i class="fas fa-key"></i> <p>Ubah Kata Sandi</p></button>
-      <button class="btn-chg"> <i class="fas fa-lock"></i> <p> Tokopedia</p></button>
+      <button class="btn-chg" data-toggle="modal" data-target="#editPwd">
+        <i class="fas fa-key"></i>
+        <p>Ubah Kata Sandi</p></button>
+        <editPwd/>
+      <button class="btn-chg">
+        <i class="fas fa-lock"></i>
+        <p> Pin Tokopedia</p></button>
     </div>
     <div class="form-profile">
       <section class="span1"><h3><b>Ubah biodata diri</b></h3></section>
       <section class="span2">
         <div  class="span3">Nama</div>
-        <div class="span4">Shilfiya Amani</div>
+        <div class="span4">{{nama}}</div>
         <div class="span5" data-toggle="modal" data-target="#editName">Ubah</div>
         <editName/>
       </section>
@@ -40,7 +46,8 @@
         <div class="span3">Nomor Hp</div>
         <div class="span4">083812909066</div>
         <div class="verified">Terverikasi <i class="fas fa-check"></i></div>
-        <div class="span5">Ubah</div>
+        <div class="span5" data-toggle="modal" data-target="#editNumb">Ubah</div>
+        <editNumb/>
       </section>
     </div>
   </div>
@@ -50,6 +57,8 @@
 import editName from '../base/editName.vue';
 import editDateBirth from '../base/editDateBirth.vue';
 import editEmail from '../base/editEmail.vue';
+import editPwd from '../base/editPwd.vue';
+import editNumb from '../base/editNumb.vue';
 
 export default {
   name: 'settingPage',
@@ -57,6 +66,14 @@ export default {
     editName,
     editDateBirth,
     editEmail,
+    editPwd,
+    editNumb,
+  },
+  computed: {
+    nama() {
+      return this.$store.state.nama;
+      // eslint-disable-next-line no-unreachable
+    },
   },
 };
 </script>
