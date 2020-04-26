@@ -7,6 +7,7 @@ Vue.use(Vuex);
 export default ({
   namespaced: true,
   state: {
+    productDetail: null,
     products: [],
     url: process.env.VUE_APP_BASE_URL,
   },
@@ -14,6 +15,9 @@ export default ({
     product(state, data) {
       state.products = data;
       // console.log(data);
+    },
+    detail(state, data) {
+      state.productDetail = data;
     },
   },
   actions: {

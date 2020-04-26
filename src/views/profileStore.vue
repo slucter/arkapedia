@@ -1,6 +1,8 @@
 <template>
     <div class="container-profile-store">
-        <Navbar/>
+        <Navbar @Catclick3="ClickCategory" @CartClick3="ClickCart" />
+        <Submenu_ />
+        <CartSubmenu_ />
         <div class="store-alert">
             <img src="../assets/img/warn.svg" alt="">
             <h1><b>Toko Anda belum aktif</b></h1>
@@ -80,21 +82,36 @@
 
 <script>
 import Navbar from '../components/Navbar/Navbar.vue';
+import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
+import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
 
 export default {
   name: 'profileStore',
   components: {
     Navbar,
+    Submenu_,
+    CartSubmenu_,
+  },
+  methods: {
+    ClickCategory() {
+      const submenu = document.querySelector('.submenu-category');
+      submenu.classList.toggle('subcat-show');
+    },
+
+    ClickCart() {
+      const subCartLayer = document.querySelector('.submenu-icon-group');
+      subCartLayer.classList.toggle('submenuCartShow');
+      const cartIcon = document.querySelector('.submenu-cart-icon');
+      cartIcon.classList.toggle('SubCartTop');
+    },
+    slider() {
+      console.log(this.coba);
+    },
   },
   data() {
     return {
       coba: 0,
     };
-  },
-  methods: {
-    slider() {
-      console.log(this.coba);
-    },
   },
 };
 </script>
