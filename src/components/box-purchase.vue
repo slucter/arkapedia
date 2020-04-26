@@ -47,30 +47,29 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-    .mother-content{
-    display: flex;
-    /* padding-left: 50px; */
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    width: 100%;
-    z-index: 2;
-    }
+  .mother-content{
+  display: flex;
+  /* padding-left: 50px; */
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  }
 
-    .mini-des{
-        cursor: pointer;
-        line-height: 1.4;
-        color: rgb(3, 172, 14);
-        font-size: 14px;
-        font-weight: bold;
-        top: 10px;
-    }
+  .mini-des{
+    cursor: pointer;
+    line-height: 1.4;
+    color: rgb(3, 172, 14);
+    font-size: 14px;
+    font-weight: bold;
+    top: 10px;
+  }
 
-    .fc{
-       cursor: pointer;
-       color: rgb(159, 166, 176);
-    }
+  .fc{
+    cursor: pointer;
+    color: rgb(159, 166, 176);
+  }
 
     .king-trop{
         width: 15px;
@@ -141,17 +140,18 @@ export default {
         left: 560px;
         font-weight: 700;
         color: rgb(3, 172, 14);
-=======
+    }
 /* Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) {
-    .mother-content{
-    display: flex;
-    padding-left: 50px;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    top: 150px;
-    width: auto;
+    @media (max-width: 576px) {
+      .mother-content{
+      display: flex;
+      padding-left: 50px;
+      flex-direction: column;
+      justify-content: space-around;
+      position: relative;
+      top: 150px;
+      width: auto;
+      }
     }
 
     .mother-first-chooise{
@@ -161,7 +161,6 @@ export default {
     }
 
     .first-square{
-    width: 55%;
     height: 200px;
     position: relative;
     border-top: 4px solid rgba(0, 0, 0, 0.1);
@@ -212,85 +211,6 @@ export default {
         position: relative;
         display: flex;
     }
-     }
-
-
-    .mother-content{
-    display: flex;
-    padding-left: 50px;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    top: 150px;
-    width: auto;
-    }
-
-    .mother-first-chooise{
-    height: 50px;
-    position: relative;
-
-    }
-
-    .first-square{
-    width: 55%;
-    height: 200px;
-    position: relative;
-    border-top: 4px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
-    padding-top: 10px;
-    }
-
-    .img-box{
-    height: 80px;
-    width: auto;
-    position: relative;
-    top: 20px;
-    border: 3px solid brown;
-    left: 20px;
-    }
-
-    .price{
-    left: 150px;
-    position: relative;
-    top: -50px;
-    }
-
-    .text-name{
-    position: relative;
-    left: 150px;
-    top: -60px;
-    }
-
-    .mini-des{
-    left: 20px;
-    position: relative;
-    margin-top: -30px;
-    }
-
-    .del{
-    position: relative;
-    left: 520px;
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
-    }
-
-    .text-city{
-        position: relative;
-        top: 20px;
-<<<<<<< HEAD
-        left: -70px;
-        font-size: 12px;
-        color: rgb(159, 166, 176);
-=======
-        left: -57px;
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
-    }
-
-    #third-chooise{
-        top: 65px;
-        position: relative;
-        display: flex;
-    }
-<<<<<<< HEAD
 
     .fa-trash{
         height: 20px;
@@ -347,6 +267,4 @@ export default {
         right: 10px;
         position: absolute;
     }
-=======
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 </style>
