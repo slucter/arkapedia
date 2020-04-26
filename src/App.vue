@@ -1,16 +1,12 @@
 <template>
-<<<<<<< HEAD
 <div>
-  <div class="navbar" v-if="items">
-  <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
-    <Submenu_ />
-    <CartSubmenu_ />
-  </div>
+    <div class="navbar" v-if="items">
+    <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
+      <Submenu_ />
+      <CartSubmenu_ />
+    </div>
 <router-view></router-view>
 </div>
-=======
-  <router-view></router-view>
->>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
 </template>
 
 <script>
@@ -20,7 +16,6 @@ import CartSubmenu_ from './components/Navbar/Submenu/CartSubmenu.vue';
 
 export default {
   name: 'App',
-<<<<<<< HEAD
   data() {
     return {
       items: [],
@@ -49,8 +44,6 @@ export default {
     this.items = localStorage.getItem('items');
   },
 
-=======
->>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
 };
 </script>
 
