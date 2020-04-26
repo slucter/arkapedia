@@ -94,15 +94,9 @@ export default {
         .catch((err) => {
         });
     },
-<<<<<<< HEAD
-<<<<<<< HEAD
   },
   mounted() {
     this.getUserById();
-=======
->>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
-=======
->>>>>>> master
   },
 };
 </script>

@@ -47,172 +47,6 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-<<<<<<< HEAD
-/* Small devices (landscape phones, 576px and up) */
-    @media (min-width: 576px) {
-=======
->>>>>>> master
-    .mother-content{
-    display: flex;
-    padding-left: 50px;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    top: 150px;
-    width: auto;
-    }
-
-    .mother-first-chooise{
-    height: 50px;
-    position: relative;
-
-    }
-
-    .first-square{
-    width: 55%;
-    height: 200px;
-    position: relative;
-    border-top: 4px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
-    padding-top: 10px;
-    }
-
-    .img-box{
-    height: 80px;
-    width: auto;
-    position: relative;
-    top: 20px;
-    border: 3px solid brown;
-    left: 20px;
-    }
-
-    .price{
-    left: 150px;
-    position: relative;
-    top: -50px;
-    }
-
-    .text-name{
-    position: relative;
-    left: 150px;
-    top: -60px;
-    }
-
-    .mini-des{
-    left: 20px;
-    position: relative;
-    margin-top: -30px;
-    }
-
-    .del{
-    position: relative;
-    left: 520px;
-    }
-
-    .text-city{
-        position: relative;
-        top: 20px;
-        left: -57px;
-=======
-  .mother-content{
-  display: flex;
-  /* padding-left: 50px; */
-  flex-direction: column;
-  justify-content: space-around;
-  position: relative;
-  width: 100%;
-  z-index: 2;
-  }
-
-  .mini-des{
-    cursor: pointer;
-    line-height: 1.4;
-    color: rgb(3, 172, 14);
-    font-size: 14px;
-    font-weight: bold;
-    top: 10px;
-  }
-
-  .fc{
-    cursor: pointer;
-    color: rgb(159, 166, 176);
-  }
-
-    .king-trop{
-        width: 15px;
-        height: 15px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-        bottom: 2px;
-        position: relative;
-    }
-
-    .ict{
-        font-size: 16px;
-        font-weight: 700;
-        color: rgb(49, 53, 59);
-        cursor: pointer;
-        text-decoration: none;
-    }
-
-    .first-square{
-        width: 100%;
-        height: 230px;
-        position: relative;
-        border-top: 4px solid rgba(0, 0, 0, 0.1);
-        border-bottom: 4px solid rgba(0, 0, 0, 0.1);
-        padding-top: 10px;
-    }
-
-    .img-box{
-        height: 70px;
-        width: auto;
-        position: relative;
-        top: 20px;
-        left: 20px;
-        outline: none;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-        border-radius: 6px;
-    }
-
-    .price{
-        left: 150px;
-        position: relative;
-        top: -50px;
-        font-weight: bold;
-        color: rgb(250, 89, 29);
-        }
-
-    .text-name{
-        position: relative;
-        left: 150px;
-        top: -50px;
-        font-size: 14;
-        font-weight: 700;
-        color: rgb(49, 53, 59);
-        text-decoration: none;
-    }
-
-    .mini-des{
-        left: 20px;
-        position: relative;
-        margin-top: -30px;
-    }
-
-    .del{
-        position: relative;
-        left: 560px;
-        font-weight: 700;
-        color: rgb(3, 172, 14);
-<<<<<<< HEAD
->>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
-    }
-/* Small devices (landscape phones, 576px and up) */
-    @media (max-width: 576px) {
       .mother-content{
       display: flex;
       padding-left: 50px;
@@ -222,7 +56,7 @@ export default {
       top: 150px;
       width: auto;
       }
-    }
+
 
     .mother-first-chooise{
     height: 50px;
@@ -268,8 +102,6 @@ export default {
     .del{
     position: relative;
     left: 520px;
-=======
->>>>>>> master
     }
 
     .text-city{
@@ -283,12 +115,6 @@ export default {
         position: relative;
         display: flex;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
-
     .fa-trash{
         height: 20px;
         width: 20px;
@@ -344,8 +170,4 @@ export default {
         right: 10px;
         position: absolute;
     }
-<<<<<<< HEAD
->>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
-=======
->>>>>>> master
 </style>
