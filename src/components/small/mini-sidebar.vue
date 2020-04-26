@@ -8,7 +8,7 @@
     <div class="text-on-sis">Beli(1)</div>
     </div>
     <div>
-    <div class="border-in-side" @click="$emit('addModal')" data-toggle="modal"
+    <div class="border-in-side" data-toggle="modal"
     data-target=".bd-example-modal-lg">
      <div class="voucher">
          <img class="voucher-gbr" src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/1c511130.png">
@@ -18,7 +18,8 @@
      <div class="border-in-bis"></div>
      <div class="text-in-bbis"> 2 Kupon </div>
      </div>
-       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+       <div class="modal fade bd-example-modal-lg" id="#bd-example-modal-lg"
+       tabindex="-1" role="dialog"
        aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -47,11 +48,6 @@
 <script>
 export default {
   name: 'Minis',
-  methods: {
-    open() {
-      document.querySelector('.modal-add').classList.toggle('modal');
-    },
-  },
 };
 </script>
 

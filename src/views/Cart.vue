@@ -1,11 +1,13 @@
 <template>
     <div>
         <Navbar/>
-    <div>
-        <Purchase/>
-    </div>
-    <div>
-        <Minis/>
+    <div class="container">
+        <div class="col-md-8">
+            <Purchase/>
+        </div>
+        <div class="col-md-4">
+            <Minis/>
+        </div>
     </div>
     <div class="content-card">
     <div class="text-conten-card">Terakhir Dilihat
@@ -13,7 +15,7 @@
 
     </div>
     <div>
-    <div class="container">
+    <div class="card-list">
     <div class="row" v-for="row in 20" :key="row.id" >
         <div class="col">
             <Card/>
@@ -27,11 +29,11 @@
 </template>
 
 <script>
-import Footer from '../components/small/footer.vue';
-import Purchase from '../components/small/box-purchase.vue';
-import Navbar from '../components/small/navbar.vue';
-import Minis from '../components/small/mini-sidebar.vue';
-import Card from '../components/small/card.vue';
+import Footer from '../components/footer.vue';
+import Purchase from '../components/box-purchase.vue';
+import Navbar from '../components/Navbar/Navbar.vue';
+import Minis from '../components/mini-sidebar.vue';
+import Card from '../components/card.vue';
 
 export default {
   name: 'Cart',
@@ -46,6 +48,10 @@ export default {
 </script>
 
 <style scoped>
+.content-card{
+    margin-top: 30px;
+}
+
     .text-conten-card{
         position: relative;
         padding-left: 80px;
@@ -59,7 +65,7 @@ export default {
 
     .text-conten-see{
         position: relative;
-        left: 850px;
+        left: 748px;
         color: rgb(3, 172, 14);
         text-decoration: none;
         padding: 0px;
@@ -67,10 +73,23 @@ export default {
         width: 300px;
         cursor: pointer;
     }
-    .container{
+    .card-list{
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        justify-content: center;
+    }
+
+    .col-md-4{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .container{
+        padding-top: 150px;
+        max-width: 1300px;
+        display: flex;
     }
 
 </style>
