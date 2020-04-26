@@ -13,7 +13,7 @@ export default ({
   mutations: {
     product(state, data) {
       state.products = data;
-      console.log(data);
+      // console.log(data);
     },
   },
   actions: {
@@ -23,6 +23,7 @@ export default ({
         .get(context.state.url + 'product') // eslint-disable-line
         .then((res) => {
           context.commit('product', res.data.Products.rows);
+          // console.log(res);
         })
         .catch((err) => {
           console.log(err);
