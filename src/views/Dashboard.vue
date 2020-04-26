@@ -1,10 +1,4 @@
 <template>
-<<<<<<< HEAD
-<div>
-  <div class="dashboard">
-    <div class="special-categories">
-      <SpecialCategory />
-=======
   <div>
     <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
     <Submenu_ />
@@ -32,7 +26,6 @@
           <CardProductRow />
       </div>
       </div>
->>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
     </div>
     <Footer />
   </div>
@@ -44,8 +37,6 @@ import ButtonCategories from '@/components/templates/ButtonCategories.vue';
 import CardProductRow from '@/components/templates/CardProductRow.vue';
 import CardCategories from '@/components/templates/CardCategories.vue';
 import SpecialCategory from '@/components/SpecialCategory.vue';
-<<<<<<< HEAD
-=======
 import Carousel from '@/components/Carousel.vue';
 import CardDiscountRow from '@/components/templates/CardDiscountRow.vue';
 import PromoRow from '../components/templates/PromoRow.vue';
@@ -53,7 +44,6 @@ import Footer from '../components/small/footer.vue';
 import Navbar_ from '../components/Navbar/Navbar.vue';
 import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
 import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
->>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
 
 export default {
   name: 'Home',
@@ -62,8 +52,6 @@ export default {
     CardProductRow,
     CardCategories,
     SpecialCategory,
-<<<<<<< HEAD
-=======
     Navbar_,
     Carousel,
     CardDiscountRow,
@@ -86,7 +74,6 @@ export default {
       const cartIcon = document.querySelector('.submenu-cart-icon');
       cartIcon.classList.toggle('SubCartTop');
     },
->>>>>>> 35f4913b24c297c53b3fb69b34cc3c26c1b5234f
   },
 };
 </script>

@@ -104,16 +104,14 @@ export default {
       const cartIcon = document.querySelector('.submenu-cart-icon');
       cartIcon.classList.toggle('SubCartTop');
     },
+    slider() {
+      console.log(this.coba);
+    },
   },
   data() {
     return {
       coba: 0,
     };
-  },
-  methods: {
-    slider() {
-      console.log(this.coba);
-    },
   },
 };
 </script>

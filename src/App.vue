@@ -1,9 +1,9 @@
 <template>
 <div>
     <div class="navbar" v-if="items">
-    <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
-      <Submenu_ />
-      <CartSubmenu_ />
+        <Navbar_ @Catclick3="ClickCategory" @CartClick3="ClickCart"/>
+        <Submenu_ />
+        <CartSubmenu_ />
     </div>
 <router-view></router-view>
 </div>
