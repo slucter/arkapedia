@@ -8,21 +8,12 @@ import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
 import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
-<<<<<<< HEAD
 import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
 import history from '../views/history.vue';
 import editProduct from '../views/EditProduct.vue';
-=======
-<<<<<<< HEAD
-import Shop from '../views/Shop.vue';
-import Register from '../views/register.vue';
-import history from '../views/history.vue';
 import MyShop from '../views/OpenShop.vue';
 // import store from '../store/modules/user/index';
-=======
->>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
->>>>>>> 38dd64817dd8bdbd15a4ea27a677eefab97cab35
 
 Vue.use(VueRouter);
 
@@ -69,10 +60,6 @@ const routes = [
     component: Login,
     // meta: { requiresVisitor: true },
   },
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 38dd64817dd8bdbd15a4ea27a677eefab97cab35
   {
     path: '/shop/:id',
     name: 'Shop',
@@ -89,19 +76,15 @@ const routes = [
     component: history,
   },
   {
-<<<<<<< HEAD
     path: '/editproduct/:id',
     name: 'editProduct',
     component: editProduct,
   },
-=======
+  {
     path: '/my-shop',
     name: 'my-shop',
     component: MyShop,
   },
-=======
->>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
->>>>>>> 38dd64817dd8bdbd15a4ea27a677eefab97cab35
 ];
 
 const router = new VueRouter({
