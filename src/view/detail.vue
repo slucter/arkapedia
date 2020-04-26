@@ -60,6 +60,11 @@ export default {
     contentProduct,
     // typeList,
   },
+  computed: {
+    getProduct() {
+      return this.$store.state.product;
+    },
+  },
 };
 </script>
 
@@ -96,6 +101,7 @@ export default {
   height: 466px;
   object-fit: cover;
   border-radius: 10px;
+  cursor: crosshair;
 }
 
 .imgCard {

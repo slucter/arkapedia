@@ -42,7 +42,18 @@
         <h3>Stok Tersedia</h3>
       </div>
       <div class="pcsProduct">
-        <h3>Min. pembelian 1pcs.</h3>
+        <div>
+          <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/23c5d449.svg" alt="">
+        </div>
+        <div class="pcsValueProduct">
+          <input type="text">
+        </div>
+        <div>
+          <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/1a4a7fe0.svg" alt="">
+        </div>
+        <div class="minPcsProduct">
+          <p>Min. pembelian 1pcs</p>
+        </div>
       </div>
       <div class="noteProduct">
         <h3>Tulis catatan untuk penjual</h3>
@@ -104,8 +115,20 @@
     <div class="shippingProduct">
       <h3>ONGKOS KIRIM</h3>
     </div>
-    <div class="shippingPlace">
-      <h3>Ke Jakarta Barat, Cengkareng</h3>
+      <div class="shippingPlace">
+        <!-- <h3>Ke Jakarta Barat, Cengkareng</h3> -->
+        <h3>Ke</h3>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
     </div>
     <div class="shippingStart">
       <h3>Mulai dari Rp9.000</h3>
@@ -223,7 +246,7 @@ export default {
 .productTotal {
   display: flex;
   flex-direction: row;
-  background: turquoise;
+  background: white;
   padding: 20px 0;
 }
 
@@ -241,7 +264,7 @@ export default {
 }
 
 .productStatus {
-  background: whitesmoke;
+  background: white;
   margin: 0 0 0 14px;
 }
 
@@ -250,14 +273,37 @@ export default {
   background: white;
 }
 
-.pcsProduct h3 {
+.pcsProduct {
+  display: flex;
+}
+
+.pcsValueProduct input {
+  width: 65px;
+  height: 24px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+}
+
+.minPcsProduct {
+  height: 17px;
+  width: 125px;
+}
+
+.minPcsProduct p {
   font-size: 12px;
+  font-family: sans-serif;
+  margin: 0px;
+  margin: 5px 0 0 10px;
 }
 
 .noteProduct h3 {
   font-size: 12px;
   color: rgb(66, 181, 73);
   font-weight: bolder;
+  margin: 10px 0 0 0;
+  cursor: pointer;
 }
 
 .productInfo {
@@ -320,7 +366,7 @@ export default {
 .productShipping {
   display: flex;
   flex-direction: row;
-  background: royalblue;
+  background: white;
   padding: 20px 0;
 }
 
@@ -334,13 +380,32 @@ export default {
 }
 
 .shippingPlace {
+  display: flex;
+  flex-direction: row;
   padding: 0 0 0 12px;
 }
 
 .shippingPlace h3 {
-  background: saddlebrown;
+  background: white;
   color: rgba(0,0,0,.54);
   font-size: 12px;
+}
+
+.dropdown {
+  width: 158px;
+  height: 18px;
+  margin: 0 10px;
+}
+
+.btn-secondary {
+  width: 158px;
+  height: 18px;
+  font-size: 12px;
+  padding: 0;
+  background: white;
+  color: black;
+  font-weight: 700;
+  border: none;
 }
 
 .shippingStart {
@@ -349,7 +414,7 @@ export default {
 
 .shippingStart h3 {
   color: rgba(0,0,0,.54);
-  background: silver;
+  background: white;
   font-size: 12px;
 }
 </style>

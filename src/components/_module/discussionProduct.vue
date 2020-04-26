@@ -103,9 +103,10 @@ export default {
 }
 
 .titleDiscussion h3 {
-  font-size: 16px;
-  font-weight: 700;
   font-family: sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .productDiscussion h3 {
