@@ -1,6 +1,7 @@
 <template>
     <div class="nav-logow">
         <img src="../../../assets/img/logo-tokped.svg" alt="logow">
+        <!-- <a href="#">Arkapedia</a> -->
     </div>
 </template>
 

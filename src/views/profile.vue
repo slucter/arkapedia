@@ -17,10 +17,10 @@
 
 <script>
 import Navbar_ from '../components/Navbar/Navbar.vue';
-import cardProfile from '../components/base/cardProfile.vue';
-import shareProduct from '../components/base/shareProduct.vue';
 import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
 import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
+import cardProfile from '../components/base/cardProfile.vue';
+import shareProduct from '../components/base/shareProduct.vue';
 
 export default {
   name: 'profile',

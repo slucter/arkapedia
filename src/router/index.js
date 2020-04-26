@@ -9,6 +9,7 @@ import Detail from '../view/detail.vue';
 import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
 import Register from '../views/register.vue';
+import Shipment from '../views/ShipAndPay.vue';
 
 Vue.use(VueRouter);
 
@@ -57,6 +58,11 @@ const routes = [
     path: '/register',
     name: 'register',
     component: Register,
+  },
+  {
+    path: '/shipment',
+    name: 'shipment',
+    component: Shipment,
   },
 ];
 
