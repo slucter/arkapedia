@@ -25,11 +25,9 @@ export default {
 <style scoped>
     /* border */
     .second-square{
-    width: 30%;
     height: 250px;
-    position: relative;
+    /* position: relative; */
     padding-top: 10px;
-    left: 900px ;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     padding-left: 20px;
     display: flex;
@@ -54,12 +52,6 @@ export default {
         display: flex;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         cursor: pointer;
-    }
-
-    .container-side{
-    position: relative;
-    right: 70px;
-    top: -125px;
     }
 
     /* text on border */

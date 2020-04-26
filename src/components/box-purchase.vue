@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 /* Small devices (landscape phones, 576px and up) */
     @media (min-width: 576px) {
     .mother-content{
@@ -110,24 +111,113 @@ export default {
         position: relative;
         top: 20px;
         left: -57px;
-    }
+=======
+  .mother-content{
+  display: flex;
+  /* padding-left: 50px; */
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  }
 
-    #third-chooise{
-        top: 65px;
+  .mini-des{
+    cursor: pointer;
+    line-height: 1.4;
+    color: rgb(3, 172, 14);
+    font-size: 14px;
+    font-weight: bold;
+    top: 10px;
+  }
+
+  .fc{
+    cursor: pointer;
+    color: rgb(159, 166, 176);
+  }
+
+    .king-trop{
+        width: 15px;
+        height: 15px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        bottom: 2px;
         position: relative;
-        display: flex;
     }
-     }
 
+    .ict{
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(49, 53, 59);
+        cursor: pointer;
+        text-decoration: none;
+    }
 
-    .mother-content{
-    display: flex;
-    padding-left: 50px;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    top: 150px;
-    width: auto;
+    .first-square{
+        width: 100%;
+        height: 230px;
+        position: relative;
+        border-top: 4px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+        padding-top: 10px;
+    }
+
+    .img-box{
+        height: 70px;
+        width: auto;
+        position: relative;
+        top: 20px;
+        left: 20px;
+        outline: none;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        border-radius: 6px;
+    }
+
+    .price{
+        left: 150px;
+        position: relative;
+        top: -50px;
+        font-weight: bold;
+        color: rgb(250, 89, 29);
+        }
+
+    .text-name{
+        position: relative;
+        left: 150px;
+        top: -50px;
+        font-size: 14;
+        font-weight: 700;
+        color: rgb(49, 53, 59);
+        text-decoration: none;
+    }
+
+    .mini-des{
+        left: 20px;
+        position: relative;
+        margin-top: -30px;
+    }
+
+    .del{
+        position: relative;
+        left: 560px;
+        font-weight: 700;
+        color: rgb(3, 172, 14);
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
+    }
+/* Small devices (landscape phones, 576px and up) */
+    @media (max-width: 576px) {
+      .mother-content{
+      display: flex;
+      padding-left: 50px;
+      flex-direction: column;
+      justify-content: space-around;
+      position: relative;
+      top: 150px;
+      width: auto;
+      }
     }
 
     .mother-first-chooise{
@@ -137,7 +227,6 @@ export default {
     }
 
     .first-square{
-    width: 55%;
     height: 200px;
     position: relative;
     border-top: 4px solid rgba(0, 0, 0, 0.1);
@@ -188,4 +277,63 @@ export default {
         position: relative;
         display: flex;
     }
+<<<<<<< HEAD
+=======
+
+    .fa-trash{
+        height: 20px;
+        width: 20px;
+        right: 150px;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .fa-heart{
+        height: 20px;
+        width: 20px;
+        right: 195px;
+        position: absolute;
+        cursor: pointer;
+    }
+
+    .input-text-qty-text{
+        box-shadow: none !important;
+        outline: none !important;
+        border-left: none !important;
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid rgb(224, 224, 224) !important;
+        padding: 1px !important;
+        border-radius: 0px !important;
+        margin: 0px !important;
+        text-align: center !important;
+        width: 80px;
+        cursor: text !important;
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+    }
+
+    .fa-minus-circle{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background-size: 20px 20px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        right: 110px;
+        position: absolute;
+    }
+
+    .fa-plus-circle{
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background-size: 20px 20px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        right: 10px;
+        position: absolute;
+    }
+>>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
 </style>

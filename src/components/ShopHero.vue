@@ -10,9 +10,9 @@
             <p>Kab. Bekasi</p>
           </div>
           <div class="button-hero">
-            <button class="btn btn-sm btn-success">Satu</button>
-            <button class="btn btn-sm btn-success">Dua</button>
-            <button class="btn btn-sm btn-light">Tiga</button>
+            <button class="btn btn-sm btn-success">Follow</button>
+            <button class="btn btn-sm btn-success">Chat Penjual</button>
+            <button class="btn btn-sm btn-light">Info Toko</button>
             <button class="icon">
               <i class="fas fa-clipboard-list"></i>
             </button>
@@ -83,12 +83,14 @@ export default {
     height: 100px;
     margin-right: 16px;
     border-radius: 50%;
-    padding-bottom: 50px;
+    background-color: saddlebrown;
+    // padding-bottom: 50px;
   }
   .btn-sm{
     margin-right: 1em;
-    padding: 3px 20px;
+    padding: 5px 20px;
     font-weight: 600;
+    font-size: 12px;
   }
   .icon{
     padding: 1px 10px;

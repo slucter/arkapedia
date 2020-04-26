@@ -6,7 +6,7 @@ import editProfile from '../views/editProfile.vue';
 import addProduct from '../views/addProduct.vue';
 import profileStore from '../views/profileStore.vue';
 import Detail from '../view/detail.vue';
-import Cart from '../views/Cart.vue';
+import checkout from '../views/checkout.vue';
 import Login from '../views/login.vue';
 import Shop from '../views/Shop.vue';
 import Register from '../views/register.vue';
@@ -42,14 +42,14 @@ const routes = [
     component: profileStore,
   },
   {
-    path: '/detail/:id',
+    path: '/detail',
     name: 'Detail',
     component: Detail,
   },
   {
-    path: '/Cart',
-    name: 'Cart',
-    component: Cart,
+    path: '/checkout',
+    name: 'checkout',
+    component: checkout,
   },
   {
     path: '/login',
