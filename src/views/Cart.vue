@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="cart">
         <Navbar/>
     <div class="container">
         <div class="col-md-8">
@@ -24,16 +24,17 @@
     </div>
     </div>
     <div>
-        <Footer/></div>
+      </div>
+        <Footer/>
     </div>
 </template>
 
 <script>
-import Footer from '../components/footer.vue';
-import Purchase from '../components/box-purchase.vue';
+import Footer from '../components/small/footer.vue';
+import Purchase from '../components/small/box-purchase.vue';
 import Navbar from '../components/Navbar/Navbar.vue';
-import Minis from '../components/mini-sidebar.vue';
-import Card from '../components/card.vue';
+import Minis from '../components/small/mini-sidebar.vue';
+import Card from '../components/small/card.vue';
 
 export default {
   name: 'Cart',
@@ -48,20 +49,19 @@ export default {
 </script>
 
 <style scoped>
-.content-card{
-    margin-top: 30px;
-}
-
-    .text-conten-card{
-        position: relative;
-        padding-left: 80px;
-        color: rgb(82, 86, 94);
-        font-weight: 800;
-        line-height: 1.5;
-        margin-bottom: 0px;
-        left: 50px;
-        width: 500px;
-    }
+  .content-card{
+      margin-top: 30px;
+  }
+  .text-conten-card{
+      position: relative;
+      padding-left: 80px;
+      color: rgb(82, 86, 94);
+      font-weight: 800;
+      line-height: 1.5;
+      margin-bottom: 0px;
+      left: 50px;
+      width: 500px;
+  }
 
     .text-conten-see{
         position: relative;
