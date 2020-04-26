@@ -4,22 +4,27 @@
     <Submenu_ />
     <CartSubmenu_ />
     <div class="dashboard">
-      <div class="container">
+      <div class="container row">
         <Navbar_ />
-        <div class="carousel">
-          <Carousel />
+        <div class="col-md-3">
+          <SideInfo />
         </div>
-        <div class="special-categories">
-          <SpecialCategory />
-        </div>
-        <CardDiscountRow />
-        <ButtonCategories />
-        <div class="card-categories">
-          <h2>Paling Banyak Dicari</h2>
-          <CardCategories />
-        </div>
-        <PromoRow />
-        <CardProductRow />
+        <div class="col-md-9">
+          <div class="carousel">
+            <Carousel />
+          </div>
+          <div class="special-categories">
+            <SpecialCategory />
+          </div>
+          <CardDiscountRow />
+          <ButtonCategories />
+          <div class="card-categories">
+            <h2>Paling Banyak Dicari</h2>
+            <CardCategories />
+          </div>
+          <PromoRow />
+          <CardProductRow />
+      </div>
       </div>
     </div>
     <Footer />
@@ -27,6 +32,7 @@
 </template>
 
 <script>
+import SideInfo from '@/components/templates/SideInfo.vue';
 import ButtonCategories from '@/components/templates/ButtonCategories.vue';
 import CardProductRow from '@/components/templates/CardProductRow.vue';
 import CardCategories from '@/components/templates/CardCategories.vue';
@@ -52,6 +58,7 @@ export default {
     PromoRow,
     Footer,
     Submenu_,
+    SideInfo,
     CartSubmenu_,
   },
   methods: {
@@ -74,6 +81,10 @@ export default {
 <style lang="scss" scoped>
   .dashboard{
     margin: 50px auto;
+  }
+  .container{
+    padding-top: 100px;
+    margin: 0 auto;
   }
   .special-categories, .carousel{
     padding: 0 5px;

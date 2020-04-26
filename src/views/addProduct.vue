@@ -1,5 +1,5 @@
 <template>
-  <div class="container-add-product">
+  <form @submit="addProduct" class="container-add-product">
     <navbar_/>
     <div class="warn-add">
       <h1 class="ttl-div">Tambah Produk</h1>
@@ -20,7 +20,7 @@
           <div class="uplo" v-for="uplo in 5" :key="uplo"></div>
         </div>
         <div class="footer-upload">
-          <input type="file" class="pick-files">
+          <input type="file" class="pick-files" ref="file" @change="upload">
           <p>atau tarik dan letakkan hingga 5 gambar sekaligus di sini</p>
         </div>
       </div>
@@ -59,11 +59,12 @@
     <div class="hero-btn">
       <button class="btn-cncl">Batal</button>
       <button class="btn-sv">Simpan</button>
-  </div>
-  </div>
+    </div>
+  </form>
 </template>
 
 <script>
+import axios from 'axios';
 import navbar_ from '../components/Navbar/Navbar.vue';
 import descriptionProduct from '../components/subAddProduct/descriptionProduct.vue';
 import priceProduct from '../components/subAddProduct/priceProduct.vue';
@@ -81,6 +82,8 @@ export default {
   },
   data() {
     return {
+      image: null,
+      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3NDgwNDc2fQ.-9y7SYyPAMQXLgB15VzlxkWLOMnP6MNcl7nIj9sZXBg',
       product: {
         name: null,
         description: null,
@@ -98,6 +101,61 @@ export default {
     };
   },
   methods: {
+    upload() {
+      const file = this.$refs.file.files[0];
+      this.image = file;
+    },
+    addProduct(event) {
+      event.preventDefault();
+      const formData = new FormData();
+      formData.append('image1', this.image);
+      axios
+        .post('http://localhost:5000/api/arkapedia/admin/image', formData,
+          { headers: { 'baca-bismillah': this.token } })
+        .then((data) => {
+          console.log(data.data.images.id);
+          // const inputs = new FormData();
+          // inputs.append('name', this.product.name);
+          // inputs.append('description', this.product.description);
+          // inputs.append('price', this.product.price);
+          // inputs.append('discount', this.product.discount);
+          // inputs.append('quantity', this.product.quantity);
+          // inputs.append('weight', this.product.weight);
+          // inputs.append('rating', this.product.rating);
+          // inputs.append('condition', this.product.condition);
+          // inputs.append('imageId', data.id);
+          // inputs.append('categoryId', this.product.categoryId);
+          // inputs.append('shopId', 1);
+          // inputs.append('tagId', this.product.tagId);
+          setTimeout(() => {
+            axios
+              .post('http://localhost:5000/api/arkapedia/admin/product', {
+                name: this.product.name,
+                description: this.product.description,
+                price: this.product.price,
+                discount: this.product.discount,
+                quantity: this.product.quantity,
+                weight: this.product.weight,
+                rating: this.product.rating,
+                condition: this.product.condition,
+                imageId: data.data.images.id,
+                categoryId: this.product.categoryId,
+                shopId: 1,
+                tagId: this.product.tagId,
+              },
+              { headers: { 'baca-bismillah': this.token } })
+              .then((data1) => {
+                console.log(data1);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          }, 3000);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
     inputWeight(e) {
       this.product.weight = e;
     },

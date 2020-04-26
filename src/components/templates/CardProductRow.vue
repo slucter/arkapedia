@@ -1,19 +1,33 @@
 <template>
   <div class="card-product-row">
-    <CardProduct v-for="data in products" :key="data.id"
-    :name="data.name" :price="data.price" :image="data.image.image1"
-    :location="data.shop.location" :id="`detail/${data.id}`" />
+    <div class="before-login" v-if="isLogin">
+      <CardProduct v-for="data in products" :key="data.id"
+      :name="data.name" :price="data.price" :image="data.image.image1"
+      :location="data.shop.location" :id="`detail/${data.id}`" />
+    </div>
+    <div class="after-login" v-else>
+      <CardProductLogin v-for="data in products" :key="data.id"
+      :name="data.name" :price="data.price" :image="data.image.image1"
+      :location="data.shop.location" :id="`detail/${data.id}`" />
+    </div>
   </div>
 </template>
 
 <script>
 import CardProduct from '@/components/CardProduct.vue';
+import CardProductLogin from '@/components/CardProductLogin.vue';
 import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'CardProductRow',
   components: {
     CardProduct,
+    CardProductLogin,
+  },
+  data() {
+    return {
+      isLogin: false,
+    };
   },
   methods: {
     ...mapActions('product', ['getAllProducts']),
@@ -28,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .card-product-row{
+  .card-product-row .before-login, .card-product-row .after-login{
     display: flex;
     flex-wrap: wrap;
     margin: 20px auto;
