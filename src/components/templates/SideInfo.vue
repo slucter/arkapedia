@@ -3,7 +3,7 @@
     <section class="people-name">
       <img src="../../assets/img/default_toped-26.jpg" alt="">
       <div class="name-status">
-        <h1>Shilfiya Amani</h1>
+        <h1>{{ name }}</h1>
         <p> <i class="fas fa-egg"></i> 0 points</p>
         <h1>Toko Points</h1>
       </div>
@@ -38,6 +38,9 @@
 <script>
 export default {
   name: 'editSideBar',
+  props: [
+    'name',
+  ],
   data() {
     return {
       purchase: true,

@@ -4,10 +4,10 @@
     <Submenu_ />
     <CartSubmenu_ />
     <div class="dashboard">
-      <div class="container row">
+      <div class="container row" v-if="id">
         <Navbar_ />
         <div class="col-md-3">
-          <SideInfo />
+          <SideInfo :name="user.name" />
         </div>
         <div class="col-md-9">
           <div class="carousel">
@@ -24,7 +24,26 @@
           </div>
           <PromoRow />
           <CardProductRow />
+        </div>
       </div>
+      <div class="container row" v-else>
+        <Navbar_ />
+        <div class="col-md-12">
+          <div class="carousel">
+            <Carousel />
+          </div>
+          <div class="special-categories">
+            <SpecialCategory />
+          </div>
+          <CardDiscountRow />
+          <ButtonCategories />
+          <div class="card-categories">
+            <h2>Paling Banyak Dicari</h2>
+            <CardCategories />
+          </div>
+          <PromoRow />
+          <CardProductRow />
+        </div>
       </div>
     </div>
     <Footer />
@@ -32,6 +51,7 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex';
 import SideInfo from '@/components/templates/SideInfo.vue';
 import ButtonCategories from '@/components/templates/ButtonCategories.vue';
 import CardProductRow from '@/components/templates/CardProductRow.vue';
@@ -61,7 +81,24 @@ export default {
     SideInfo,
     CartSubmenu_,
   },
+  data() {
+    return {
+      id: null,
+    };
+  },
+  computed: {
+    ...mapState('user', ['user']),
+  },
+  created() {
+    this.id = localStorage.getItem('id');
+    this.getUserId();
+  },
+  mounted() {
+    this.getUserById();
+  },
   methods: {
+    ...mapActions('user', ['getUserById']),
+    ...mapActions('user', ['getUserId']),
     ClickCategory() {
       const submenu = document.querySelector('.submenu-category');
       submenu.classList.toggle('subcat-show');

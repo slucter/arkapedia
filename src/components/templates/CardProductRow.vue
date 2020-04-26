@@ -1,6 +1,6 @@
 <template>
   <div class="card-product-row">
-    <div class="before-login" v-if="isLogin">
+    <div class="before-login" v-if="!id">
       <CardProduct v-for="data in products" :key="data.id"
       :name="data.name" :price="data.price" :image="data.image.image1"
       :location="data.shop.location" :id="`detail/${data.id}`" />
@@ -26,8 +26,11 @@ export default {
   },
   data() {
     return {
-      isLogin: false,
+      id: null,
     };
+  },
+  created() {
+    this.id = localStorage.getItem('id');
   },
   methods: {
     ...mapActions('product', ['getAllProducts']),

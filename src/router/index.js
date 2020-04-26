@@ -54,7 +54,7 @@ const routes = [
     component: profileStore,
   },
   {
-    path: '/detail',
+    path: '/detail/:id',
     name: 'Detail',
     component: Detail,
   },

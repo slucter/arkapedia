@@ -50,7 +50,7 @@ export default {
   }
   .image-promo{
     // background-color: #eaeaea;
-    height: 170px;
+    height: 190px;
     display: flex;
   }
   .intro-promo{
