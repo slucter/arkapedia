@@ -46,7 +46,7 @@
           <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/23c5d449.svg" alt="">
         </div>
         <div class="pcsValueProduct">
-          <input type="text">
+          <input type="number">
         </div>
         <div>
           <img src="https://ecs7.tokopedia.net/assets-tokopedia-lite/v2/zeus/production/1a4a7fe0.svg" alt="">
@@ -284,6 +284,7 @@ export default {
   border-left: none;
   border-right: none;
   text-align: center;
+  outline: none;
 }
 
 .minPcsProduct {
