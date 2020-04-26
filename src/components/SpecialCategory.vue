@@ -1,16 +1,16 @@
 <template>
   <div class="card">
     <div class="card-wrapper">
-      <div class="card-body">
+      <div class="card-body mr-3">
         <h2>Kategori Pilihan</h2>
         <div class="card-category">
-          <div class="category"></div>
-          <div class="category"></div>
-          <div class="category"></div>
-          <div class="category"></div>
+          <div class="category cat1"></div>
+          <div class="category cat2"></div>
+          <div class="category cat3"></div>
+          <div class="category cat4"></div>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body ml-3">
         <h2>Top Up & Tagihan</h2>
         <div class="card-topup">
           <ul class="nav nav-tabs">
@@ -54,15 +54,11 @@
     <div class="button-category">
       <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
       <button><div class="icon"><i class="fas fa-star"></i></div>Semua Promo</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
-      <button><div class="icon"><i class="fas fa-star"></i></div>Belanja</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Redam COVID-19</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Kesehatan</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Dapur</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Emas</button>
+      <button><div class="icon"><i class="fas fa-star"></i></div>Handphone & Tablet</button>
     </div>
   </div>
 </template>
@@ -75,7 +71,6 @@ export default {
 
 <style scoped lang="scss">
   .card{
-    margin-top: 200px;
     width: 100%;
     padding: 16px 24px;
     border-radius: 8px;
@@ -108,24 +103,46 @@ export default {
   .category{
     width: 120px;
     height: 120px;
-    background: fuchsia;
     margin: 2px 8px;
     border-radius: 6px;
+    border: 1px solid #eaeaea;
+  }
+  .cat1{
+    background-image: url('https://ecs7.tokopedia.net/img/cache/200-square/attachment/2018/8/12/3127195/3127195_303a071e-1231-4595-b703-129d156b08ae.jpg.webp');
+    background-position: center center;
+    background-size: contain;
+  }
+  .cat2{
+    background-image: url('https://ecs7.tokopedia.net/img/cache/200-square/attachment/2018/8/11/3127195/3127195_be5cd482-7d5c-407a-b6e5-3a755d78aa04.jpg.webp');
+    background-position: center center;
+    background-size: contain;
+  }
+  .cat3{
+    background-image: url('https://ecs7.tokopedia.net/img/cache/200-square/attachment/2018/8/12/3127195/3127195_fbca6601-21a7-43e2-b92c-73f05103a6c5.jpg.webp');
+    background-position: center center;
+    background-size: contain;
+  }
+  .cat4{
+    background-image: url('https://ecs7.tokopedia.net/img/cache/200-square/attachment/2018/8/11/3127195/3127195_d4d021b8-b5db-4992-8862-0162c4b71552.jpg.webp');
+    background-position: center center;
+    background-size: contain;
   }
   .button-category{
     margin-top: 24px;
     overflow: hidden;
-    display: flex;
-    flex-direction: row;
+    height: 40px;
+    display: inline-block;
+    width: 100%;
   }
   .button-category button{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     padding: 6px 12px;
     margin-right: 8px;
     background: transparent;
     border-radius: 16px;
     border: 1px solid #eaeaea;
+    height: 38px;
   }
   .icon{
     margin-right: 8px;

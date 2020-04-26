@@ -19,15 +19,22 @@ export default {
 </script>
 
 <style scoped>
+.subcat-show{
+   visibility: visible!important;
+   top: 90px!important;
+   transition: .3s;
+}
 .submenu-category{
+    transition: .1s;
     width:100%;
     display: flex;
+    visibility: hidden;
     background-color: #fff;
     flex-direction: column;
     position: fixed;
-    top:110px;
+    top:180px;
     z-index: 100;
-    transition: .5s;
+    /* transition: .5s; */
 }
 .submenu-category-slide{
     top: 110px!important;

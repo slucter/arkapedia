@@ -1,12 +1,14 @@
 <template>
+  <router-link to="/">
     <div class="nav-logow">
-        <img src="../../../assets/img/logo-tokped.svg" alt="logow">
+      <img src="../../../assets/img/logo-tokped.svg" alt="logow">
     </div>
+  </router-link>
 </template>
 
 <script>
 export default {
-  name: '_Logo.vue',
+  name: 'Logo_',
 };
 </script>
 
@@ -20,7 +22,7 @@ export default {
     justify-content: center;
 }
 .nav-logow img{
-    width: 65%;
+    width: 100%;
     height: 55%;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <nav>
         <NavTop />
-        <NavCenter />
+        <NavCenter @Catclick2="$emit('Catclick3')" @CartClick2="$emit('CartClick3')" />
     </nav>
 </template>
 
@@ -24,7 +24,7 @@ nav{
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
-    height: 110px;
+    height: 90px;
     box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.2);
     position: fixed;
     z-index: 100;
