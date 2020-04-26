@@ -67,7 +67,8 @@
                       <div class="notif-none">
                           <h1>Toko Anda Belum Memiliki Produk</h1>
                           <p>Yuk isi tokomu dengan produk unggulan</p>
-                          <router-link to="add" class="add-product">Tambah Produk</router-link>
+                          <router-link to="1/addProduct" class="add-product">
+                          Tambah Produk</router-link>
                       </div>
                   </div>
               </div>

@@ -58,10 +58,7 @@ import editName from '../base/editName.vue';
 import editDateBirth from '../base/editDateBirth.vue';
 import editEmail from '../base/editEmail.vue';
 import editPwd from '../base/editPwd.vue';
-<<<<<<< HEAD
-=======
 import editNumb from '../base/editNumb.vue';
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 
 export default {
   name: 'settingPage',
@@ -70,8 +67,6 @@ export default {
     editDateBirth,
     editEmail,
     editPwd,
-<<<<<<< HEAD
-=======
     editNumb,
   },
   computed: {
@@ -79,7 +74,6 @@ export default {
       return this.$store.state.nama;
       // eslint-disable-next-line no-unreachable
     },
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
   },
 };
 </script>

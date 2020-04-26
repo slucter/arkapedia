@@ -31,17 +31,22 @@ const routes = [
     component: editProfile,
   },
   {
-    path: '/add',
+    path: '/profileStore/:id/addProduct',
     name: 'addProduct',
     component: addProduct,
   },
   {
-    path: '/profileStore',
+    path: '/profileStore/:id',
     name: 'profileStore',
     component: profileStore,
   },
   {
     path: '/detail/:id',
+    name: 'Detail',
+    component: Detail,
+  },
+  {
+    path: '/shop/detail/:id',
     name: 'Detail',
     component: Detail,
   },
