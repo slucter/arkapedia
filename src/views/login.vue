@@ -1,5 +1,36 @@
 <template>
   <div>
+<<<<<<< HEAD
+=======
+    <div class="test" v-if="msg === 1">
+      <div class="modal-msg">
+        <div class="header-modal-msg">
+          <h2>Email Belum Terdaftar</h2>
+        </div>
+        <div class="content-modal-msg">
+          <p>Lanjut masuk dengan email ini <br> {{email}}?</p>
+        </div>
+        <div class="button-modal-msg">
+          <button @click="closemodal" class="ubah-modal">Ubah</button>
+          <router-link to="/register" class="masuk-modal">Ya,Daftar</router-link>
+        </div>
+      </div>
+    </div>
+    <div class="test" v-if="msg === 2">
+      <div class="modal-msg">
+        <div class="header-modal-msg">
+          <h2>Email Belum Di Aktivasi</h2>
+        </div>
+        <div class="content-modal-msg">
+          <p>Aktivasi email ini Telebih Dahulu <br> {{email}}</p>
+        </div>
+        <div class="button-modal-msg">
+          <button @click="closemodal" class="ubah-modal">Ubah</button>
+          <a href="https://mail.google.com/mail/u/" class="masuk-modal">Email</a>
+        </div>
+      </div>
+    </div>
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     <NavbarLogin/>
     <div class="background-login">
       <div>
@@ -11,6 +42,7 @@
             </div>
             <section>
               <div>
+<<<<<<< HEAD
                 <div class="form-email">
                   <label for="email">Email</label>
                   <div class="form-input">
@@ -60,6 +92,80 @@
                   v-if="!$v.email.email || !$v.email.required
                   || !$v.password.required || !$v.password.minLength"
                   class="default-button">Masuk</button>
+=======
+                <div v-if="response === 1">
+                  <div class="form-email">
+                    <label for="email">Email</label>
+                    <div class="form-input">
+                      <input
+                      v-model.trim="$v.email.$model"
+                      type="email"
+                      id="email">
+                      <div class="error-msg">
+                        <p class="default-msg" v-if="!$v.email.required || $v.email.email">
+                        Contoh: email@tokopedia.com</p>
+                        <p class="error-email" v-if="!$v.email.email">Format Email Salah!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="button">
+                    <button
+                    @click="selanjutnya"
+                    class="green-button"
+                    v-if="$v.email.email && $v.email.required">Selanjutnya</button>
+                    <button
+                    class="default-button"
+                    v-if="!$v.email.email || !$v.email.required">Selanjutnya</button>
+                  </div>
+                </div>
+                <div v-if="response !== 1">
+                  <div class="form-email">
+                    <label for="email">Email</label>
+                    <div class="form-input">
+                      <p class="email-user">{{email}}
+                        <span @click="ubah">Ubah</span></p>
+                    </div>
+                  </div>
+                  <div class="form-email">
+                    <label for="password">Kata Sandi</label>
+                    <div class="form-input">
+                      <input
+                      v-model.trim="$v.password.$model"
+                      :type="type"
+                      id="password">
+                      <i class="material-icons" id="on" @click="show"
+                      v-if="btnShow === 1">visibility</i>
+                      <i class="material-icons" id="off" @click="hide"
+                      v-if="btnShow !== 1" >visibility_off</i>
+                      <div class="error-msg">
+                        <p
+                        v-if="!$v.password.minLength"
+                        class="error-password-msg">Password Minimum 6 Karakter</p>
+                        <p
+                        v-if="checkpass === false"
+                        class="error-password-msg">Kata sandi yang Anda masukkan kurang tepat</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="user-checkbox">
+                    <div class="forgot">
+                      <router-link to="/forgot">Lupa Kata Sandi?</router-link>
+                    </div>
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">Ingat Saya</label>
+                  </div>
+                  <div class="button">
+                    <button
+                    @click="login"
+                    v-if="$v.password.minLength && $v.email.email && $v.email.required
+                    && $v.password.required"
+                    class="green-button">Masuk</button>
+                    <button
+                    v-if="!$v.email.email || !$v.email.required
+                    || !$v.password.required || !$v.password.minLength"
+                    class="default-button">Masuk</button>
+                  </div>
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
                 </div>
               </div>
             </section>
@@ -89,20 +195,35 @@
 
 <script>
 import { required, email, minLength } from 'vuelidate/lib/validators';
+<<<<<<< HEAD
+=======
+import Axios from 'axios';
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 import NavbarLogin from '../components/module/NavbarLogin.vue';
 
 export default {
   data() {
     return {
+<<<<<<< HEAD
+=======
+      response: 1,
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
       type: 'password',
       btnShow: 1,
       email: '',
       password: '',
+<<<<<<< HEAD
+=======
+      error: '',
+      checkpass: '',
+      msg: 0,
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     };
   },
   components: {
     NavbarLogin,
   },
+<<<<<<< HEAD
   methods: {
     show() {
       if (this.type === 'password') {
@@ -112,13 +233,74 @@ export default {
         this.type = 'password';
         this.btnShow = 1;
       }
+=======
+  beforeCreate() {
+    Axios.patch(`http://192.168.1.97:5000/api/arkapedia/user/activation?token=${this.$route.query.token}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+  methods: {
+    closemodal() {
+      this.msg = 0;
+    },
+    selanjutnya() {
+      Axios.post('http://192.168.1.97:5000/api/arkapedia/checkUser', {
+        email: this.email,
+      })
+        .then((res) => {
+          console.log(res);
+          if (res.data.status === 0) {
+            this.response = 0;
+          } else {
+            this.msg = 1;
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+    ubah() {
+      this.response = 1;
+    },
+    show() {
+      this.type = 'text';
+      this.btnShow = 2;
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     },
     hide() {
       this.type = 'password';
       this.btnShow = 1;
     },
+<<<<<<< HEAD
     login(event) {
       event.preventDefault();
+=======
+    login() {
+      Axios.post('http://192.168.1.97:5000/api/arkapedia/auth/signin', {
+        email: this.email, password: this.password,
+      })
+        .then((res) => {
+          console.log(res);
+          if (res.data.isActive === 0) {
+            this.msg = 2;
+          }
+          if (res.data.status === 0) {
+            this.checkpass = false;
+          }
+          if (res.data.token) {
+            localStorage.token = res.data.token;
+            localStorage.id = res.data.user;
+            this.$router.replace('/');
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
     },
   },
   validations: {
@@ -135,6 +317,7 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 .background-login{
   background: url('../assets/img/download.svg') center no-repeat;
   height: 568px;
@@ -142,6 +325,90 @@ export default {
   display: flex;
   justify-content: center;
   position: relative;
+=======
+/* Modal */
+.test{
+  position: fixed;
+  width: 100vw!important;
+  height: 100vh!important;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.4);;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-msg{
+  border-radius: 10px;
+  background: white;
+  width: 420px;
+  height: 208px;
+}
+.header-modal-msg{
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
+  text-align: center;
+}
+.header-modal-msg h2{
+  font-weight: 800;
+  font-size: 18px;
+  color: rgba(49,53,59,.96);
+  margin-bottom: 10px;
+}
+.content-modal-msg{
+  padding: 0 0 24px;
+  text-align: center;
+}
+.content-modal-msg p{
+  font-size: 14px;
+  color: rgba(0,0,0,.54);
+}
+.button-modal-msg{
+  display: flex;
+  justify-content: center;
+}
+.button-modal-msg button{
+  margin: 0 4px;
+  width: 158px;
+  height: 44px;
+}
+.button-modal-msg a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 4px;
+  width: 158px;
+  height: 44px;
+  position: relative;
+  text-decoration: none;
+}
+.ubah-modal{
+  background: #fff;
+  color: rgba(0,0,0,.54);
+  border: 1px solid rgba(0,0,0,.12);
+  font-weight: 600;
+  border-radius: 3px;
+  outline: none;
+}
+.masuk-modal{
+  color: #fff;
+  background: #42b549;
+  border: 1px solid #42b549;
+  font-weight: 600;
+  border-radius: 3px;
+  outline: none;
+}
+/*  */
+.background-login{
+  background: url('../assets/img/download.svg') center no-repeat;
+  height: 600px;
+  width: 1349;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 16px;
+  padding-top: 16px;
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 }
 .form-login{
   border-radius: 9px;
@@ -185,6 +452,18 @@ export default {
 .form-input{
   position: relative;
 }
+<<<<<<< HEAD
+=======
+.email-user {
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: rgba(0,0,0,.7);
+}
+.email-user span{
+  color: #42b549;
+  cursor: pointer;
+}
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 .form-input input{
   box-sizing: border-box;
   width: 100%;
@@ -200,7 +479,11 @@ export default {
 .error-msg{
   position: relative;
   height: 14px;
+<<<<<<< HEAD
   margin-bottom: 5px;
+=======
+  margin-bottom: 13px;
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 }
 .error-password-msg{
   color: #d50000;
@@ -331,6 +614,10 @@ export default {
   text-align: center;
   margin: 64px 0 10px 0;
   font-size: 15px;
+<<<<<<< HEAD
+=======
+  /* top: 50px; */
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 }
 .footer a{
   text-decoration: none;

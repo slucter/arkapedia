@@ -24,6 +24,7 @@
             v-on:input="searchText = $event.target.value">
           </textarea>
         </div>
+<<<<<<< HEAD
         <div class="product-nam">
           <div class="ctrl-grp">
             <h3>Video Produk</h3>
@@ -31,6 +32,8 @@
           </div>
           <button class="btn-vid"> + Tambah Video</button>
         </div>
+=======
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
  </div>
 </template>
 

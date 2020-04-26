@@ -1,3 +1,4 @@
+/* eslint-disable no-unreachable */
 <template>
   <div class="profile-setting-pages">
     <div class="img-profile">
@@ -21,7 +22,7 @@
       <section class="span1"><h3><b>Ubah biodata diri</b></h3></section>
       <section class="span2">
         <div  class="span3">Nama</div>
-        <div class="span4">Shilfiya Amani</div>
+        <div class="span4">{{nama}}</div>
         <div class="span5" data-toggle="modal" data-target="#editName">Ubah</div>
         <editName/>
       </section>
@@ -45,7 +46,8 @@
         <div class="span3">Nomor Hp</div>
         <div class="span4">083812909066</div>
         <div class="verified">Terverikasi <i class="fas fa-check"></i></div>
-        <div class="span5">Ubah</div>
+        <div class="span5" data-toggle="modal" data-target="#editNumb">Ubah</div>
+        <editNumb/>
       </section>
     </div>
   </div>
@@ -56,6 +58,10 @@ import editName from '../base/editName.vue';
 import editDateBirth from '../base/editDateBirth.vue';
 import editEmail from '../base/editEmail.vue';
 import editPwd from '../base/editPwd.vue';
+<<<<<<< HEAD
+=======
+import editNumb from '../base/editNumb.vue';
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 
 export default {
   name: 'settingPage',
@@ -64,6 +70,16 @@ export default {
     editDateBirth,
     editEmail,
     editPwd,
+<<<<<<< HEAD
+=======
+    editNumb,
+  },
+  computed: {
+    nama() {
+      return this.$store.state.nama;
+      // eslint-disable-next-line no-unreachable
+    },
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
   },
 };
 </script>

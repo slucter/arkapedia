@@ -58,7 +58,7 @@ export default {
     .footer-new{
         position: relative;
         border-top: 4px solid rgba(0, 0, 0, 0.1);
-        margin-top: 50px;
+        margin-top: 270px;
         height: 100vh;
         width: 100%;
         margin-bottom: 20px;
@@ -66,7 +66,6 @@ export default {
         display: flex;
         border-bottom: 4px solid rgba(0, 0, 0, 0.1);
         justify-content: space-around;
-        box-shadow: 0 1px 6px 0 rgba(49,53,59,0.12);
     }
 
     .parent-footer-text-two{
@@ -79,16 +78,15 @@ export default {
     .parent-footer-text-one{
         display: flex;
         flex-direction: column;
-        position: relative;
-        left: -100px;
-        justify-content: space-around;
+        position: absolute;
+        left: 100px;
     }
 
     .parent-footer-text-three{
          display: flex;
         flex-direction: column;
         top: 207px;
-        right: 820px;
+        right: 805px;
         position: absolute;
     }
 
@@ -97,21 +95,5 @@ export default {
         flex-direction: column;
         right: 500px;
         position: absolute;
-    }
-
-    footer {
-        clear: both;
-    }
-
-    a:hover{
-        color: #03AC0E;
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    a{
-        color: rgba(0,0,0,.54);
-        font-size: 13px !important;
-        font-weight: 600;
     }
 </style>

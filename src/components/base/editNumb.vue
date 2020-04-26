@@ -1,7 +1,7 @@
 <template>
   <div class="container-modal">
     <!-- Modal -->
-    <div class="modal fade" id="editName" tabindex="-1" role="dialog"
+    <div class="modal fade" id="editNumb" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -10,13 +10,12 @@
           <span aria-hidden="true">&times;</span>
         </button>
         <div class="modal-body">
-          <h3>Ubah Nama</h3>
-          <p>kamu hanya dapat mengubah nama 1 kali lagi. Pastikan nama sudah benar</p>
+          <h3>Ubah Nomor Hp</h3>
+          <p>Pastikan no hp sudah benar</p>
           <div class="form-group">
-            <label for="name" class="lbl-nm">Nama</label>
-            <input type="text" class="form-control" id="name"
-            aria-describedby="emailHelp" :value="$store.state.nama">
-            <p>Nama dapat dilihat oleh pengguna lainnya</p>
+            <label for="name" class="lbl-nm">No Hp</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            <p>Nomor hp dapat dilihat oleh pengguna lainnya</p>
           </div>
         </div>
         <div class="hero-btn">

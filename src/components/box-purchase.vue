@@ -2,6 +2,7 @@
       <div class="mother-content">
         <div class="mother-first-chooise">
             <input type="checkbox" id="first-chooise">
+<<<<<<< HEAD
             <label for="first-chooise" class="fc"> Pilih semua produk <span class="del">Hapus</span>
             </label>
         </div>
@@ -13,6 +14,19 @@
         </label>
         </div>
         <div class="mother-tc">
+=======
+            <label for="first-chooise">Pilih semua produk <span class="del">Hapus</span>
+            </label>
+        </div>
+        <div class="first-square">
+        <div>
+            <input type="checkbox" id="second-chooise">
+            <label for="second-chooise">Ink City <span class="text-city">Kota Surabaya
+        </span>
+        </label>
+        </div>
+        <div>
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
             <input type="checkbox" id="third-chooise">
             <label for="third-chooise">
             <img class="img-box" src="https://1.bp.blogspot.com/-ER8FqA_HO7M/XTcqJNdXAPI/AAAAAAAAS3g/yjr7XW-SMVUygkyHbDxyMMaHilLbKUqPwCLcBGAs/s1600/Harga%2Bdan%2BSpesifikasi%2BAsus%2BE402YA%2BGA101T%2BLaptophia.JPG">
@@ -22,6 +36,7 @@
         </label>
         </div>
         <div class="mini-des">Tulis Catatan Untuk Toko</div>
+<<<<<<< HEAD
         <div>
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash" class="svg-inline--fa fa-trash fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="#e3dada" d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z"></path></svg>
         </div>
@@ -36,6 +51,8 @@
         <div>
             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus-circle" class="svg-inline--fa fa-plus-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#0dbf1c" d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm144 276c0 6.6-5.4 12-12 12h-92v92c0 6.6-5.4 12-12 12h-56c-6.6 0-12-5.4-12-12v-92h-92c-6.6 0-12-5.4-12-12v-56c0-6.6 5.4-12 12-12h92v-92c0-6.6 5.4-12 12-12h56c6.6 0 12 5.4 12 12v92h92c6.6 0 12 5.4 12 12v56z"></path></svg>
         </div>
+=======
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
         </div>
     </div>
 </template>
@@ -47,6 +64,7 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
     .mother-content{
     display: flex;
     /* padding-left: 50px; */
@@ -140,14 +158,70 @@ export default {
         left: 560px;
         font-weight: 700;
         color: rgb(3, 172, 14);
+=======
+/* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {
+    .mother-content{
+    display: flex;
+    padding-left: 50px;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    top: 150px;
+    width: auto;
+    }
+
+    .mother-first-chooise{
+    height: 50px;
+    position: relative;
+
+    }
+
+    .first-square{
+    width: 55%;
+    height: 200px;
+    position: relative;
+    border-top: 4px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    }
+
+    .img-box{
+    height: 80px;
+    width: auto;
+    position: relative;
+    top: 20px;
+    border: 3px solid brown;
+    left: 20px;
+    }
+
+    .price{
+    left: 150px;
+    position: relative;
+    top: -50px;
+    }
+
+    .text-name{
+    position: relative;
+    left: 150px;
+    top: -60px;
+    }
+
+    .mini-des{
+    left: 20px;
+    position: relative;
+    margin-top: -30px;
+    }
+
+    .del{
+    position: relative;
+    left: 520px;
     }
 
     .text-city{
         position: relative;
         top: 20px;
-        left: -70px;
-        font-size: 12px;
-        color: rgb(159, 166, 176);
+        left: -57px;
     }
 
     #third-chooise{
@@ -155,6 +229,85 @@ export default {
         position: relative;
         display: flex;
     }
+     }
+
+
+    .mother-content{
+    display: flex;
+    padding-left: 50px;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    top: 150px;
+    width: auto;
+    }
+
+    .mother-first-chooise{
+    height: 50px;
+    position: relative;
+
+    }
+
+    .first-square{
+    width: 55%;
+    height: 200px;
+    position: relative;
+    border-top: 4px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    padding-top: 10px;
+    }
+
+    .img-box{
+    height: 80px;
+    width: auto;
+    position: relative;
+    top: 20px;
+    border: 3px solid brown;
+    left: 20px;
+    }
+
+    .price{
+    left: 150px;
+    position: relative;
+    top: -50px;
+    }
+
+    .text-name{
+    position: relative;
+    left: 150px;
+    top: -60px;
+    }
+
+    .mini-des{
+    left: 20px;
+    position: relative;
+    margin-top: -30px;
+    }
+
+    .del{
+    position: relative;
+    left: 520px;
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
+    }
+
+    .text-city{
+        position: relative;
+        top: 20px;
+<<<<<<< HEAD
+        left: -70px;
+        font-size: 12px;
+        color: rgb(159, 166, 176);
+=======
+        left: -57px;
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
+    }
+
+    #third-chooise{
+        top: 65px;
+        position: relative;
+        display: flex;
+    }
+<<<<<<< HEAD
 
     .fa-trash{
         height: 20px;
@@ -211,4 +364,6 @@ export default {
         right: 10px;
         position: absolute;
     }
+=======
+>>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
 </style>
