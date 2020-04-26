@@ -172,6 +172,11 @@ export default {
   components: {
     NavbarLogin,
   },
+  // created() {
+  //   if (localStorage.token !== null) {
+  //     this.$router.push('/');
+  //   }
+  // },
   methods: {
     register() {
       axios.post('http://192.168.1.97:5000/api/arkapedia/auth/signup', {

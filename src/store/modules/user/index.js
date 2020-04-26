@@ -7,9 +7,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     products: [],
-    url: process.env.VUE_APP_BASE_URL,
-    forUser: [],
+    // poso: localStorage.getItem('token') || null,
   },
+  // getters: {
+  //   getUser(state) {
+  //     return state.poso !== null;
+  //   },
+  // },
   mutations: {
     FOR_USER(state, data) {
       state.forUser = data;
