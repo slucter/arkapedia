@@ -3,7 +3,7 @@
     <div class="thumbnail">
       <div class="cover-profil">
         <img src="../../assets/img/photo-profile-default.jpg" alt="">
-        <h3>Shilfiya Amani</h3>
+        <h3>{{dataUser.name}}</h3>
         <p>0 Follower</p>
       </div>
       <section class="edit-profile">
@@ -14,8 +14,42 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'cardProfile',
+  data() {
+    return {
+      dataUser: [],
+      local: null,
+    };
+  },
+  created() {
+    this.local = localStorage.getItem('id');
+  },
+  computed: {
+    cardUser() {
+      return this.$store.state.forUser;
+    },
+  },
+  methods: {
+    getUserById() {
+      axios.get(`http://192.168.1.97:5000/api/arkapedia/user/${this.local}`)
+        // eslint-disable-next-line no-unused-vars
+        .then((res) => {
+          // eslint-disable-next-line no-unused-expressions
+          // resolve.res.data;
+          this.dataUser = res.data.user;
+          console.log(res.data.user);
+        })
+        // eslint-disable-next-line no-unused-vars
+        .catch((err) => {
+        });
+    },
+  },
+  mounted() {
+    this.getUserById();
+  },
 };
 </script>
 

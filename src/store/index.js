@@ -39,4 +39,7 @@ export const store = new Vuex.Store({
     product,
     shop,
   },
+  actions: {
+
+  },
 });

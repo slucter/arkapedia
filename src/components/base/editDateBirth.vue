@@ -14,8 +14,9 @@
             <p>kamu hanya dapat mengubah Tanggal Lahir 1 kali. Pastikan
               tanggal lahir sudah benar</p>
             <div class="select-group">
-              <select name="tanggal" class="edit-date" >
-                <option value="1" v-for="(date, i) in 30" :key="date">{{i+1}}</option>
+              <select name="tanggal" class="edit-date" v-model="date"  >
+                <option v-for="date in 30" :key="date.id" :value="date" >
+                  {{date}}</option>
               </select>
               <select name="bulan" class="edit-month">
                 <option value="">January</option>
@@ -43,8 +44,38 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'editDateBirth',
+  data() {
+    return {
+      dataUser: [],
+      local: null,
+      date: null,
+    };
+  },
+  created() {
+    this.local = localStorage.getItem('id');
+  },
+  methods: {
+    getUserById() {
+      axios.get(`http://192.168.1.97:5000/api/arkapedia/user/${this.local}`)
+        // eslint-disable-next-line no-unused-vars
+        .then((res) => {
+          // eslint-disable-next-line no-unused-expressions
+          // resolve.res.data;
+          this.dataUser = res.data.user;
+          console.log(res.data.user);
+        })
+        // eslint-disable-next-line no-unused-vars
+        .catch((err) => {
+        });
+    },
+  },
+  mounted() {
+    this.getUserById();
+  },
 };
 </script>
 

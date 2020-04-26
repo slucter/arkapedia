@@ -11,6 +11,7 @@
 </template>
 
 <script>
+// import axios from 'axios';
 import Navbar from '../components/Navbar/Navbar.vue';
 import editSideBar from '../components/base/editSideBar.vue';
 import mainEditProfile from '../components/base/mainEditProfile.vue';

@@ -15,12 +15,13 @@
           <div class="form-group">
             <label for="name" class="lbl-nm">Nama</label>
             <input type="text" class="form-control" id="name"
-            aria-describedby="emailHelp" :value="$store.state.nama">
+            aria-describedby="emailHelp" v-model="name">
             <p>Nama dapat dilihat oleh pengguna lainnya</p>
           </div>
         </div>
         <div class="hero-btn">
-          <button type="button" class="btn-save">Simpan</button>
+          <!-- <button type="button" class="btn-save" @click="getUserById" >Simpan</button> -->
+          <button type="button" class="btn-active" @click="updateUser" >Simpan</button>
         </div>
       </div>
     </div>
@@ -29,8 +30,54 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: 'editName',
+  data() {
+    return {
+      name: null,
+      local: null,
+    };
+  },
+  created() {
+    this.local = localStorage.getItem('id');
+    this.token = localStorage.getItem('token');
+  },
+  computed: {
+    cardUser() {
+      return this.$store.state.forUser;
+    },
+  },
+  methods: {
+    updateUser() {
+      axios.put(`http://192.168.1.97:5000/api/arkapedia/user/${this.local}`,
+        { name: this.name }, { headers: this.token })
+        // eslint-disable-next-line no-unused-vars
+        .then((res) => {
+          // eslint-disable-next-line no-unused-expressions
+          // resolve.res.data;
+          // this.dataUser = res.data.user;
+          this.$router.replace(`http://localhost:8080/editprofile/${this.route.params.id}`);
+          console.log(res);
+        })
+        // eslint-disable-next-line no-unused-vars
+        .catch((err) => {
+        });
+    },
+  },
+  mounted() {
+    axios.get(`http://192.168.1.97:5000/api/arkapedia/user/${this.local}`)
+      .then((res) => {
+        // eslint-disable-next-line no-unused-expressions
+        // resolve.res.data;
+        this.name = res.data.user.name;
+        // console.log(res);
+      })
+    // eslint-disable-next-line no-unused-vars
+      .catch((err) => {
+      });
+  },
 };
 </script>
 
@@ -80,5 +127,15 @@ export default {
     border: none;
     border-radius: 5px;
     color: rgba(0, 0, 0, 0.26);
+  }
+  .btn-active{
+    width: 150px;
+    height: 44px;
+    background: #42b549;
+    margin: 0 2px;
+    padding: 11px 0;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
   }
 </style>
