@@ -25,11 +25,10 @@ export default {
 <style scoped>
     /* border */
     .second-square{
-    width: 30%;
     height: 250px;
-    position: relative;
+    width: 100%;
+    /* position: relative; */
     padding-top: 10px;
-    left: 900px ;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     padding-left: 20px;
     display: flex;

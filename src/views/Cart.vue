@@ -29,11 +29,11 @@
 </template>
 
 <script>
-import Footer from '../components/footer.vue';
-import Purchase from '../components/box-purchase.vue';
+import Footer from '../components/small/footer.vue';
+import Purchase from '../components/small/box-purchase.vue';
 import Navbar from '../components/Navbar/Navbar.vue';
-import Minis from '../components/mini-sidebar.vue';
-import Card from '../components/card.vue';
+import Minis from '../components/small/mini-sidebar.vue';
+import Card from '../components/small/card.vue';
 
 export default {
   name: 'Cart',
