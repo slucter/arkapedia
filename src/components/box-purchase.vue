@@ -48,8 +48,11 @@ export default {
 
 <style scoped>
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Small devices (landscape phones, 576px and up) */
     @media (min-width: 576px) {
+=======
+>>>>>>> master
     .mother-content{
     display: flex;
     padding-left: 50px;
@@ -205,6 +208,7 @@ export default {
         left: 560px;
         font-weight: 700;
         color: rgb(3, 172, 14);
+<<<<<<< HEAD
 >>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
     }
 /* Small devices (landscape phones, 576px and up) */
@@ -264,6 +268,8 @@ export default {
     .del{
     position: relative;
     left: 520px;
+=======
+>>>>>>> master
     }
 
     .text-city{
@@ -278,7 +284,10 @@ export default {
         display: flex;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> master
 
     .fa-trash{
         height: 20px;
@@ -335,5 +344,8 @@ export default {
         right: 10px;
         position: absolute;
     }
+<<<<<<< HEAD
 >>>>>>> 2254b575ed42ddfc7d9965189c75543c9ff67ec2
+=======
+>>>>>>> master
 </style>
