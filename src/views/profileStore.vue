@@ -1,6 +1,8 @@
 <template>
     <div class="container-profile-store">
-        <Navbar/>
+        <Navbar @Catclick3="ClickCategory" @CartClick3="ClickCart" />
+        <Submenu_ />
+        <CartSubmenu_ />
         <div class="store-alert">
             <img src="../assets/img/warn.svg" alt="">
             <h1><b>Toko Anda belum aktif</b></h1>
@@ -45,10 +47,15 @@
             <section class="tblst">Diskusi Product</section>
         </div>
         <div class="content-store">
-            <aside class="sidebar"></aside>
+            <aside class="sidebar">
+                <p>Etalase Toko</p>
+                <section>Semua Produk</section>
+                <section>Produk Terjual</section>
+            </aside>
             <div class="all-produk">
               <div class="nav-content">
                 <div class="search-adress">
+                  <input type="text" placeholder="Cari alamat" class="input-src">
                   <input type="text" placeholder="Cari Produk" class="input-src">
                   <div class="icon-src"><i class="fas fa-search-location"></i></div>
                 </div>
@@ -62,7 +69,8 @@
                       <div class="notif-none">
                           <h1>Toko Anda Belum Memiliki Produk</h1>
                           <p>Yuk isi tokomu dengan produk unggulan</p>
-                          <router-link to="add" class="add-product">Tambah Produk</router-link>
+                          <router-link to="1/addProduct" class="add-product">
+                          Tambah Produk</router-link>
                       </div>
                   </div>
               </div>
@@ -74,21 +82,36 @@
 
 <script>
 import Navbar from '../components/Navbar/Navbar.vue';
+import Submenu_ from '../components/Navbar/Submenu/Submenu.vue';
+import CartSubmenu_ from '../components/Navbar/Submenu/CartSubmenu.vue';
 
 export default {
   name: 'profileStore',
   components: {
     Navbar,
+    Submenu_,
+    CartSubmenu_,
+  },
+  methods: {
+    ClickCategory() {
+      const submenu = document.querySelector('.submenu-category');
+      submenu.classList.toggle('subcat-show');
+    },
+
+    ClickCart() {
+      const subCartLayer = document.querySelector('.submenu-icon-group');
+      subCartLayer.classList.toggle('submenuCartShow');
+      const cartIcon = document.querySelector('.submenu-cart-icon');
+      cartIcon.classList.toggle('SubCartTop');
+    },
+    slider() {
+      console.log(this.coba);
+    },
   },
   data() {
     return {
       coba: 0,
     };
-  },
-  methods: {
-    slider() {
-      console.log(this.coba);
-    },
   },
 };
 </script>
@@ -157,6 +180,7 @@ export default {
     }
     .sidebar{
         display: flex;
+        flex-direction: column;
         width: 266px;
         height: 134px;
         background: #ffffff;
@@ -344,7 +368,7 @@ export default {
       flex-direction: column;
       width: 241.98px;
       height: 152px;
-      margin-left: 20px ;
+      margin-left: 50px ;
   }
   .notif-none h1{
       font-size: 20px;
@@ -372,5 +396,20 @@ export default {
       display: flex;
       flex-direction: column;
       padding: 0 0 0 12px;
+  }
+  .sidebar p{
+      font-size: 14px;
+      color: rgba(49, 53, 59, 0.96);
+      font-weight: 600;
+  }
+  .sidebar section{
+      width: 244px;
+      height: 36px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+  }
+  .sidebar section:hover{
+      background: #f8f8f8;
   }
 </style>

@@ -1,15 +1,8 @@
 <template>
-  <form @submit="addProduct" class="container-add-product">
+  <div class="container-add-product">
     <navbar_/>
     <div class="warn-add">
-      <h1 class="ttl-div">Tambah Produk</h1>
-      <div class="warn-txt">
-        <p>
-          Pastikan produk Anda sudah sesuai dengan syarat dan ketentuan Tokopedia.
-          Tokopedia menghimbau seller untuk menjual produk dengar harga yang wajar atau
-          produk Anda dapat diturunkan oleh Tokopedia sesuai S&K yang berlaku.
-        </p>
-      </div>
+      <h1 class="ttl-div">Ubah Produk</h1>
       <div class="upload-product">
         <div class="attention">
           <h1 class="ttl-div">Upload Produk</h1>
@@ -20,7 +13,7 @@
           <div class="uplo" v-for="uplo in 5" :key="uplo"></div>
         </div>
         <div class="footer-upload">
-          <input type="file" class="pick-files" ref="file" @change="upload">
+          <input type="file" class="pick-files">
           <p>atau tarik dan letakkan hingga 5 gambar sekaligus di sini</p>
         </div>
       </div>
@@ -32,39 +25,38 @@
             <p>Nama produk min. 5 kata dan terdiri dari jenis produk, merek, dan
                keterangan seperti warna, bahan, atau tipe.</p>
           </div>
-          <input type="text" v-model="product.name">
+          <input type="text" v-model="this.product.name">
         </div>
         <div class="category-product">
           <div class="dtl-txt">
             <h3>Kategori</h3>
           </div>
-          <select name="etalase" class="select-etalase" v-model="product.categoryId">
+          <select name="etalase" class="select-etalase" v-model="this.product.categoryId">
             <option value="1">Buku</option>
           </select>
         </div>
       </div>
       <div class="desc-product">
-        <descriptionProduct @description="inputDescription"/>
+        <descriptionProduct :inputs="this.product.description"/>
       </div>
       <div class="price-product">
-        <priceProduct @price="inputPrice" />
+        <priceProduct/>
       </div>
       <div class="management-product">
-        <managementProduct @stock="inputStock" />
+        <managementProduct/>
       </div>
       <div class="weight-product">
-        <weightProduct @weight="inputWeight" />
+        <weightProduct/>
       </div>
     </div>
     <div class="hero-btn">
       <button class="btn-cncl">Batal</button>
       <button class="btn-sv">Simpan</button>
-    </div>
-  </form>
+  </div>
+  </div>
 </template>
 
 <script>
-import axios from 'axios';
 import navbar_ from '../components/Navbar/Navbar.vue';
 import descriptionProduct from '../components/subAddProduct/descriptionProduct.vue';
 import priceProduct from '../components/subAddProduct/priceProduct.vue';
@@ -72,7 +64,7 @@ import managementProduct from '../components/subAddProduct/managementProduct.vue
 import weightProduct from '../components/subAddProduct/weightProduct.vue';
 
 export default {
-  name: 'addProduct',
+  name: 'EditProduct',
   components: {
     navbar_,
     descriptionProduct,
@@ -82,8 +74,6 @@ export default {
   },
   data() {
     return {
-      image: null,
-      token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3NDgwNDc2fQ.-9y7SYyPAMQXLgB15VzlxkWLOMnP6MNcl7nIj9sZXBg',
       product: {
         name: null,
         description: null,
@@ -99,76 +89,6 @@ export default {
         tagId: null,
       },
     };
-  },
-  methods: {
-    upload() {
-      const file = this.$refs.file.files[0];
-      this.image = file;
-    },
-    addProduct(event) {
-      event.preventDefault();
-      const formData = new FormData();
-      formData.append('image1', this.image);
-      axios
-        .post('http://localhost:5000/api/arkapedia/admin/image', formData,
-          { headers: { 'baca-bismillah': this.token } })
-        .then((data) => {
-          console.log(data.data.images.id);
-          // const inputs = new FormData();
-          // inputs.append('name', this.product.name);
-          // inputs.append('description', this.product.description);
-          // inputs.append('price', this.product.price);
-          // inputs.append('discount', this.product.discount);
-          // inputs.append('quantity', this.product.quantity);
-          // inputs.append('weight', this.product.weight);
-          // inputs.append('rating', this.product.rating);
-          // inputs.append('condition', this.product.condition);
-          // inputs.append('imageId', data.id);
-          // inputs.append('categoryId', this.product.categoryId);
-          // inputs.append('shopId', 1);
-          // inputs.append('tagId', this.product.tagId);
-          setTimeout(() => {
-            axios
-              .post('http://localhost:5000/api/arkapedia/admin/product', {
-                name: this.product.name,
-                description: this.product.description,
-                price: this.product.price,
-                discount: this.product.discount,
-                quantity: this.product.quantity,
-                weight: this.product.weight,
-                rating: this.product.rating,
-                condition: this.product.condition,
-                imageId: data.data.images.id,
-                categoryId: this.product.categoryId,
-                shopId: 1,
-                tagId: this.product.tagId,
-              },
-              { headers: { 'baca-bismillah': this.token } })
-              .then((data1) => {
-                console.log(data1);
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          }, 3000);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    inputWeight(e) {
-      this.product.weight = e;
-    },
-    inputPrice(e) {
-      this.product.price = e;
-    },
-    inputDescription(e) {
-      this.product.description = e;
-      // console.log(this.product.description);
-    },
-    inputStock(e) {
-      this.product.quantity = e;
-    },
   },
 };
 </script>

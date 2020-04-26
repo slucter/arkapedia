@@ -1,10 +1,10 @@
 <template>
-  <router-link class="link" to="detail/1">
+  <router-link class="link" :to="id">
     <div class="card">
-      <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2018/8/15/18988007/18988007_0ea97510-9ae3-4592-a981-a00f91054240.jpg" class="card-img-top" alt="img-shop">
+      <img :src="image" class="card-img-top" :alt="image">
       <div class="card-body">
-        <p class="card-title">Hello</p>
-        <p class="card-price">Rp. 50000</p>
+        <p class="card-title">{{ name }}</p>
+        <p class="card-price">Rp. {{ price }}</p>
         <div class="rating">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -19,12 +19,11 @@
 
 <script>
 export default {
-  name: 'CardProduct',
+  name: 'CardShop',
   props: [
     'name',
     'image',
     'price',
-    'location',
     'id',
   ],
 };
@@ -58,6 +57,8 @@ export default {
     font-weight: bold;
     margin: 0;
     text-transform: uppercase;
+    max-height: 45px;
+    overflow: hidden;
   }
   .card-price{
     font-size: 14px;
