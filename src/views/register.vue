@@ -72,11 +72,7 @@
                   </div>
                 </div>
               </div>
-<<<<<<< HEAD
-              <div v-else>
-=======
               <div v-if="code === 0">
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
                 <div class="header-register-2">
                   <router-link to="/register" @click="ubah">
                     <i @click="ubah" class="material-icons">keyboard_backspace</i>
@@ -86,18 +82,6 @@
                 </div>
                 <div>
                   <div class="form-email">
-<<<<<<< HEAD
-                    <label for="name">Nama Lengkap</label>
-                    <div class="form-input">
-                      <input
-                      v-model.trim="$v.fullname.$model"
-                      type="text"
-                      id="name">
-                      <img src="@/assets/img/check.png"
-                      v-if="$v.fullname.minLength && $v.fullname.required">
-                      <div class="error-msg">
-                        <p class="error-email" v-if="!$v.fullname.minLength">
-=======
                     <div class="alertdiv" v-if="alert === 1">
                       <p class="alert">Login Succes Please Check Your <a href="https://mail.google.com/mail/">Email</a></p>
                     </div>
@@ -111,7 +95,6 @@
                       v-if="$v.name.minLength && $v.name.required">
                       <div class="error-msg">
                         <p class="error-email" v-if="!$v.name.minLength">
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
                           Nama lengkap terlalu pendek, minimum 3 karakter</p>
                       </div>
                     </div>
@@ -138,14 +121,6 @@
                   </div>
                   <div class="button-register">
                     <button
-<<<<<<< HEAD
-                    v-if="$v.fullname.minLength && $v.fullname.required
-                    && $v.password.minLength && $v.password.required"
-                    class="green-button">Selesai</button>
-                    <button
-                    v-if="!$v.password.minLength || !$v.password.required
-                    || !$v.fullname.required || !$v.fullname.minLength"
-=======
                     v-if="$v.name.minLength && $v.name.required
                     && $v.password.minLength && $v.password.required"
                     @click="register"
@@ -153,7 +128,6 @@
                     <button
                     v-if="!$v.password.minLength || !$v.password.required
                     || !$v.name.required || !$v.name.minLength"
->>>>>>> 90ae0d3edbae5e763f25d1c5c1e42893764b0c8b
                     class="default-button">Selesai</button>
                   </div>
                 </div>
