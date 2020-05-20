@@ -36,7 +36,7 @@
 ## Usage for development
 
 1. Open your terminal or command prompt
-2. Type `git clone https://github.com/bagakibadi/arkapedia-frontend.git`
+2. Type `git clone https://github.com/slucter/arkapedia.git
 3. Open the folder and type `npm install` for install dependencies
 4. Create Environment Variable [here](#create-environment-variable)
 5. Before run this, you must run backend first
