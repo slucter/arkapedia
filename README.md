@@ -57,7 +57,7 @@ VUE_APP_SECRET_KEY_TOKEN=YOUR_API_KEY
 
 ## Related Project (Backend)
 
-* [`Backend-Arkapedia`](https://github.com/bagakibadi/arkapedia-backend.git)
+* [`Backend-Arkapedia`](https://github.com/slucter/arkapedia.git)
 
 ## Contributors
 
@@ -106,4 +106,4 @@ VUE_APP_SECRET_KEY_TOKEN=YOUR_API_KEY
 
 ## Contact
 
-MyEmail : solaybagus2@gmail.com
+MyEmail : mad.irhashdianto@gmail.com
